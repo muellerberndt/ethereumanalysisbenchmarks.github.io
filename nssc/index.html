@@ -369,205 +369,245 @@
 </pre></div>
 
           <h4>Mythril Report</h4>
-                          <h5>Location</h5>
-           <pre>Line 37: function GetGift(bytes pass)
-    external
-    payable
-    returns (string)
-    {
-        if(hashPass == sha3(pass))
-        {
-            msg.sender.transfer(this.balance);
-            return message;
-        }
-    }</pre>
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L37">Location</a></h5>
+      <p>Function: <code>GetGift(bytes)</code>, Line: 37, Bytecode offset: 190:</br>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="n">GetGift</span><span class="p">(</span><span class="kt">bytes</span> <span class="n">pass</span><span class="p">)</span>
+    <span class="kr">external</span>
+    <span class="kr">payable</span>
+    <span class="k">returns</span> <span class="p">(</span><span class="kt">string</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">hashPass</span> <span class="o">==</span> <span class="nf">sha3</span><span class="p">(</span><span class="n">pass</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">);</span>
+            <span class="k">return</span> <span class="n">message</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+
                   <h5>Issue Integer Overflow (Warning)</h5>
-         A possible integer overflow exists in the function `GetGift(bytes)`.
-The addition or multiplication may result in a value higher than the maximum representable integer.
-                          <h5>Location</h5>
-           <pre>Line 28: function SetMessage(string _message)
-    public
-    {
-        if(msg.sender==sender)
-        {
-            message =_message;
-        }
-    }</pre>
+         <p>A possible integer overflow exists in the function <code>GetGift(bytes)</code>.
+The addition or multiplication may result in a value higher than the maximum representable integer.</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L28">Location</a></h5>
+      <p>Function: <code>SetMessage(string)</code>, Line: 28, Bytecode offset: 470:</br>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="n">SetMessage</span><span class="p">(</span><span class="kt">string</span> <span class="n">_message</span><span class="p">)</span>
+    <span class="kr">public</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">msg.sender</span><span class="o">==</span><span class="n">sender</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">message</span> <span class="o">=</span><span class="n">_message</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+
                   <h5>Issue Integer Overflow (Warning)</h5>
-         A possible integer overflow exists in the function `SetMessage(string)`.
-The addition or multiplication may result in a value higher than the maximum representable integer.
-                          <h5>Location</h5>
-           <pre>Line 15: function GetHash(bytes pass) public constant returns (bytes32) {return sha3(pass);}</pre>
+         <p>A possible integer overflow exists in the function <code>SetMessage(string)</code>.
+The addition or multiplication may result in a value higher than the maximum representable integer.</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L15">Location</a></h5>
+      <p>Function: <code>GetHash(bytes)</code>, Line: 15, Bytecode offset: 575:</br>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="n">GetHash</span><span class="p">(</span><span class="kt">bytes</span> <span class="n">pass</span><span class="p">)</span> <span class="kr">public</span> <span class="kr">constant</span> <span class="k">returns</span> <span class="p">(</span><span class="kt">bytes32</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nf">sha3</span><span class="p">(</span><span class="n">pass</span><span class="p">);}</span>
+</pre></div>
+
                   <h5>Issue Integer Overflow (Warning)</h5>
-         A possible integer overflow exists in the function `GetHash(bytes)`.
-The addition or multiplication may result in a value higher than the maximum representable integer.
-                          <h5>Location</h5>
-           <pre>Line 42: sha3(pass)</pre>
+         <p>A possible integer overflow exists in the function <code>GetHash(bytes)</code>.
+The addition or multiplication may result in a value higher than the maximum representable integer.</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L42">Location</a></h5>
+      <p>Function: <code>GetGift(bytes)</code>, Line: 42, Bytecode offset: 840:</br>
+<div class="highlight"><pre><span></span><span class="nf">sha3</span><span class="p">(</span><span class="n">pass</span><span class="p">)</span>
+</pre></div>
+
                   <h5>Issue Integer Overflow (Warning)</h5>
-         A possible integer overflow exists in the function `GetGift(bytes)`.
-The addition or multiplication may result in a value higher than the maximum representable integer.
-                          <h5>Location</h5>
-           <pre>Line 42: sha3(pass)</pre>
+         <p>A possible integer overflow exists in the function <code>GetGift(bytes)</code>.
+The addition or multiplication may result in a value higher than the maximum representable integer.</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L42">Location</a></h5>
+      <p>Function: <code>GetGift(bytes)</code>, Line: 42, Bytecode offset: 853:</br>
+<div class="highlight"><pre><span></span><span class="nf">sha3</span><span class="p">(</span><span class="n">pass</span><span class="p">)</span>
+</pre></div>
+
                   <h5>Issue Integer Underflow (Warning)</h5>
-         A possible integer underflow exists in the function `GetGift(bytes)`.
-The subtraction may result in a value &lt; 0.
-                          <h5>Location</h5>
-           <pre>Line 44: msg.sender.transfer(this.balance)</pre>
-                  <h5>Issue Ether send (Warning)</h5>
-         In the function `GetGift(bytes)` a non-zero amount of Ether is sent to msg.sender.
+         <p>A possible integer underflow exists in the function <code>GetGift(bytes)</code>.
+The subtraction may result in a value &lt; 0.</p>
 
-There is a check on storage index 2. This storage slot can be written to by calling the function `SetPass(bytes32)`.
-                          <h5>Location</h5>
-           <pre>Line 55: sender.transfer(this.balance)</pre>
-                  <h5>Issue Ether send (Warning)</h5>
-         In the function `Revoce()` a non-zero amount of Ether is sent to an address taken from storage slot 1.
-There is a check on storage index 1. This storage slot can be written to by calling the function `SetPass(bytes32)`.
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L44">Location</a></h5>
+      <p>Function: <code>GetGift(bytes)</code>, Line: 44, Bytecode offset: 943:</br>
+<div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span>
+</pre></div>
 
-There is a check on storage index 1. This storage slot can be written to by calling the function `SetPass(bytes32)`.
-                          <h5>Location</h5>
-           <pre>Line 55: sender.transfer(this.balance)</pre>
+                  <h5>Issue Ether send (Warning)</h5>
+         <p>In the function <code>GetGift(bytes)</code> a non-zero amount of Ether is sent to msg.sender.</p>
+
+<p>There is a check on storage index 2. This storage slot can be written to by calling the function <code>SetPass(bytes32)</code>.</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L55">Location</a></h5>
+      <p>Function: <code>Revoce()</code>, Line: 55, Bytecode offset: 1686:</br>
+<div class="highlight"><pre><span></span><span class="n">sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span>
+</pre></div>
+
+                  <h5>Issue Ether send (Warning)</h5>
+         <p>In the function <code>Revoce()</code> a non-zero amount of Ether is sent to an address taken from storage slot 1.
+There is a check on storage index 1. This storage slot can be written to by calling the function <code>SetPass(bytes32)</code>.</p>
+
+<p>There is a check on storage index 1. This storage slot can be written to by calling the function <code>SetPass(bytes32)</code>.</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L55">Location</a></h5>
+      <p>Function: <code>Revoce()</code>, Line: 55, Bytecode offset: 1686:</br>
+<div class="highlight"><pre><span></span><span class="n">sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span>
+</pre></div>
+
                   <h5>Issue Transaction order dependence (Warning)</h5>
-         A possible transaction order independence vulnerability exists in function Revoce(). The value or direction of the call statement is determined from a tainted storage location
-                          <h5>Location</h5>
-           <pre>Line 3: contract NEW_YEARS_GIFT
-{
-    string message;
+         <p>A possible transaction order independence vulnerability exists in function Revoce(). The value or direction of the call statement is determined from a tainted storage location</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L3">Location</a></h5>
+      <p>Function: <code>SetMessage(string)</code>, Line: 3, Bytecode offset: 1819:</br>
+<div class="highlight"><pre><span></span><span class="kd">contract</span> <span class="n">NEW_YEARS_GIFT</span>
+<span class="p">{</span>
+    <span class="kt">string</span> <span class="n">message</span><span class="p">;</span>
     
-    bool passHasBeenSet = false;
+    <span class="kt">bool</span> <span class="n">passHasBeenSet</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
     
-    address sender;
+    <span class="kt">address</span> <span class="n">sender</span><span class="p">;</span>
     
-    bytes32 public hashPass;
+    <span class="kt">bytes32</span> <span class="kr">public</span> <span class="n">hashPass</span><span class="p">;</span>
 	
-    function() public payable{}
+    <span class="kd">function</span><span class="p">()</span> <span class="kr">public</span> <span class="kr">payable</span><span class="p">{}</span>
     
-    function GetHash(bytes pass) public constant returns (bytes32) {return sha3(pass);}
+    <span class="kd">function</span> <span class="n">GetHash</span><span class="p">(</span><span class="kt">bytes</span> <span class="n">pass</span><span class="p">)</span> <span class="kr">public</span> <span class="kr">constant</span> <span class="k">returns</span> <span class="p">(</span><span class="kt">bytes32</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nf">sha3</span><span class="p">(</span><span class="n">pass</span><span class="p">);}</span>
     
-    function SetPass(bytes32 hash)
-    public
-    payable
-    {
-        if( (!passHasBeenSet&amp;&amp;(msg.value &gt; 1 ether)) || hashPass==0x0 )
-        {
-            hashPass = hash;
-            sender = msg.sender;
-        }
-    }
+    <span class="kd">function</span> <span class="n">SetPass</span><span class="p">(</span><span class="kt">bytes32</span> <span class="n">hash</span><span class="p">)</span>
+    <span class="kr">public</span>
+    <span class="kr">payable</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span> <span class="p">(</span><span class="o">!</span><span class="n">passHasBeenSet</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="nb">msg.value</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="kc">ether</span><span class="p">))</span> <span class="o">||</span> <span class="n">hashPass</span><span class="o">==</span><span class="mh">0x0</span> <span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">hashPass</span> <span class="o">=</span> <span class="n">hash</span><span class="p">;</span>
+            <span class="n">sender</span> <span class="o">=</span> <span class="nb">msg.sender</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    function SetMessage(string _message)
-    public
-    {
-        if(msg.sender==sender)
-        {
-            message =_message;
-        }
-    }
+    <span class="kd">function</span> <span class="n">SetMessage</span><span class="p">(</span><span class="kt">string</span> <span class="n">_message</span><span class="p">)</span>
+    <span class="kr">public</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">msg.sender</span><span class="o">==</span><span class="n">sender</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">message</span> <span class="o">=</span><span class="n">_message</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    function GetGift(bytes pass)
-    external
-    payable
-    returns (string)
-    {
-        if(hashPass == sha3(pass))
-        {
-            msg.sender.transfer(this.balance);
-            return message;
-        }
-    }
+    <span class="kd">function</span> <span class="n">GetGift</span><span class="p">(</span><span class="kt">bytes</span> <span class="n">pass</span><span class="p">)</span>
+    <span class="kr">external</span>
+    <span class="kr">payable</span>
+    <span class="k">returns</span> <span class="p">(</span><span class="kt">string</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">hashPass</span> <span class="o">==</span> <span class="nf">sha3</span><span class="p">(</span><span class="n">pass</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">);</span>
+            <span class="k">return</span> <span class="n">message</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    function Revoce()
-    public
-    payable
-    {
-        if(msg.sender==sender)
-        {
-            sender.transfer(this.balance);
-            message=&#34;&#34;;
-        }
-    }
+    <span class="kd">function</span> <span class="n">Revoce</span><span class="p">()</span>
+    <span class="kr">public</span>
+    <span class="kr">payable</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">msg.sender</span><span class="o">==</span><span class="n">sender</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">);</span>
+            <span class="n">message</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    function PassHasBeenSet(bytes32 hash)
-    public
-    {
-        if(msg.sender==sender&amp;&amp;hash==hashPass)
-        {
-           passHasBeenSet=true;
-        }
-    }
-}</pre>
+    <span class="kd">function</span> <span class="n">PassHasBeenSet</span><span class="p">(</span><span class="kt">bytes32</span> <span class="n">hash</span><span class="p">)</span>
+    <span class="kr">public</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">msg.sender</span><span class="o">==</span><span class="n">sender</span><span class="o">&amp;&amp;</span><span class="n">hash</span><span class="o">==</span><span class="n">hashPass</span><span class="p">)</span>
+        <span class="p">{</span>
+           <span class="n">passHasBeenSet</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
                   <h5>Issue Integer Overflow (Warning)</h5>
-         A possible integer overflow exists in the function `SetMessage(string)`.
-The addition or multiplication may result in a value higher than the maximum representable integer.
-                          <h5>Location</h5>
-           <pre>Line 3: contract NEW_YEARS_GIFT
-{
-    string message;
+         <p>A possible integer overflow exists in the function <code>SetMessage(string)</code>.
+The addition or multiplication may result in a value higher than the maximum representable integer.</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L3">Location</a></h5>
+      <p>Function: <code>SetMessage(string)</code>, Line: 3, Bytecode offset: 1833:</br>
+<div class="highlight"><pre><span></span><span class="kd">contract</span> <span class="n">NEW_YEARS_GIFT</span>
+<span class="p">{</span>
+    <span class="kt">string</span> <span class="n">message</span><span class="p">;</span>
     
-    bool passHasBeenSet = false;
+    <span class="kt">bool</span> <span class="n">passHasBeenSet</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
     
-    address sender;
+    <span class="kt">address</span> <span class="n">sender</span><span class="p">;</span>
     
-    bytes32 public hashPass;
+    <span class="kt">bytes32</span> <span class="kr">public</span> <span class="n">hashPass</span><span class="p">;</span>
 	
-    function() public payable{}
+    <span class="kd">function</span><span class="p">()</span> <span class="kr">public</span> <span class="kr">payable</span><span class="p">{}</span>
     
-    function GetHash(bytes pass) public constant returns (bytes32) {return sha3(pass);}
+    <span class="kd">function</span> <span class="n">GetHash</span><span class="p">(</span><span class="kt">bytes</span> <span class="n">pass</span><span class="p">)</span> <span class="kr">public</span> <span class="kr">constant</span> <span class="k">returns</span> <span class="p">(</span><span class="kt">bytes32</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nf">sha3</span><span class="p">(</span><span class="n">pass</span><span class="p">);}</span>
     
-    function SetPass(bytes32 hash)
-    public
-    payable
-    {
-        if( (!passHasBeenSet&amp;&amp;(msg.value &gt; 1 ether)) || hashPass==0x0 )
-        {
-            hashPass = hash;
-            sender = msg.sender;
-        }
-    }
+    <span class="kd">function</span> <span class="n">SetPass</span><span class="p">(</span><span class="kt">bytes32</span> <span class="n">hash</span><span class="p">)</span>
+    <span class="kr">public</span>
+    <span class="kr">payable</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span> <span class="p">(</span><span class="o">!</span><span class="n">passHasBeenSet</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="nb">msg.value</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="kc">ether</span><span class="p">))</span> <span class="o">||</span> <span class="n">hashPass</span><span class="o">==</span><span class="mh">0x0</span> <span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">hashPass</span> <span class="o">=</span> <span class="n">hash</span><span class="p">;</span>
+            <span class="n">sender</span> <span class="o">=</span> <span class="nb">msg.sender</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    function SetMessage(string _message)
-    public
-    {
-        if(msg.sender==sender)
-        {
-            message =_message;
-        }
-    }
+    <span class="kd">function</span> <span class="n">SetMessage</span><span class="p">(</span><span class="kt">string</span> <span class="n">_message</span><span class="p">)</span>
+    <span class="kr">public</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">msg.sender</span><span class="o">==</span><span class="n">sender</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">message</span> <span class="o">=</span><span class="n">_message</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    function GetGift(bytes pass)
-    external
-    payable
-    returns (string)
-    {
-        if(hashPass == sha3(pass))
-        {
-            msg.sender.transfer(this.balance);
-            return message;
-        }
-    }
+    <span class="kd">function</span> <span class="n">GetGift</span><span class="p">(</span><span class="kt">bytes</span> <span class="n">pass</span><span class="p">)</span>
+    <span class="kr">external</span>
+    <span class="kr">payable</span>
+    <span class="k">returns</span> <span class="p">(</span><span class="kt">string</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">hashPass</span> <span class="o">==</span> <span class="nf">sha3</span><span class="p">(</span><span class="n">pass</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">);</span>
+            <span class="k">return</span> <span class="n">message</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    function Revoce()
-    public
-    payable
-    {
-        if(msg.sender==sender)
-        {
-            sender.transfer(this.balance);
-            message=&#34;&#34;;
-        }
-    }
+    <span class="kd">function</span> <span class="n">Revoce</span><span class="p">()</span>
+    <span class="kr">public</span>
+    <span class="kr">payable</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">msg.sender</span><span class="o">==</span><span class="n">sender</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">);</span>
+            <span class="n">message</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    function PassHasBeenSet(bytes32 hash)
-    public
-    {
-        if(msg.sender==sender&amp;&amp;hash==hashPass)
-        {
-           passHasBeenSet=true;
-        }
-    }
-}</pre>
+    <span class="kd">function</span> <span class="n">PassHasBeenSet</span><span class="p">(</span><span class="kt">bytes32</span> <span class="n">hash</span><span class="p">)</span>
+    <span class="kr">public</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">msg.sender</span><span class="o">==</span><span class="n">sender</span><span class="o">&amp;&amp;</span><span class="n">hash</span><span class="o">==</span><span class="n">hashPass</span><span class="p">)</span>
+        <span class="p">{</span>
+           <span class="n">passHasBeenSet</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
                   <h5>Issue Integer Overflow (Warning)</h5>
-         A possible integer overflow exists in the function `SetMessage(string)`.
-The addition or multiplication may result in a value higher than the maximum representable integer.
+         <p>A possible integer overflow exists in the function <code>SetMessage(string)</code>.
+The addition or multiplication may result in a value higher than the maximum representable integer.</p>
+
                 <hr>
     <h3 id=honeypots/KOTH/KOTH>
       <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/KOTH/KOTH.sol">honeypots/KOTH/KOTH</a>
@@ -741,21 +781,33 @@ The addition or multiplication may result in a value higher than the maximum rep
 </pre></div>
 
           <h4>Mythril Report</h4>
-                          <h5>Location</h5>
-           <pre>Line 85: block.number - 1</pre>
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/Lottery/Lottery.sol#L85">Location</a></h5>
+      <p>Function: <code>forceReseed()</code>, Line: 85, Bytecode offset: 1204:</br>
+<div class="highlight"><pre><span></span><span class="nb">block.number</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+
                   <h5>Issue Integer Underflow (Warning)</h5>
-         A possible integer underflow exists in the function `forceReseed()`.
-The subtraction may result in a value &lt; 0.
-                          <h5>Location</h5>
-           <pre>Line 86: block.difficulty*(uint)(block.coinbase)</pre>
+         <p>A possible integer underflow exists in the function <code>forceReseed()</code>.
+The subtraction may result in a value &lt; 0.</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/Lottery/Lottery.sol#L86">Location</a></h5>
+      <p>Function: <code>forceReseed()</code>, Line: 86, Bytecode offset: 1242:</br>
+<div class="highlight"><pre><span></span><span class="nb">block.difficulty</span><span class="o">*</span><span class="p">(</span><span class="kt">uint</span><span class="p">)(</span><span class="nb">block.coinbase</span><span class="p">)</span>
+</pre></div>
+
                   <h5>Issue Integer Overflow (Warning)</h5>
-         A possible integer overflow exists in the function `forceReseed()`.
-The addition or multiplication may result in a value higher than the maximum representable integer.
-                          <h5>Location</h5>
-           <pre>Line 87: tx.gasprice * 7</pre>
+         <p>A possible integer overflow exists in the function <code>forceReseed()</code>.
+The addition or multiplication may result in a value higher than the maximum representable integer.</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/Lottery/Lottery.sol#L87">Location</a></h5>
+      <p>Function: <code>forceReseed()</code>, Line: 87, Bytecode offset: 1254:</br>
+<div class="highlight"><pre><span></span><span class="nb">tx.gasprice</span> <span class="o">*</span> <span class="mi">7</span>
+</pre></div>
+
                   <h5>Issue Integer Overflow (Warning)</h5>
-         A possible integer overflow exists in the function `forceReseed()`.
-The addition or multiplication may result in a value higher than the maximum representable integer.
+         <p>A possible integer overflow exists in the function <code>forceReseed()</code>.
+The addition or multiplication may result in a value higher than the maximum representable integer.</p>
+
                 <hr>
     <h3 id=honeypots/Multiplicator/Multiplicator>
       <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/Multiplicator/Multiplicator.sol">honeypots/Multiplicator/Multiplicator</a>
@@ -955,16 +1007,24 @@ The addition or multiplication may result in a value higher than the maximum rep
 </pre></div>
 
           <h4>Mythril Report</h4>
-                          <h5>Location</h5>
-           <pre>Line 26: msg.value*2</pre>
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/VarLoop/VarLoop.sol#L26">Location</a></h5>
+      <p>Function: <code>Test()</code>, Line: 26, Bytecode offset: 352:</br>
+<div class="highlight"><pre><span></span><span class="nb">msg.value</span><span class="o">*</span><span class="mi">2</span>
+</pre></div>
+
                   <h5>Issue Integer Overflow (Warning)</h5>
-         A possible integer overflow exists in the function `Test()`.
-The addition or multiplication may result in a value higher than the maximum representable integer.
-                          <h5>Location</h5>
-           <pre>Line 36: msg.sender.transfer(i2)</pre>
+         <p>A possible integer overflow exists in the function <code>Test()</code>.
+The addition or multiplication may result in a value higher than the maximum representable integer.</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/VarLoop/VarLoop.sol#L36">Location</a></h5>
+      <p>Function: <code>Test()</code>, Line: 36, Bytecode offset: 464:</br>
+<div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">i2</span><span class="p">)</span>
+</pre></div>
+
                   <h5>Issue Ether send (Warning)</h5>
-         In the function `Test()` a non-zero amount of Ether is sent to msg.sender.
-It seems that this function can be called without restrictions.
+         <p>In the function <code>Test()</code> a non-zero amount of Ether is sent to msg.sender.
+It seems that this function can be called without restrictions.</p>
+
                 <hr>
     <h3 id=incorrect_interface/Alice>
       <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//incorrect_interface/Alice.sol">incorrect_interface/Alice</a>
@@ -1043,14 +1103,22 @@ It seems that this function can be called without restrictions.
 </pre></div>
 
           <h4>Mythril Report</h4>
-                          <h5>Location</h5>
-           <pre>Line 11: c.set(42)</pre>
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//incorrect_interface/Bob.sol#L11">Location</a></h5>
+      <p>Function: <code>_function_0x2801617e</code>, Line: 11, Bytecode offset: 330:</br>
+<div class="highlight"><pre><span></span><span class="n">c</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+
                   <h5>Issue Message call to external contract (Warning)</h5>
-         This contract executes a message call to an address provided as a function argument. Generally, it is not recommended to call user-supplied addresses using Solidity&#39;s call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract&#39;s state.
-                          <h5>Location</h5>
-           <pre>Line 15: c.set_fixed(42)</pre>
+         <p>This contract executes a message call to an address provided as a function argument. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//incorrect_interface/Bob.sol#L15">Location</a></h5>
+      <p>Function: <code>_function_0x90b2290e</code>, Line: 15, Bytecode offset: 469:</br>
+<div class="highlight"><pre><span></span><span class="n">c</span><span class="p">.</span><span class="n">set_fixed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+
                   <h5>Issue Message call to external contract (Warning)</h5>
-         This contract executes a message call to an address provided as a function argument. Generally, it is not recommended to call user-supplied addresses using Solidity&#39;s call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract&#39;s state.
+         <p>This contract executes a message call to an address provided as a function argument. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
+
                 <hr>
     <h3 id=integer_overflow/interger_overflow_1>
       <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//integer_overflow/interger_overflow_1.sol">integer_overflow/interger_overflow_1</a>
@@ -1091,11 +1159,15 @@ It seems that this function can be called without restrictions.
 </pre></div>
 
           <h4>Mythril Report</h4>
-                          <h5>Location</h5>
-           <pre>Line 7: sellerBalance += value</pre>
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//integer_overflow/interger_overflow_1.sol#L7">Location</a></h5>
+      <p>Function: <code>add(uint256)</code>, Line: 7, Bytecode offset: 229:</br>
+<div class="highlight"><pre><span></span><span class="n">sellerBalance</span> <span class="o">+=</span> <span class="n">value</span>
+</pre></div>
+
                   <h5>Issue Integer Overflow (Warning)</h5>
-         A possible integer overflow exists in the function `add(uint256)`.
-The addition or multiplication may result in a value higher than the maximum representable integer.
+         <p>A possible integer overflow exists in the function <code>add(uint256)</code>.
+The addition or multiplication may result in a value higher than the maximum representable integer.</p>
+
                 <hr>
     <h3 id=missing_constructor/Missing>
       <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//missing_constructor/Missing.sol">missing_constructor/Missing</a>
@@ -1144,17 +1216,25 @@ The addition or multiplication may result in a value higher than the maximum rep
 </pre></div>
 
           <h4>Mythril Report</h4>
-                          <h5>Location</h5>
-           <pre>Line 23: owner.transfer(this.balance)</pre>
-                  <h5>Issue Ether send (Warning)</h5>
-         In the function `withdraw()` a non-zero amount of Ether is sent to an address taken from storage slot 0.
-There is a check on storage index 0. This storage slot can be written to by calling the function `IamMissing()`.
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//missing_constructor/Missing.sol#L23">Location</a></h5>
+      <p>Function: <code>withdraw()</code>, Line: 23, Bytecode offset: 388:</br>
+<div class="highlight"><pre><span></span><span class="n">owner</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span>
+</pre></div>
 
-There is a check on storage index 0. This storage slot can be written to by calling the function `IamMissing()`.
-                          <h5>Location</h5>
-           <pre>Line 23: owner.transfer(this.balance)</pre>
+                  <h5>Issue Ether send (Warning)</h5>
+         <p>In the function <code>withdraw()</code> a non-zero amount of Ether is sent to an address taken from storage slot 0.
+There is a check on storage index 0. This storage slot can be written to by calling the function <code>IamMissing()</code>.</p>
+
+<p>There is a check on storage index 0. This storage slot can be written to by calling the function <code>IamMissing()</code>.</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//missing_constructor/Missing.sol#L23">Location</a></h5>
+      <p>Function: <code>withdraw()</code>, Line: 23, Bytecode offset: 388:</br>
+<div class="highlight"><pre><span></span><span class="n">owner</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span>
+</pre></div>
+
                   <h5>Issue Transaction order dependence (Warning)</h5>
-         A possible transaction order independence vulnerability exists in function withdraw(). The value or direction of the call statement is determined from a tainted storage location
+         <p>A possible transaction order independence vulnerability exists in function withdraw(). The value or direction of the call statement is determined from a tainted storage location</p>
+
                 <hr>
     <h3 id=missing_constructor/Rubixi_source_code/Rubixi>
       <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//missing_constructor/Rubixi_source_code/Rubixi.sol">missing_constructor/Rubixi_source_code/Rubixi</a>
@@ -1404,18 +1484,30 @@ There is a check on storage index 0. This storage slot can be written to by call
 </pre></div>
 
           <h4>Mythril Report</h4>
-                          <h5>Location</h5>
-           <pre>Line 39: token.transferFrom(msg.sender, owner, price)</pre>
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//race_condition/RaceCondition.sol#L39">Location</a></h5>
+      <p>Function: <code>buy(uint256)</code>, Line: 39, Bytecode offset: 623:</br>
+<div class="highlight"><pre><span></span><span class="n">token</span><span class="p">.</span><span class="n">transferFrom</span><span class="p">(</span><span class="nb">msg.sender</span><span class="p">,</span> <span class="n">owner</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>
+</pre></div>
+
                   <h5>Issue Message call to external contract (Informational)</h5>
-         This contract executes a message call to to another contract. Make sure that the called contract is trusted and does not execute user-supplied code.
-                          <h5>Location</h5>
-           <pre>Line 41: price = new_price</pre>
+         <p>This contract executes a message call to to another contract. Make sure that the called contract is trusted and does not execute user-supplied code.</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//race_condition/RaceCondition.sol#L41">Location</a></h5>
+      <p>Function: <code>buy(uint256)</code>, Line: 41, Bytecode offset: 686:</br>
+<div class="highlight"><pre><span></span><span class="n">price</span> <span class="o">=</span> <span class="n">new_price</span>
+</pre></div>
+
                   <h5>Issue State change after external call (Warning)</h5>
-         The contract account state is changed after an external call. Consider that the called contract could re-enter the function before this state change takes place. This can lead to business logic vulnerabilities.
-                          <h5>Location</h5>
-           <pre>Line 42: owner = msg.sender</pre>
+         <p>The contract account state is changed after an external call. Consider that the called contract could re-enter the function before this state change takes place. This can lead to business logic vulnerabilities.</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//race_condition/RaceCondition.sol#L42">Location</a></h5>
+      <p>Function: <code>buy(uint256)</code>, Line: 42, Bytecode offset: 750:</br>
+<div class="highlight"><pre><span></span><span class="n">owner</span> <span class="o">=</span> <span class="nb">msg.sender</span>
+</pre></div>
+
                   <h5>Issue State change after external call (Warning)</h5>
-         The contract account state is changed after an external call. Consider that the called contract could re-enter the function before this state change takes place. This can lead to business logic vulnerabilities.
+         <p>The contract account state is changed after an external call. Consider that the called contract could re-enter the function before this state change takes place. This can lead to business logic vulnerabilities.</p>
+
                 <hr>
     <h3 id=reentrancy/DAO_source_code/DAO>
       <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/DAO_source_code/DAO.sol">reentrancy/DAO_source_code/DAO</a>
@@ -2741,38 +2833,66 @@ There is a check on storage index 0. This storage slot can be written to by call
 </pre></div>
 
           <h4>Mythril Report</h4>
-                          <h5>Location</h5>
-           <pre>Line 28: msg.sender.call.value(amount)()</pre>
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L28">Location</a></h5>
+      <p>Function: <code>withdrawBalance_fixed()</code>, Line: 28, Bytecode offset: 455:</br>
+<div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">amount</span><span class="p">)()</span>
+</pre></div>
+
                   <h5>Issue Ether send (Warning)</h5>
-         In the function `withdrawBalance_fixed()` a non-zero amount of Ether is sent to msg.sender.
-It seems that this function can be called without restrictions.
-                          <h5>Location</h5>
-           <pre>Line 28: msg.sender.call.value(amount)()</pre>
+         <p>In the function <code>withdrawBalance_fixed()</code> a non-zero amount of Ether is sent to msg.sender.
+It seems that this function can be called without restrictions.</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L28">Location</a></h5>
+      <p>Function: <code>withdrawBalance_fixed()</code>, Line: 28, Bytecode offset: 455:</br>
+<div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">amount</span><span class="p">)()</span>
+</pre></div>
+
                   <h5>Issue Message call to external contract (Warning)</h5>
-         This contract executes a message call to the address of the transaction sender. Generally, it is not recommended to call user-supplied addresses using Solidity&#39;s call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract&#39;s state.
-                          <h5>Location</h5>
-           <pre>Line 17: msg.sender.call.value(userBalance[msg.sender])()</pre>
+         <p>This contract executes a message call to the address of the transaction sender. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L17">Location</a></h5>
+      <p>Function: <code>withdrawBalance()</code>, Line: 17, Bytecode offset: 575:</br>
+<div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">])()</span>
+</pre></div>
+
                   <h5>Issue Ether send (Warning)</h5>
-         In the function `withdrawBalance()` a non-zero amount of Ether is sent to msg.sender.
-It seems that this function can be called without restrictions.
-                          <h5>Location</h5>
-           <pre>Line 17: msg.sender.call.value(userBalance[msg.sender])()</pre>
+         <p>In the function <code>withdrawBalance()</code> a non-zero amount of Ether is sent to msg.sender.
+It seems that this function can be called without restrictions.</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L17">Location</a></h5>
+      <p>Function: <code>withdrawBalance()</code>, Line: 17, Bytecode offset: 575:</br>
+<div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">])()</span>
+</pre></div>
+
                   <h5>Issue Message call to external contract (Warning)</h5>
-         This contract executes a message call to the address of the transaction sender. Generally, it is not recommended to call user-supplied addresses using Solidity&#39;s call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract&#39;s state.
-                          <h5>Location</h5>
-           <pre>Line 20: userBalance[msg.sender] = 0</pre>
+         <p>This contract executes a message call to the address of the transaction sender. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L20">Location</a></h5>
+      <p>Function: <code>withdrawBalance()</code>, Line: 20, Bytecode offset: 657:</br>
+<div class="highlight"><pre><span></span><span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+
                   <h5>Issue State change after external call (Warning)</h5>
-         The contract account state is changed after an external call. Consider that the called contract could re-enter the function before this state change takes place. This can lead to business logic vulnerabilities.
-                          <h5>Location</h5>
-           <pre>Line 11: userBalance[msg.sender] += msg.value</pre>
+         <p>The contract account state is changed after an external call. Consider that the called contract could re-enter the function before this state change takes place. This can lead to business logic vulnerabilities.</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L11">Location</a></h5>
+      <p>Function: <code>addToBalance()</code>, Line: 11, Bytecode offset: 729:</br>
+<div class="highlight"><pre><span></span><span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">msg.value</span>
+</pre></div>
+
                   <h5>Issue Integer Overflow (Warning)</h5>
-         A possible integer overflow exists in the function `addToBalance()`.
-The addition or multiplication may result in a value higher than the maximum representable integer.
-                          <h5>Location</h5>
-           <pre>Line 38: msg.sender.transfer(userBalance[msg.sender])</pre>
+         <p>A possible integer overflow exists in the function <code>addToBalance()</code>.
+The addition or multiplication may result in a value higher than the maximum representable integer.</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L38">Location</a></h5>
+      <p>Function: <code>withdrawBalance_fixed_2()</code>, Line: 38, Bytecode offset: 848:</br>
+<div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">])</span>
+</pre></div>
+
                   <h5>Issue Ether send (Warning)</h5>
-         In the function `withdrawBalance_fixed_2()` a non-zero amount of Ether is sent to msg.sender.
-It seems that this function can be called without restrictions.
+         <p>In the function <code>withdrawBalance_fixed_2()</code> a non-zero amount of Ether is sent to msg.sender.
+It seems that this function can be called without restrictions.</p>
+
                 <hr>
     <h3 id=reentrancy/ReentrancyExploit>
       <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol">reentrancy/ReentrancyExploit</a>
@@ -2835,32 +2955,56 @@ It seems that this function can be called without restrictions.
 </pre></div>
 
           <h4>Mythril Report</h4>
-                          <h5>Location</h5>
-           <pre>Line 31: vulnerable_contract.call(bytes4(sha3(&#34;withdrawBalance()&#34;)))</pre>
-                  <h5>Issue Message call to external contract (Warning)</h5>
-         This contract executes a message call to an address found at storage slot 0. This storage slot can be written to by calling the function `fallback`. Generally, it is not recommended to call user-supplied addresses using Solidity&#39;s call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract&#39;s state.
-                          <h5>Location</h5>
-           <pre>Line 31: vulnerable_contract.call(bytes4(sha3(&#34;withdrawBalance()&#34;)))</pre>
-                  <h5>Issue Transaction order dependence (Warning)</h5>
-         A possible transaction order independence vulnerability exists in function fallback. The value or direction of the call statement is determined from a tainted storage location
-                          <h5>Location</h5>
-           <pre>Line 22: vulnerable_contract.call(bytes4(sha3(&#34;withdrawBalance()&#34;)))</pre>
-                  <h5>Issue Message call to external contract (Warning)</h5>
-         This contract executes a message call to an address found at storage slot 0. This storage slot can be written to by calling the function `fallback`. Generally, it is not recommended to call user-supplied addresses using Solidity&#39;s call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract&#39;s state.
-                          <h5>Location</h5>
-           <pre>Line 22: vulnerable_contract.call(bytes4(sha3(&#34;withdrawBalance()&#34;)))</pre>
-                  <h5>Issue Transaction order dependence (Warning)</h5>
-         A possible transaction order independence vulnerability exists in function launch_attack(). The value or direction of the call statement is determined from a tainted storage location
-                          <h5>Location</h5>
-           <pre>Line 36: suicide(owner)</pre>
-                  <h5>Issue Unchecked SUICIDE (Warning)</h5>
-         The function `get_money()` executes the SUICIDE instruction. The remaining Ether is sent to a stored address.
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L31">Location</a></h5>
+      <p>Function: <code>fallback</code>, Line: 31, Bytecode offset: 369:</br>
+<div class="highlight"><pre><span></span><span class="n">vulnerable_contract</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="kt">bytes4</span><span class="p">(</span><span class="nf">sha3</span><span class="p">(</span><span class="s">&quot;withdrawBalance()&quot;</span><span class="p">)))</span>
+</pre></div>
 
-It seems that this function can be called without restrictions.
-                          <h5>Location</h5>
-           <pre>Line 15: vulnerable_contract.call.value(msg.value)(bytes4(sha3(&#34;addToBalance()&#34;)))</pre>
                   <h5>Issue Message call to external contract (Warning)</h5>
-         This contract executes a message call to an address provided as a function argument. Generally, it is not recommended to call user-supplied addresses using Solidity&#39;s call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract&#39;s state.
+         <p>This contract executes a message call to an address found at storage slot 0. This storage slot can be written to by calling the function <code>fallback</code>. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L31">Location</a></h5>
+      <p>Function: <code>fallback</code>, Line: 31, Bytecode offset: 369:</br>
+<div class="highlight"><pre><span></span><span class="n">vulnerable_contract</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="kt">bytes4</span><span class="p">(</span><span class="nf">sha3</span><span class="p">(</span><span class="s">&quot;withdrawBalance()&quot;</span><span class="p">)))</span>
+</pre></div>
+
+                  <h5>Issue Transaction order dependence (Warning)</h5>
+         <p>A possible transaction order independence vulnerability exists in function fallback. The value or direction of the call statement is determined from a tainted storage location</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L22">Location</a></h5>
+      <p>Function: <code>launch_attack()</code>, Line: 22, Bytecode offset: 975:</br>
+<div class="highlight"><pre><span></span><span class="n">vulnerable_contract</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="kt">bytes4</span><span class="p">(</span><span class="nf">sha3</span><span class="p">(</span><span class="s">&quot;withdrawBalance()&quot;</span><span class="p">)))</span>
+</pre></div>
+
+                  <h5>Issue Message call to external contract (Warning)</h5>
+         <p>This contract executes a message call to an address found at storage slot 0. This storage slot can be written to by calling the function <code>fallback</code>. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L22">Location</a></h5>
+      <p>Function: <code>launch_attack()</code>, Line: 22, Bytecode offset: 975:</br>
+<div class="highlight"><pre><span></span><span class="n">vulnerable_contract</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="kt">bytes4</span><span class="p">(</span><span class="nf">sha3</span><span class="p">(</span><span class="s">&quot;withdrawBalance()&quot;</span><span class="p">)))</span>
+</pre></div>
+
+                  <h5>Issue Transaction order dependence (Warning)</h5>
+         <p>A possible transaction order independence vulnerability exists in function launch_attack(). The value or direction of the call statement is determined from a tainted storage location</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L36">Location</a></h5>
+      <p>Function: <code>get_money()</code>, Line: 36, Bytecode offset: 1106:</br>
+<div class="highlight"><pre><span></span><span class="nb">suicide</span><span class="p">(</span><span class="n">owner</span><span class="p">)</span>
+</pre></div>
+
+                  <h5>Issue Unchecked SUICIDE (Warning)</h5>
+         <p>The function <code>get_money()</code> executes the SUICIDE instruction. The remaining Ether is sent to a stored address.</p>
+
+<p>It seems that this function can be called without restrictions.</p>
+
+                     <h5><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L15">Location</a></h5>
+      <p>Function: <code>deposit(address)</code>, Line: 15, Bytecode offset: 1376:</br>
+<div class="highlight"><pre><span></span><span class="n">vulnerable_contract</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="nb">msg.value</span><span class="p">)(</span><span class="kt">bytes4</span><span class="p">(</span><span class="nf">sha3</span><span class="p">(</span><span class="s">&quot;addToBalance()&quot;</span><span class="p">)))</span>
+</pre></div>
+
+                  <h5>Issue Message call to external contract (Warning)</h5>
+         <p>This contract executes a message call to an address provided as a function argument. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
+
                 <hr>
     <h3 id=unchecked_external_call/KotET_source_code/KingOfTheEtherThrone>
       <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//unchecked_external_call/KotET_source_code/KingOfTheEtherThrone.sol">unchecked_external_call/KotET_source_code/KingOfTheEtherThrone</a>
