@@ -374,8 +374,8 @@
 
         <h4>Mythril Report</h4>
     <div style="margin-left: 1em">
-                           <h5>Issue #1</h5>
-            <div style="margin-left: 1em">
+               <h5>Issue #1</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>GetGift(bytes)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L37">Line 37</a>, Bytecode offset: 190:</p>
             <p><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="n">GetGift</span><span class="p">(</span><span class="kt">bytes</span> <span class="n">pass</span><span class="p">)</span>
     <span class="kr">external</span>
@@ -390,15 +390,15 @@
     <span class="p">}</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Integer Overflow (Warning)</h5>
+                  <p><i>Integer Overflow (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>A possible integer overflow exists in the function <code>GetGift(bytes)</code>.
 The addition or multiplication may result in a value higher than the maximum representable integer.</p>
 </p>
             </div>
-                           <h5>Issue #2</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #2</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>SetMessage(string)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L28">Line 28</a>, Bytecode offset: 470:</p>
             <p><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="n">SetMessage</span><span class="p">(</span><span class="kt">string</span> <span class="n">_message</span><span class="p">)</span>
     <span class="kr">public</span>
@@ -410,74 +410,73 @@ The addition or multiplication may result in a value higher than the maximum rep
     <span class="p">}</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Integer Overflow (Warning)</h5>
+                  <p><i>Integer Overflow (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>A possible integer overflow exists in the function <code>SetMessage(string)</code>.
 The addition or multiplication may result in a value higher than the maximum representable integer.</p>
 </p>
             </div>
-                           <h5>Issue #3</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #3</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>GetHash(bytes)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L15">Line 15</a>, Bytecode offset: 575:</p>
             <p><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="n">GetHash</span><span class="p">(</span><span class="kt">bytes</span> <span class="n">pass</span><span class="p">)</span> <span class="kr">public</span> <span class="kr">constant</span> <span class="k">returns</span> <span class="p">(</span><span class="kt">bytes32</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nf">sha3</span><span class="p">(</span><span class="n">pass</span><span class="p">);}</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Integer Overflow (Warning)</h5>
+                  <p><i>Integer Overflow (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>A possible integer overflow exists in the function <code>GetHash(bytes)</code>.
 The addition or multiplication may result in a value higher than the maximum representable integer.</p>
 </p>
             </div>
-                           <h5>Issue #4</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #4</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>GetGift(bytes)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L42">Line 42</a>, Bytecode offset: 840:</p>
             <p><div class="highlight"><pre><span></span><span class="nf">sha3</span><span class="p">(</span><span class="n">pass</span><span class="p">)</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Integer Overflow (Warning)</h5>
+                  <p><i>Integer Overflow (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>A possible integer overflow exists in the function <code>GetGift(bytes)</code>.
 The addition or multiplication may result in a value higher than the maximum representable integer.</p>
 </p>
             </div>
-                           <h5>Issue #5</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #5</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>GetGift(bytes)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L42">Line 42</a>, Bytecode offset: 853:</p>
             <p><div class="highlight"><pre><span></span><span class="nf">sha3</span><span class="p">(</span><span class="n">pass</span><span class="p">)</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Integer Underflow (Warning)</h5>
+                  <p><i>Integer Underflow (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>A possible integer underflow exists in the function <code>GetGift(bytes)</code>.
 The subtraction may result in a value &lt; 0.</p>
 </p>
             </div>
-                           <h5>Issue #6</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #6</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>GetGift(bytes)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L44">Line 44</a>, Bytecode offset: 943:</p>
             <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Ether send (Warning)</h5>
+                  <p><i>Ether send (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>In the function <code>GetGift(bytes)</code> a non-zero amount of Ether is sent to msg.sender.</p>
 
 <p>There is a check on storage index 2. This storage slot can be written to by calling the function <code>SetPass(bytes32)</code>.</p>
 </p>
             </div>
-                           <h5>Issue #7</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #7</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>Revoce()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L55">Line 55</a>, Bytecode offset: 1686:</p>
             <p><div class="highlight"><pre><span></span><span class="n">sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Ether send (Warning)</h5>
+                  <p><i>Ether send (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>In the function <code>Revoce()</code> a non-zero amount of Ether is sent to an address taken from storage slot 1.
 There is a check on storage index 1. This storage slot can be written to by calling the function <code>SetPass(bytes32)</code>.</p>
@@ -485,20 +484,21 @@ There is a check on storage index 1. This storage slot can be written to by call
 <p>There is a check on storage index 1. This storage slot can be written to by calling the function <code>SetPass(bytes32)</code>.</p>
 </p>
             </div>
-                           <h5>Issue #8</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #8</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>Revoce()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L55">Line 55</a>, Bytecode offset: 1686:</p>
             <p><div class="highlight"><pre><span></span><span class="n">sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Transaction order dependence (Warning)</h5>
+                  <p><i>Transaction order dependence (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>A possible transaction order independence vulnerability exists in function Revoce(). The value or direction of the call statement is determined from a tainted storage location</p>
 </p>
             </div>
-                           <h5>Issue #9</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #9</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>SetMessage(string)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L3">Line 3</a>, Bytecode offset: 1819:</p>
             <p><div class="highlight"><pre><span></span><span class="kd">contract</span> <span class="n">NEW_YEARS_GIFT</span>
 <span class="p">{</span>
@@ -568,15 +568,15 @@ There is a check on storage index 1. This storage slot can be written to by call
 <span class="p">}</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Integer Overflow (Warning)</h5>
+                  <p><i>Integer Overflow (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>A possible integer overflow exists in the function <code>SetMessage(string)</code>.
 The addition or multiplication may result in a value higher than the maximum representable integer.</p>
 </p>
             </div>
-                           <h5>Issue #10</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #10</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>SetMessage(string)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L3">Line 3</a>, Bytecode offset: 1833:</p>
             <p><div class="highlight"><pre><span></span><span class="kd">contract</span> <span class="n">NEW_YEARS_GIFT</span>
 <span class="p">{</span>
@@ -646,13 +646,13 @@ The addition or multiplication may result in a value higher than the maximum rep
 <span class="p">}</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Integer Overflow (Warning)</h5>
+                  <p><i>Integer Overflow (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>A possible integer overflow exists in the function <code>SetMessage(string)</code>.
 The addition or multiplication may result in a value higher than the maximum representable integer.</p>
 </p>
             </div>
+	 </div>
           </div>
     
       <hr>
@@ -830,45 +830,45 @@ The addition or multiplication may result in a value higher than the maximum rep
 
         <h4>Mythril Report</h4>
     <div style="margin-left: 1em">
-                           <h5>Issue #1</h5>
-            <div style="margin-left: 1em">
+               <h5>Issue #1</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>forceReseed()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/Lottery/Lottery.sol#L85">Line 85</a>, Bytecode offset: 1204:</p>
             <p><div class="highlight"><pre><span></span><span class="nb">block.number</span> <span class="o">-</span> <span class="mi">1</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Integer Underflow (Warning)</h5>
+                  <p><i>Integer Underflow (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>A possible integer underflow exists in the function <code>forceReseed()</code>.
 The subtraction may result in a value &lt; 0.</p>
 </p>
             </div>
-                           <h5>Issue #2</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #2</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>forceReseed()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/Lottery/Lottery.sol#L86">Line 86</a>, Bytecode offset: 1242:</p>
             <p><div class="highlight"><pre><span></span><span class="nb">block.difficulty</span><span class="o">*</span><span class="p">(</span><span class="kt">uint</span><span class="p">)(</span><span class="nb">block.coinbase</span><span class="p">)</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Integer Overflow (Warning)</h5>
+                  <p><i>Integer Overflow (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>A possible integer overflow exists in the function <code>forceReseed()</code>.
 The addition or multiplication may result in a value higher than the maximum representable integer.</p>
 </p>
             </div>
-                           <h5>Issue #3</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #3</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>forceReseed()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/Lottery/Lottery.sol#L87">Line 87</a>, Bytecode offset: 1254:</p>
             <p><div class="highlight"><pre><span></span><span class="nb">tx.gasprice</span> <span class="o">*</span> <span class="mi">7</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Integer Overflow (Warning)</h5>
+                  <p><i>Integer Overflow (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>A possible integer overflow exists in the function <code>forceReseed()</code>.
 The addition or multiplication may result in a value higher than the maximum representable integer.</p>
 </p>
             </div>
+	 </div>
           </div>
     
       <hr>
@@ -1073,32 +1073,32 @@ The addition or multiplication may result in a value higher than the maximum rep
 
         <h4>Mythril Report</h4>
     <div style="margin-left: 1em">
-                           <h5>Issue #1</h5>
-            <div style="margin-left: 1em">
+               <h5>Issue #1</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>Test()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/VarLoop/VarLoop.sol#L26">Line 26</a>, Bytecode offset: 352:</p>
             <p><div class="highlight"><pre><span></span><span class="nb">msg.value</span><span class="o">*</span><span class="mi">2</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Integer Overflow (Warning)</h5>
+                  <p><i>Integer Overflow (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>A possible integer overflow exists in the function <code>Test()</code>.
 The addition or multiplication may result in a value higher than the maximum representable integer.</p>
 </p>
             </div>
-                           <h5>Issue #2</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #2</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>Test()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/VarLoop/VarLoop.sol#L36">Line 36</a>, Bytecode offset: 464:</p>
             <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">i2</span><span class="p">)</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Ether send (Warning)</h5>
+                  <p><i>Ether send (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>In the function <code>Test()</code> a non-zero amount of Ether is sent to msg.sender.
 It seems that this function can be called without restrictions.</p>
 </p>
             </div>
+	 </div>
           </div>
     
       <hr>
@@ -1181,30 +1181,30 @@ It seems that this function can be called without restrictions.</p>
 
         <h4>Mythril Report</h4>
     <div style="margin-left: 1em">
-                           <h5>Issue #1</h5>
-            <div style="margin-left: 1em">
+               <h5>Issue #1</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>_function_0x2801617e</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//incorrect_interface/Bob.sol#L11">Line 11</a>, Bytecode offset: 330:</p>
             <p><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Message call to external contract (Warning)</h5>
+                  <p><i>Message call to external contract (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>This contract executes a message call to an address provided as a function argument. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
 </p>
             </div>
-                           <h5>Issue #2</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #2</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>_function_0x90b2290e</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//incorrect_interface/Bob.sol#L15">Line 15</a>, Bytecode offset: 469:</p>
             <p><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">.</span><span class="n">set_fixed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Message call to external contract (Warning)</h5>
+                  <p><i>Message call to external contract (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>This contract executes a message call to an address provided as a function argument. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
 </p>
             </div>
+	 </div>
           </div>
     
       <hr>
@@ -1248,19 +1248,19 @@ It seems that this function can be called without restrictions.</p>
 
         <h4>Mythril Report</h4>
     <div style="margin-left: 1em">
-                           <h5>Issue #1</h5>
-            <div style="margin-left: 1em">
+               <h5>Issue #1</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>add(uint256)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//integer_overflow/interger_overflow_1.sol#L7">Line 7</a>, Bytecode offset: 229:</p>
             <p><div class="highlight"><pre><span></span><span class="n">sellerBalance</span> <span class="o">+=</span> <span class="n">value</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Integer Overflow (Warning)</h5>
+                  <p><i>Integer Overflow (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>A possible integer overflow exists in the function <code>add(uint256)</code>.
 The addition or multiplication may result in a value higher than the maximum representable integer.</p>
 </p>
             </div>
+	 </div>
           </div>
     
       <hr>
@@ -1312,14 +1312,13 @@ The addition or multiplication may result in a value higher than the maximum rep
 
         <h4>Mythril Report</h4>
     <div style="margin-left: 1em">
-                           <h5>Issue #1</h5>
-            <div style="margin-left: 1em">
+               <h5>Issue #1</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>withdraw()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//missing_constructor/Missing.sol#L23">Line 23</a>, Bytecode offset: 388:</p>
             <p><div class="highlight"><pre><span></span><span class="n">owner</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Ether send (Warning)</h5>
+                  <p><i>Ether send (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>In the function <code>withdraw()</code> a non-zero amount of Ether is sent to an address taken from storage slot 0.
 There is a check on storage index 0. This storage slot can be written to by calling the function <code>IamMissing()</code>.</p>
@@ -1327,18 +1326,19 @@ There is a check on storage index 0. This storage slot can be written to by call
 <p>There is a check on storage index 0. This storage slot can be written to by calling the function <code>IamMissing()</code>.</p>
 </p>
             </div>
-                           <h5>Issue #2</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #2</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>withdraw()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//missing_constructor/Missing.sol#L23">Line 23</a>, Bytecode offset: 388:</p>
             <p><div class="highlight"><pre><span></span><span class="n">owner</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Transaction order dependence (Warning)</h5>
+                  <p><i>Transaction order dependence (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>A possible transaction order independence vulnerability exists in function withdraw(). The value or direction of the call statement is determined from a tainted storage location</p>
 </p>
             </div>
+	 </div>
           </div>
     
       <hr>
@@ -1592,42 +1592,42 @@ There is a check on storage index 0. This storage slot can be written to by call
 
         <h4>Mythril Report</h4>
     <div style="margin-left: 1em">
-                           <h5>Issue #1</h5>
-            <div style="margin-left: 1em">
+               <h5>Issue #1</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>buy(uint256)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//race_condition/RaceCondition.sol#L39">Line 39</a>, Bytecode offset: 623:</p>
             <p><div class="highlight"><pre><span></span><span class="n">token</span><span class="p">.</span><span class="n">transferFrom</span><span class="p">(</span><span class="nb">msg.sender</span><span class="p">,</span> <span class="n">owner</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Message call to external contract (Informational)</h5>
+                  <p><i>Message call to external contract (Informational)</i></p>
             <div style="margin-left: 1em">
             <p><p>This contract executes a message call to to another contract. Make sure that the called contract is trusted and does not execute user-supplied code.</p>
 </p>
             </div>
-                           <h5>Issue #2</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #2</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>buy(uint256)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//race_condition/RaceCondition.sol#L41">Line 41</a>, Bytecode offset: 686:</p>
             <p><div class="highlight"><pre><span></span><span class="n">price</span> <span class="o">=</span> <span class="n">new_price</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>State change after external call (Warning)</h5>
+                  <p><i>State change after external call (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>The contract account state is changed after an external call. Consider that the called contract could re-enter the function before this state change takes place. This can lead to business logic vulnerabilities.</p>
 </p>
             </div>
-                           <h5>Issue #3</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #3</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>buy(uint256)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//race_condition/RaceCondition.sol#L42">Line 42</a>, Bytecode offset: 750:</p>
             <p><div class="highlight"><pre><span></span><span class="n">owner</span> <span class="o">=</span> <span class="nb">msg.sender</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>State change after external call (Warning)</h5>
+                  <p><i>State change after external call (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>The contract account state is changed after an external call. Consider that the called contract could re-enter the function before this state change takes place. This can lead to business logic vulnerabilities.</p>
 </p>
             </div>
+	 </div>
           </div>
     
       <hr>
@@ -2957,94 +2957,94 @@ There is a check on storage index 0. This storage slot can be written to by call
 
         <h4>Mythril Report</h4>
     <div style="margin-left: 1em">
-                           <h5>Issue #1</h5>
-            <div style="margin-left: 1em">
+               <h5>Issue #1</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>withdrawBalance_fixed()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L28">Line 28</a>, Bytecode offset: 455:</p>
             <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">amount</span><span class="p">)()</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Ether send (Warning)</h5>
+                  <p><i>Ether send (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>In the function <code>withdrawBalance_fixed()</code> a non-zero amount of Ether is sent to msg.sender.
 It seems that this function can be called without restrictions.</p>
 </p>
             </div>
-                           <h5>Issue #2</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #2</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>withdrawBalance_fixed()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L28">Line 28</a>, Bytecode offset: 455:</p>
             <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">amount</span><span class="p">)()</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Message call to external contract (Warning)</h5>
+                  <p><i>Message call to external contract (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>This contract executes a message call to the address of the transaction sender. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
 </p>
             </div>
-                           <h5>Issue #3</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #3</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>withdrawBalance()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L17">Line 17</a>, Bytecode offset: 575:</p>
             <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">])()</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Ether send (Warning)</h5>
+                  <p><i>Ether send (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>In the function <code>withdrawBalance()</code> a non-zero amount of Ether is sent to msg.sender.
 It seems that this function can be called without restrictions.</p>
 </p>
             </div>
-                           <h5>Issue #4</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #4</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>withdrawBalance()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L17">Line 17</a>, Bytecode offset: 575:</p>
             <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">])()</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Message call to external contract (Warning)</h5>
+                  <p><i>Message call to external contract (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>This contract executes a message call to the address of the transaction sender. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
 </p>
             </div>
-                           <h5>Issue #5</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #5</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>withdrawBalance()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L20">Line 20</a>, Bytecode offset: 657:</p>
             <p><div class="highlight"><pre><span></span><span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>State change after external call (Warning)</h5>
+                  <p><i>State change after external call (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>The contract account state is changed after an external call. Consider that the called contract could re-enter the function before this state change takes place. This can lead to business logic vulnerabilities.</p>
 </p>
             </div>
-                           <h5>Issue #6</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #6</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>addToBalance()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L11">Line 11</a>, Bytecode offset: 729:</p>
             <p><div class="highlight"><pre><span></span><span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">msg.value</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Integer Overflow (Warning)</h5>
+                  <p><i>Integer Overflow (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>A possible integer overflow exists in the function <code>addToBalance()</code>.
 The addition or multiplication may result in a value higher than the maximum representable integer.</p>
 </p>
             </div>
-                           <h5>Issue #7</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #7</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>withdrawBalance_fixed_2()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L38">Line 38</a>, Bytecode offset: 848:</p>
             <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">])</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Ether send (Warning)</h5>
+                  <p><i>Ether send (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>In the function <code>withdrawBalance_fixed_2()</code> a non-zero amount of Ether is sent to msg.sender.
 It seems that this function can be called without restrictions.</p>
 </p>
             </div>
+	 </div>
           </div>
     
       <hr>
@@ -3110,80 +3110,80 @@ It seems that this function can be called without restrictions.</p>
 
         <h4>Mythril Report</h4>
     <div style="margin-left: 1em">
-                           <h5>Issue #1</h5>
-            <div style="margin-left: 1em">
+               <h5>Issue #1</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>fallback</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L31">Line 31</a>, Bytecode offset: 369:</p>
             <p><div class="highlight"><pre><span></span><span class="n">vulnerable_contract</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="kt">bytes4</span><span class="p">(</span><span class="nf">sha3</span><span class="p">(</span><span class="s">&quot;withdrawBalance()&quot;</span><span class="p">)))</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Message call to external contract (Warning)</h5>
+                  <p><i>Message call to external contract (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>This contract executes a message call to an address found at storage slot 0. This storage slot can be written to by calling the function <code>fallback</code>. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
 </p>
             </div>
-                           <h5>Issue #2</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #2</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>fallback</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L31">Line 31</a>, Bytecode offset: 369:</p>
             <p><div class="highlight"><pre><span></span><span class="n">vulnerable_contract</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="kt">bytes4</span><span class="p">(</span><span class="nf">sha3</span><span class="p">(</span><span class="s">&quot;withdrawBalance()&quot;</span><span class="p">)))</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Transaction order dependence (Warning)</h5>
+                  <p><i>Transaction order dependence (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>A possible transaction order independence vulnerability exists in function fallback. The value or direction of the call statement is determined from a tainted storage location</p>
 </p>
             </div>
-                           <h5>Issue #3</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #3</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>launch_attack()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L22">Line 22</a>, Bytecode offset: 975:</p>
             <p><div class="highlight"><pre><span></span><span class="n">vulnerable_contract</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="kt">bytes4</span><span class="p">(</span><span class="nf">sha3</span><span class="p">(</span><span class="s">&quot;withdrawBalance()&quot;</span><span class="p">)))</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Message call to external contract (Warning)</h5>
+                  <p><i>Message call to external contract (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>This contract executes a message call to an address found at storage slot 0. This storage slot can be written to by calling the function <code>fallback</code>. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
 </p>
             </div>
-                           <h5>Issue #4</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #4</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>launch_attack()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L22">Line 22</a>, Bytecode offset: 975:</p>
             <p><div class="highlight"><pre><span></span><span class="n">vulnerable_contract</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="kt">bytes4</span><span class="p">(</span><span class="nf">sha3</span><span class="p">(</span><span class="s">&quot;withdrawBalance()&quot;</span><span class="p">)))</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Transaction order dependence (Warning)</h5>
+                  <p><i>Transaction order dependence (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>A possible transaction order independence vulnerability exists in function launch_attack(). The value or direction of the call statement is determined from a tainted storage location</p>
 </p>
             </div>
-                           <h5>Issue #5</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #5</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>get_money()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L36">Line 36</a>, Bytecode offset: 1106:</p>
             <p><div class="highlight"><pre><span></span><span class="nb">suicide</span><span class="p">(</span><span class="n">owner</span><span class="p">)</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Unchecked SUICIDE (Warning)</h5>
+                  <p><i>Unchecked SUICIDE (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>The function <code>get_money()</code> executes the SUICIDE instruction. The remaining Ether is sent to a stored address.</p>
 
 <p>It seems that this function can be called without restrictions.</p>
 </p>
             </div>
-                           <h5>Issue #6</h5>
-            <div style="margin-left: 1em">
+	 </div>
+               <h5>Issue #6</h5>
+                     <div style="margin-left: 1em">
             <p>Function: <code>deposit(address)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L15">Line 15</a>, Bytecode offset: 1376:</p>
             <p><div class="highlight"><pre><span></span><span class="n">vulnerable_contract</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="nb">msg.value</span><span class="p">)(</span><span class="kt">bytes4</span><span class="p">(</span><span class="nf">sha3</span><span class="p">(</span><span class="s">&quot;addToBalance()&quot;</span><span class="p">)))</span>
 </pre></div>
 </p>
-         	 </div>
-         <h5>Message call to external contract (Warning)</h5>
+                  <p><i>Message call to external contract (Warning)</i></p>
             <div style="margin-left: 1em">
             <p><p>This contract executes a message call to an address provided as a function argument. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
 </p>
             </div>
+	 </div>
           </div>
     
       <hr>
