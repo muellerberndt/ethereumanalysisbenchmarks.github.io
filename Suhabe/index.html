@@ -24,6 +24,10 @@
     font-size: 1.17em;
     }
 
+    h5 {
+    font-size: 1.0em;
+    }
+
     .highlight .hll { background-color: #ffffcc }
     .highlight  { background: #f8f8f8; }
     .highlight .c { color: #408080; font-style: italic } /* Comment */
@@ -423,7 +427,8 @@
 <span class="p">}</span>
 </pre></div>
 
-          <hr>
+    
+      <hr>
     <h3 id=assert_minimal>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/assert_minimal.sol">assert_minimal</a>
     </h3>
@@ -456,16 +461,23 @@
 <span class="p">}</span>
 </pre></div>
 
-          <h4>Mythril Report</h4>
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/assert_minimal.sol#L5">Location</a></h5>
-      <p>Function: <code>run()</code>, Line: 5, Bytecode offset: 96:</br>
-<div class="highlight"><pre><span></span><span class="nf">assert</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+        <h4>Mythril Report</h4>
+    <div style="margin-left: 1em">
+                           <h5>Issue #1</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>run()</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/assert_minimal.sol#L5">Line 5</a>, Bytecode offset: 96:</p>
+            <p><div class="highlight"><pre><span></span><span class="nf">assert</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
 </pre></div>
-
-                  <h5>Issue Exception state (Informational)</h5>
-         <p>A reachable exception (opcode 0xfe) has been detected. This can be caused by type errors, division by zero, out-of-bounds array access, or assert violations. This is acceptable in most situations. Note however that <code>assert()</code> should only be used to check invariants. Use <code>require()</code> for regular input checking. </p>
-
-                <hr>
+</p>
+         	 </div>
+         <h5>Exception state (Informational)</h5>
+            <div style="margin-left: 1em">
+            <p><p>A reachable exception (opcode 0xfe) has been detected. This can be caused by type errors, division by zero, out-of-bounds array access, or assert violations. This is acceptable in most situations. Note however that <code>assert()</code> should only be used to check invariants. Use <code>require()</code> for regular input checking. </p>
+</p>
+            </div>
+          </div>
+    
+      <hr>
     <h3 id=assert_multitx_1>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/assert_multitx_1.sol">assert_multitx_1</a>
     </h3>
@@ -502,7 +514,8 @@
 <span class="p">}</span>
 </pre></div>
 
-          <hr>
+    
+      <hr>
     <h3 id=assert_multitx_2>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/assert_multitx_2.sol">assert_multitx_2</a>
     </h3>
@@ -544,16 +557,23 @@
 <span class="p">}</span>
 </pre></div>
 
-          <h4>Mythril Report</h4>
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/assert_multitx_2.sol#L12">Location</a></h5>
-      <p>Function: <code>run()</code>, Line: 12, Bytecode offset: 161:</br>
-<div class="highlight"><pre><span></span><span class="nf">assert</span><span class="p">(</span><span class="n">param</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <h4>Mythril Report</h4>
+    <div style="margin-left: 1em">
+                           <h5>Issue #1</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>run()</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/assert_multitx_2.sol#L12">Line 12</a>, Bytecode offset: 161:</p>
+            <p><div class="highlight"><pre><span></span><span class="nf">assert</span><span class="p">(</span><span class="n">param</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
-
-                  <h5>Issue Exception state (Informational)</h5>
-         <p>A reachable exception (opcode 0xfe) has been detected. This can be caused by type errors, division by zero, out-of-bounds array access, or assert violations. This is acceptable in most situations. Note however that <code>assert()</code> should only be used to check invariants. Use <code>require()</code> for regular input checking. </p>
-
-                <hr>
+</p>
+         	 </div>
+         <h5>Exception state (Informational)</h5>
+            <div style="margin-left: 1em">
+            <p><p>A reachable exception (opcode 0xfe) has been detected. This can be caused by type errors, division by zero, out-of-bounds array access, or assert violations. This is acceptable in most situations. Note however that <code>assert()</code> should only be used to check invariants. Use <code>require()</code> for regular input checking. </p>
+</p>
+            </div>
+          </div>
+    
+      <hr>
     <h3 id=assert_require>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/assert_require.sol">assert_require</a>
     </h3>
@@ -583,7 +603,8 @@
 <span class="p">}</span>
 </pre></div>
 
-          <hr>
+    
+      <hr>
     <h3 id=assert_sym>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/assert_sym.sol">assert_sym</a>
     </h3>
@@ -612,16 +633,23 @@
 <span class="p">}</span>
 </pre></div>
 
-          <h4>Mythril Report</h4>
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/assert_sym.sol#L5">Location</a></h5>
-      <p>Function: <code>run(uint256)</code>, Line: 5, Bytecode offset: 120:</br>
-<div class="highlight"><pre><span></span><span class="nf">assert</span><span class="p">(</span><span class="n">param</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <h4>Mythril Report</h4>
+    <div style="margin-left: 1em">
+                           <h5>Issue #1</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>run(uint256)</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/assert_sym.sol#L5">Line 5</a>, Bytecode offset: 120:</p>
+            <p><div class="highlight"><pre><span></span><span class="nf">assert</span><span class="p">(</span><span class="n">param</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
-
-                  <h5>Issue Exception state (Informational)</h5>
-         <p>A reachable exception (opcode 0xfe) has been detected. This can be caused by type errors, division by zero, out-of-bounds array access, or assert violations. This is acceptable in most situations. Note however that <code>assert()</code> should only be used to check invariants. Use <code>require()</code> for regular input checking. </p>
-
-                <hr>
+</p>
+         	 </div>
+         <h5>Exception state (Informational)</h5>
+            <div style="margin-left: 1em">
+            <p><p>A reachable exception (opcode 0xfe) has been detected. This can be caused by type errors, division by zero, out-of-bounds array access, or assert violations. This is acceptable in most situations. Note however that <code>assert()</code> should only be used to check invariants. Use <code>require()</code> for regular input checking. </p>
+</p>
+            </div>
+          </div>
+    
+      <hr>
     <h3 id=attribute_store>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/attribute_store.sol">attribute_store</a>
     </h3>
@@ -660,7 +688,8 @@
 <span class="p">}</span>
 </pre></div>
 
-          <hr>
+    
+      <hr>
     <h3 id=eth_tx_order_dependence_2>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/eth_tx_order_dependence_2.sol">eth_tx_order_dependence_2</a>
     </h3>
@@ -699,7 +728,8 @@
 <span class="p">}</span>
 </pre></div>
 
-          <hr>
+    
+      <hr>
     <h3 id=eth_tx_order_dependence_minimal>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/eth_tx_order_dependence_minimal.sol">eth_tx_order_dependence_minimal</a>
     </h3>
@@ -748,46 +778,65 @@
 <span class="p">}</span>
 </pre></div>
 
-          <h4>Mythril Report</h4>
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/eth_tx_order_dependence_minimal.sol#L16">Location</a></h5>
-      <p>Function: <code>setReward()</code>, Line: 16, Bytecode offset: 554:</br>
-<div class="highlight"><pre><span></span><span class="n">owner</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
+        <h4>Mythril Report</h4>
+    <div style="margin-left: 1em">
+                           <h5>Issue #1</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>setReward()</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/eth_tx_order_dependence_minimal.sol#L16">Line 16</a>, Bytecode offset: 554:</p>
+            <p><div class="highlight"><pre><span></span><span class="n">owner</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
 </pre></div>
-
-                  <h5>Issue Ether send (Warning)</h5>
-         <p>In the function <code>setReward()</code> a non-zero amount of Ether is sent to an address taken from storage slot 0.
+</p>
+         	 </div>
+         <h5>Ether send (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>In the function <code>setReward()</code> a non-zero amount of Ether is sent to an address taken from storage slot 0.
 There is a check on storage index 0. This storage slot can be written to by calling the function <code>claimReward(uint256)</code>.</p>
 
 <p>There is a check on storage index 0. This storage slot can be written to by calling the function <code>claimReward(uint256)</code>.
 There is a check on storage index 0. This storage slot can be written to by calling the function <code>claimReward(uint256)</code>.</p>
-
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/eth_tx_order_dependence_minimal.sol#L16">Location</a></h5>
-      <p>Function: <code>setReward()</code>, Line: 16, Bytecode offset: 554:</br>
-<div class="highlight"><pre><span></span><span class="n">owner</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
+</p>
+            </div>
+                           <h5>Issue #2</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>setReward()</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/eth_tx_order_dependence_minimal.sol#L16">Line 16</a>, Bytecode offset: 554:</p>
+            <p><div class="highlight"><pre><span></span><span class="n">owner</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
 </pre></div>
-
-                  <h5>Issue Transaction order dependence (Warning)</h5>
-         <p>A possible transaction order independence vulnerability exists in function setReward(). The value or direction of the call statement is determined from a tainted storage location</p>
-
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/eth_tx_order_dependence_minimal.sol#L24">Location</a></h5>
-      <p>Function: <code>claimReward(uint256)</code>, Line: 24, Bytecode offset: 716:</br>
-<div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
+</p>
+         	 </div>
+         <h5>Transaction order dependence (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>A possible transaction order independence vulnerability exists in function setReward(). The value or direction of the call statement is determined from a tainted storage location</p>
+</p>
+            </div>
+                           <h5>Issue #3</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>claimReward(uint256)</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/eth_tx_order_dependence_minimal.sol#L24">Line 24</a>, Bytecode offset: 716:</p>
+            <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
 </pre></div>
-
-                  <h5>Issue Ether send (Warning)</h5>
-         <p>In the function <code>claimReward(uint256)</code> a non-zero amount of Ether is sent to msg.sender.</p>
+</p>
+         	 </div>
+         <h5>Ether send (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>In the function <code>claimReward(uint256)</code> a non-zero amount of Ether is sent to msg.sender.</p>
 
 <p>There is a check on storage index 0. This storage slot can be written to by calling the function <code>claimReward(uint256)</code>.</p>
-
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/eth_tx_order_dependence_minimal.sol#L24">Location</a></h5>
-      <p>Function: <code>claimReward(uint256)</code>, Line: 24, Bytecode offset: 716:</br>
-<div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
+</p>
+            </div>
+                           <h5>Issue #4</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>claimReward(uint256)</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/eth_tx_order_dependence_minimal.sol#L24">Line 24</a>, Bytecode offset: 716:</p>
+            <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
 </pre></div>
-
-                  <h5>Issue Transaction order dependence (Warning)</h5>
-         <p>A possible transaction order independence vulnerability exists in function claimReward(uint256). The value or direction of the call statement is determined from a tainted storage location</p>
-
-                <hr>
+</p>
+         	 </div>
+         <h5>Transaction order dependence (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>A possible transaction order independence vulnerability exists in function claimReward(uint256). The value or direction of the call statement is determined from a tainted storage location</p>
+</p>
+            </div>
+          </div>
+    
+      <hr>
     <h3 id=eth_tx_order_dependence_multitx_1>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/eth_tx_order_dependence_multitx_1.sol">eth_tx_order_dependence_multitx_1</a>
     </h3>
@@ -843,7 +892,8 @@ There is a check on storage index 0. This storage slot can be written to by call
 <span class="p">}</span>
 </pre></div>
 
-          <hr>
+    
+      <hr>
     <h3 id=eth_tx_order_dependence_puzzle>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/eth_tx_order_dependence_puzzle.sol">eth_tx_order_dependence_puzzle</a>
     </h3>
@@ -899,50 +949,68 @@ There is a check on storage index 0. This storage slot can be written to by call
 <span class="p">}</span>
 </pre></div>
 
-          <h4>Mythril Report</h4>
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/eth_tx_order_dependence_puzzle.sol#L21">Location</a></h5>
-      <p>Function: <code>fallback</code>, Line: 21, Bytecode offset: 316:</br>
-<div class="highlight"><pre><span></span><span class="n">owner</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
+        <h4>Mythril Report</h4>
+    <div style="margin-left: 1em">
+                           <h5>Issue #1</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>fallback</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/eth_tx_order_dependence_puzzle.sol#L21">Line 21</a>, Bytecode offset: 316:</p>
+            <p><div class="highlight"><pre><span></span><span class="n">owner</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
 </pre></div>
-
-                  <h5>Issue Ether send (Warning)</h5>
-         <p>In the function <code>fallback</code> a non-zero amount of Ether is sent to an address taken from storage slot 0.
+</p>
+         	 </div>
+         <h5>Ether send (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>In the function <code>fallback</code> a non-zero amount of Ether is sent to an address taken from storage slot 0.
 There is a check on storage index 0. This storage slot can be written to by calling the function <code>Puzzle()</code>.</p>
 
 <p>There is a check on storage index 0. This storage slot can be written to by calling the function <code>Puzzle()</code>.
 There is a check on storage index 0. This storage slot can be written to by calling the function <code>Puzzle()</code>.</p>
-
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/eth_tx_order_dependence_puzzle.sol#L21">Location</a></h5>
-      <p>Function: <code>fallback</code>, Line: 21, Bytecode offset: 316:</br>
-<div class="highlight"><pre><span></span><span class="n">owner</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
+</p>
+            </div>
+                           <h5>Issue #2</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>fallback</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/eth_tx_order_dependence_puzzle.sol#L21">Line 21</a>, Bytecode offset: 316:</p>
+            <p><div class="highlight"><pre><span></span><span class="n">owner</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
 </pre></div>
-
-                  <h5>Issue Transaction order dependence (Warning)</h5>
-         <p>A possible transaction order independence vulnerability exists in function fallback. The value or direction of the call statement is determined from a tainted storage location</p>
-
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/eth_tx_order_dependence_puzzle.sol#L27">Location</a></h5>
-      <p>Function: <code>fallback</code>, Line: 27, Bytecode offset: 551:</br>
-<div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
+</p>
+         	 </div>
+         <h5>Transaction order dependence (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>A possible transaction order independence vulnerability exists in function fallback. The value or direction of the call statement is determined from a tainted storage location</p>
+</p>
+            </div>
+                           <h5>Issue #3</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>fallback</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/eth_tx_order_dependence_puzzle.sol#L27">Line 27</a>, Bytecode offset: 551:</p>
+            <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
 </pre></div>
-
-                  <h5>Issue Ether send (Warning)</h5>
-         <p>In the function <code>fallback</code> a non-zero amount of Ether is sent to msg.sender.</p>
+</p>
+         	 </div>
+         <h5>Ether send (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>In the function <code>fallback</code> a non-zero amount of Ether is sent to msg.sender.</p>
 
 <p>There is a check on storage index 0. This storage slot can be written to by calling the function <code>Puzzle()</code>.
 There is a check on storage index 0. This storage slot can be written to by calling the function <code>Puzzle()</code>.
 There is a check on storage index 2. This storage slot can be written to by calling the function <code>Puzzle()</code>.</p>
-
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/eth_tx_order_dependence_puzzle.sol#L27">Location</a></h5>
-      <p>Function: <code>fallback</code>, Line: 27, Bytecode offset: 551:</br>
-<div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
+</p>
+            </div>
+                           <h5>Issue #4</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>fallback</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/eth_tx_order_dependence_puzzle.sol#L27">Line 27</a>, Bytecode offset: 551:</p>
+            <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
 </pre></div>
-
-                  <h5>Issue Transaction order dependence (Warning)</h5>
-         <p>A possible transaction order independence vulnerability exists in function fallback. The value or direction of the call statement is determined from a tainted storage location</p>
-
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/eth_tx_order_dependence_puzzle.sol#L4">Location</a></h5>
-      <p>Function: <code>fallback</code>, Line: 4, Bytecode offset: 1416:</br>
-<div class="highlight"><pre><span></span><span class="kd">contract</span> <span class="n">Benchmark</span> <span class="p">{</span>
+</p>
+         	 </div>
+         <h5>Transaction order dependence (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>A possible transaction order independence vulnerability exists in function fallback. The value or direction of the call statement is determined from a tainted storage location</p>
+</p>
+            </div>
+                           <h5>Issue #5</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>fallback</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/eth_tx_order_dependence_puzzle.sol#L4">Line 4</a>, Bytecode offset: 1416:</p>
+            <p><div class="highlight"><pre><span></span><span class="kd">contract</span> <span class="n">Benchmark</span> <span class="p">{</span>
     <span class="kt">address</span> <span class="kr">public</span> <span class="n">owner</span> <span class="p">;</span>
     <span class="kt">bool</span> <span class="kr">public</span> <span class="n">locked</span> <span class="p">;</span>
     <span class="kt">uint</span> <span class="kr">public</span> <span class="n">reward</span> <span class="p">;</span>
@@ -974,12 +1042,17 @@ There is a check on storage index 2. This storage slot can be written to by call
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-
-                  <h5>Issue Integer Overflow (Warning)</h5>
-         <p>A possible integer overflow exists in the function <code>fallback</code>.
+</p>
+         	 </div>
+         <h5>Integer Overflow (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>A possible integer overflow exists in the function <code>fallback</code>.
 The addition or multiplication may result in a value higher than the maximum representable integer.</p>
-
-                <hr>
+</p>
+            </div>
+          </div>
+    
+      <hr>
     <h3 id=integer_overflow_add>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_add.sol">integer_overflow_add</a>
     </h3>
@@ -1017,17 +1090,24 @@ The addition or multiplication may result in a value higher than the maximum rep
 <span class="p">}</span>
 </pre></div>
 
-          <h4>Mythril Report</h4>
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_add.sol#L10">Location</a></h5>
-      <p>Function: <code>run(uint256)</code>, Line: 10, Bytecode offset: 174:</br>
-<div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">+=</span> <span class="n">input</span>
+        <h4>Mythril Report</h4>
+    <div style="margin-left: 1em">
+                           <h5>Issue #1</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>run(uint256)</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_add.sol#L10">Line 10</a>, Bytecode offset: 174:</p>
+            <p><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">+=</span> <span class="n">input</span>
 </pre></div>
-
-                  <h5>Issue Integer Overflow (Warning)</h5>
-         <p>A possible integer overflow exists in the function <code>run(uint256)</code>.
+</p>
+         	 </div>
+         <h5>Integer Overflow (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>A possible integer overflow exists in the function <code>run(uint256)</code>.
 The addition or multiplication may result in a value higher than the maximum representable integer.</p>
-
-                <hr>
+</p>
+            </div>
+          </div>
+    
+      <hr>
     <h3 id=integer_overflow_benign_1>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_benign_1.sol">integer_overflow_benign_1</a>
     </h3>
@@ -1065,7 +1145,8 @@ The addition or multiplication may result in a value higher than the maximum rep
 <span class="p">}</span>
 </pre></div>
 
-          <hr>
+    
+      <hr>
     <h3 id=integer_overflow_benign_2>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_benign_2.sol">integer_overflow_benign_2</a>
     </h3>
@@ -1121,26 +1202,37 @@ The addition or multiplication may result in a value higher than the maximum rep
 <span class="p">}</span>
 </pre></div>
 
-          <h4>Mythril Report</h4>
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_benign_2.sol#L22">Location</a></h5>
-      <p>Function: <code>run(uint256)</code>, Line: 22, Bytecode offset: 231:</br>
-<div class="highlight"><pre><span></span><span class="n">sub</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+        <h4>Mythril Report</h4>
+    <div style="margin-left: 1em">
+                           <h5>Issue #1</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>run(uint256)</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_benign_2.sol#L22">Line 22</a>, Bytecode offset: 231:</p>
+            <p><div class="highlight"><pre><span></span><span class="n">sub</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
-
-                  <h5>Issue Integer Underflow (Warning)</h5>
-         <p>A possible integer underflow exists in the function <code>run(uint256)</code>.
+</p>
+         	 </div>
+         <h5>Integer Underflow (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>A possible integer underflow exists in the function <code>run(uint256)</code>.
 The subtraction may result in a value &lt; 0.</p>
-
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_benign_2.sol#L23">Location</a></h5>
-      <p>Function: <code>run(uint256)</code>, Line: 23, Bytecode offset: 246:</br>
-<div class="highlight"><pre><span></span><span class="n">add</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</p>
+            </div>
+                           <h5>Issue #2</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>run(uint256)</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_benign_2.sol#L23">Line 23</a>, Bytecode offset: 246:</p>
+            <p><div class="highlight"><pre><span></span><span class="n">add</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
-
-                  <h5>Issue Integer Overflow (Warning)</h5>
-         <p>A possible integer overflow exists in the function <code>run(uint256)</code>.
+</p>
+         	 </div>
+         <h5>Integer Overflow (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>A possible integer overflow exists in the function <code>run(uint256)</code>.
 The addition or multiplication may result in a value higher than the maximum representable integer.</p>
-
-                <hr>
+</p>
+            </div>
+          </div>
+    
+      <hr>
     <h3 id=integer_overflow_bytes_param>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_bytes_param.sol">integer_overflow_bytes_param</a>
     </h3>
@@ -1169,7 +1261,8 @@ The addition or multiplication may result in a value higher than the maximum rep
 <span class="p">}</span>
 </pre></div>
 
-          <hr>
+    
+      <hr>
     <h3 id=integer_overflow_dynarray>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_dynarray.sol">integer_overflow_dynarray</a>
     </h3>
@@ -1207,7 +1300,8 @@ The addition or multiplication may result in a value higher than the maximum rep
 <span class="p">}</span>
 </pre></div>
 
-          <hr>
+    
+      <hr>
     <h3 id=integer_overflow_mapping_mapping>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_mapping_mapping.sol">integer_overflow_mapping_mapping</a>
     </h3>
@@ -1245,7 +1339,8 @@ The addition or multiplication may result in a value higher than the maximum rep
 <span class="p">}</span>
 </pre></div>
 
-          <hr>
+    
+      <hr>
     <h3 id=integer_overflow_mapping_staticarray>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_mapping_staticarray.sol">integer_overflow_mapping_staticarray</a>
     </h3>
@@ -1278,7 +1373,8 @@ The addition or multiplication may result in a value higher than the maximum rep
 <span class="p">}</span>
 </pre></div>
 
-          <hr>
+    
+      <hr>
     <h3 id=integer_overflow_mapping_strkey>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_mapping_strkey.sol">integer_overflow_mapping_strkey</a>
     </h3>
@@ -1309,7 +1405,8 @@ The addition or multiplication may result in a value higher than the maximum rep
 <span class="p">}</span>
 </pre></div>
 
-          <hr>
+    
+      <hr>
     <h3 id=integer_overflow_mapping_struct>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_mapping_struct.sol">integer_overflow_mapping_struct</a>
     </h3>
@@ -1347,7 +1444,8 @@ The addition or multiplication may result in a value higher than the maximum rep
 <span class="p">}</span>
 </pre></div>
 
-          <hr>
+    
+      <hr>
     <h3 id=integer_overflow_mapping_sym_1>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_mapping_sym_1.sol">integer_overflow_mapping_sym_1</a>
     </h3>
@@ -1378,17 +1476,24 @@ The addition or multiplication may result in a value higher than the maximum rep
 <span class="p">}</span>
 </pre></div>
 
-          <h4>Mythril Report</h4>
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_mapping_sym_1.sol#L7">Location</a></h5>
-      <p>Function: <code>init(uint256,uint256)</code>, Line: 7, Bytecode offset: 145:</br>
-<div class="highlight"><pre><span></span><span class="n">map</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">-=</span> <span class="n">v</span>
+        <h4>Mythril Report</h4>
+    <div style="margin-left: 1em">
+                           <h5>Issue #1</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>init(uint256,uint256)</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_mapping_sym_1.sol#L7">Line 7</a>, Bytecode offset: 145:</p>
+            <p><div class="highlight"><pre><span></span><span class="n">map</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">-=</span> <span class="n">v</span>
 </pre></div>
-
-                  <h5>Issue Integer Underflow (Warning)</h5>
-         <p>A possible integer underflow exists in the function <code>init(uint256,uint256)</code>.
+</p>
+         	 </div>
+         <h5>Integer Underflow (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>A possible integer underflow exists in the function <code>init(uint256,uint256)</code>.
 The subtraction may result in a value &lt; 0.</p>
-
-                <hr>
+</p>
+            </div>
+          </div>
+    
+      <hr>
     <h3 id=integer_overflow_mapping_sym_2>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_mapping_sym_2.sol">integer_overflow_mapping_sym_2</a>
     </h3>
@@ -1421,7 +1526,8 @@ The subtraction may result in a value &lt; 0.</p>
 <span class="p">}</span>
 </pre></div>
 
-          <hr>
+    
+      <hr>
     <h3 id=integer_overflow_mapping_word>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_mapping_word.sol">integer_overflow_mapping_word</a>
     </h3>
@@ -1457,7 +1563,8 @@ The subtraction may result in a value &lt; 0.</p>
 <span class="p">}</span>
 </pre></div>
 
-          <hr>
+    
+      <hr>
     <h3 id=integer_overflow_minimal>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_minimal.sol">integer_overflow_minimal</a>
     </h3>
@@ -1491,17 +1598,24 @@ The subtraction may result in a value &lt; 0.</p>
 <span class="p">}</span>
 </pre></div>
 
-          <h4>Mythril Report</h4>
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_minimal.sol#L10">Location</a></h5>
-      <p>Function: <code>run(uint256)</code>, Line: 10, Bytecode offset: 174:</br>
-<div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">-=</span> <span class="n">input</span>
+        <h4>Mythril Report</h4>
+    <div style="margin-left: 1em">
+                           <h5>Issue #1</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>run(uint256)</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_minimal.sol#L10">Line 10</a>, Bytecode offset: 174:</p>
+            <p><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">-=</span> <span class="n">input</span>
 </pre></div>
-
-                  <h5>Issue Integer Underflow (Warning)</h5>
-         <p>A possible integer underflow exists in the function <code>run(uint256)</code>.
+</p>
+         	 </div>
+         <h5>Integer Underflow (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>A possible integer underflow exists in the function <code>run(uint256)</code>.
 The subtraction may result in a value &lt; 0.</p>
-
-                <hr>
+</p>
+            </div>
+          </div>
+    
+      <hr>
     <h3 id=integer_overflow_mul>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_mul.sol">integer_overflow_mul</a>
     </h3>
@@ -1535,17 +1649,24 @@ The subtraction may result in a value &lt; 0.</p>
 <span class="p">}</span>
 </pre></div>
 
-          <h4>Mythril Report</h4>
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_mul.sol#L10">Location</a></h5>
-      <p>Function: <code>run(uint256)</code>, Line: 10, Bytecode offset: 174:</br>
-<div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">*=</span> <span class="n">input</span>
+        <h4>Mythril Report</h4>
+    <div style="margin-left: 1em">
+                           <h5>Issue #1</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>run(uint256)</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_mul.sol#L10">Line 10</a>, Bytecode offset: 174:</p>
+            <p><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">*=</span> <span class="n">input</span>
 </pre></div>
-
-                  <h5>Issue Integer Overflow (Warning)</h5>
-         <p>A possible integer overflow exists in the function <code>run(uint256)</code>.
+</p>
+         	 </div>
+         <h5>Integer Overflow (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>A possible integer overflow exists in the function <code>run(uint256)</code>.
 The addition or multiplication may result in a value higher than the maximum representable integer.</p>
-
-                <hr>
+</p>
+            </div>
+          </div>
+    
+      <hr>
     <h3 id=integer_overflow_multitx_multifunc_feasible>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_multitx_multifunc_feasible.sol">integer_overflow_multitx_multifunc_feasible</a>
     </h3>
@@ -1588,17 +1709,24 @@ The addition or multiplication may result in a value higher than the maximum rep
 <span class="p">}</span>
 </pre></div>
 
-          <h4>Mythril Report</h4>
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_multitx_multifunc_feasible.sol#L19">Location</a></h5>
-      <p>Function: <code>run(uint256)</code>, Line: 19, Bytecode offset: 218:</br>
-<div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">-=</span> <span class="n">input</span>
+        <h4>Mythril Report</h4>
+    <div style="margin-left: 1em">
+                           <h5>Issue #1</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>run(uint256)</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_multitx_multifunc_feasible.sol#L19">Line 19</a>, Bytecode offset: 218:</p>
+            <p><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">-=</span> <span class="n">input</span>
 </pre></div>
-
-                  <h5>Issue Integer Underflow (Warning)</h5>
-         <p>A possible integer underflow exists in the function <code>run(uint256)</code>.
+</p>
+         	 </div>
+         <h5>Integer Underflow (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>A possible integer underflow exists in the function <code>run(uint256)</code>.
 The subtraction may result in a value &lt; 0.</p>
-
-                <hr>
+</p>
+            </div>
+          </div>
+    
+      <hr>
     <h3 id=integer_overflow_multitx_onefunc_feasible>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_multitx_onefunc_feasible.sol">integer_overflow_multitx_onefunc_feasible</a>
     </h3>
@@ -1638,17 +1766,24 @@ The subtraction may result in a value &lt; 0.</p>
 <span class="p">}</span>
 </pre></div>
 
-          <h4>Mythril Report</h4>
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_multitx_onefunc_feasible.sol#L16">Location</a></h5>
-      <p>Function: <code>run(uint256)</code>, Line: 16, Bytecode offset: 196:</br>
-<div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">-=</span> <span class="n">input</span>
+        <h4>Mythril Report</h4>
+    <div style="margin-left: 1em">
+                           <h5>Issue #1</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>run(uint256)</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_multitx_onefunc_feasible.sol#L16">Line 16</a>, Bytecode offset: 196:</p>
+            <p><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">-=</span> <span class="n">input</span>
 </pre></div>
-
-                  <h5>Issue Integer Underflow (Warning)</h5>
-         <p>A possible integer underflow exists in the function <code>run(uint256)</code>.
+</p>
+         	 </div>
+         <h5>Integer Underflow (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>A possible integer underflow exists in the function <code>run(uint256)</code>.
 The subtraction may result in a value &lt; 0.</p>
-
-                <hr>
+</p>
+            </div>
+          </div>
+    
+      <hr>
     <h3 id=integer_overflow_multitx_onefunc_infeasible>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_multitx_onefunc_infeasible.sol">integer_overflow_multitx_onefunc_infeasible</a>
     </h3>
@@ -1691,7 +1826,8 @@ The subtraction may result in a value &lt; 0.</p>
 <span class="p">}</span>
 </pre></div>
 
-          <hr>
+    
+      <hr>
     <h3 id=integer_overflow_path_1>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_path_1.sol">integer_overflow_path_1</a>
     </h3>
@@ -1731,7 +1867,8 @@ The subtraction may result in a value &lt; 0.</p>
 <span class="p">}</span>
 </pre></div>
 
-          <hr>
+    
+      <hr>
     <h3 id=integer_overflow_staticarray>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_staticarray.sol">integer_overflow_staticarray</a>
     </h3>
@@ -1762,7 +1899,8 @@ The subtraction may result in a value &lt; 0.</p>
 <span class="p">}</span>
 </pre></div>
 
-          <hr>
+    
+      <hr>
     <h3 id=integer_overflow_storageinvariant>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_storageinvariant.sol">integer_overflow_storageinvariant</a>
     </h3>
@@ -1810,35 +1948,50 @@ The subtraction may result in a value &lt; 0.</p>
 <span class="p">}</span>
 </pre></div>
 
-          <h4>Mythril Report</h4>
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_storageinvariant.sol#L12">Location</a></h5>
-      <p>Function: <code>withdrawAll()</code>, Line: 12, Bytecode offset: 267:</br>
-<div class="highlight"><pre><span></span><span class="nb">balance</span> <span class="o">-=</span> <span class="n">oCredit</span>
+        <h4>Mythril Report</h4>
+    <div style="margin-left: 1em">
+                           <h5>Issue #1</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>withdrawAll()</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_storageinvariant.sol#L12">Line 12</a>, Bytecode offset: 267:</p>
+            <p><div class="highlight"><pre><span></span><span class="nb">balance</span> <span class="o">-=</span> <span class="n">oCredit</span>
 </pre></div>
-
-                  <h5>Issue Integer Underflow (Warning)</h5>
-         <p>A possible integer underflow exists in the function <code>withdrawAll()</code>.
+</p>
+         	 </div>
+         <h5>Integer Underflow (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>A possible integer underflow exists in the function <code>withdrawAll()</code>.
 The subtraction may result in a value &lt; 0.</p>
-
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_storageinvariant.sol#L18">Location</a></h5>
-      <p>Function: <code>deposit()</code>, Line: 18, Bytecode offset: 418:</br>
-<div class="highlight"><pre><span></span><span class="n">credit</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">msg.value</span>
+</p>
+            </div>
+                           <h5>Issue #2</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>deposit()</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_storageinvariant.sol#L18">Line 18</a>, Bytecode offset: 418:</p>
+            <p><div class="highlight"><pre><span></span><span class="n">credit</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">msg.value</span>
 </pre></div>
-
-                  <h5>Issue Integer Overflow (Warning)</h5>
-         <p>A possible integer overflow exists in the function <code>deposit()</code>.
+</p>
+         	 </div>
+         <h5>Integer Overflow (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>A possible integer overflow exists in the function <code>deposit()</code>.
 The addition or multiplication may result in a value higher than the maximum representable integer.</p>
-
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_storageinvariant.sol#L19">Location</a></h5>
-      <p>Function: <code>deposit()</code>, Line: 19, Bytecode offset: 434:</br>
-<div class="highlight"><pre><span></span><span class="nb">balance</span> <span class="o">+=</span> <span class="nb">msg.value</span>
+</p>
+            </div>
+                           <h5>Issue #3</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>deposit()</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_storageinvariant.sol#L19">Line 19</a>, Bytecode offset: 434:</p>
+            <p><div class="highlight"><pre><span></span><span class="nb">balance</span> <span class="o">+=</span> <span class="nb">msg.value</span>
 </pre></div>
-
-                  <h5>Issue Integer Overflow (Warning)</h5>
-         <p>A possible integer overflow exists in the function <code>deposit()</code>.
+</p>
+         	 </div>
+         <h5>Integer Overflow (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>A possible integer overflow exists in the function <code>deposit()</code>.
 The addition or multiplication may result in a value higher than the maximum representable integer.</p>
-
-                <hr>
+</p>
+            </div>
+          </div>
+    
+      <hr>
     <h3 id=integer_overflow_storagepacking>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/integer_overflow_storagepacking.sol">integer_overflow_storagepacking</a>
     </h3>
@@ -1872,7 +2025,8 @@ The addition or multiplication may result in a value higher than the maximum rep
 <span class="p">}</span>
 </pre></div>
 
-          <hr>
+    
+      <hr>
     <h3 id=reentrancy_dao>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/reentrancy_dao.sol">reentrancy_dao</a>
     </h3>
@@ -1915,51 +2069,74 @@ The addition or multiplication may result in a value higher than the maximum rep
 <span class="p">}</span>
 </pre></div>
 
-          <h4>Mythril Report</h4>
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/reentrancy_dao.sol#L10">Location</a></h5>
-      <p>Function: <code>withdrawAll()</code>, Line: 10, Bytecode offset: 200:</br>
-<div class="highlight"><pre><span></span><span class="nb">balance</span> <span class="o">-=</span> <span class="n">oCredit</span>
+        <h4>Mythril Report</h4>
+    <div style="margin-left: 1em">
+                           <h5>Issue #1</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>withdrawAll()</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/reentrancy_dao.sol#L10">Line 10</a>, Bytecode offset: 200:</p>
+            <p><div class="highlight"><pre><span></span><span class="nb">balance</span> <span class="o">-=</span> <span class="n">oCredit</span>
 </pre></div>
-
-                  <h5>Issue Integer Underflow (Warning)</h5>
-         <p>A possible integer underflow exists in the function <code>withdrawAll()</code>.
+</p>
+         	 </div>
+         <h5>Integer Underflow (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>A possible integer underflow exists in the function <code>withdrawAll()</code>.
 The subtraction may result in a value &lt; 0.</p>
-
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/reentrancy_dao.sol#L11">Location</a></h5>
-      <p>Function: <code>withdrawAll()</code>, Line: 11, Bytecode offset: 247:</br>
-<div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">oCredit</span><span class="p">)()</span>
+</p>
+            </div>
+                           <h5>Issue #2</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>withdrawAll()</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/reentrancy_dao.sol#L11">Line 11</a>, Bytecode offset: 247:</p>
+            <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">oCredit</span><span class="p">)()</span>
 </pre></div>
-
-                  <h5>Issue Message call to external contract (Warning)</h5>
-         <p>This contract executes a message call to the address of the transaction sender. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
-
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/reentrancy_dao.sol#L13">Location</a></h5>
-      <p>Function: <code>withdrawAll()</code>, Line: 13, Bytecode offset: 332:</br>
-<div class="highlight"><pre><span></span><span class="n">credit</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</p>
+         	 </div>
+         <h5>Message call to external contract (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>This contract executes a message call to the address of the transaction sender. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
+</p>
+            </div>
+                           <h5>Issue #3</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>withdrawAll()</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/reentrancy_dao.sol#L13">Line 13</a>, Bytecode offset: 332:</p>
+            <p><div class="highlight"><pre><span></span><span class="n">credit</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
-
-                  <h5>Issue State change after external call (Warning)</h5>
-         <p>The contract account state is changed after an external call. Consider that the called contract could re-enter the function before this state change takes place. This can lead to business logic vulnerabilities.</p>
-
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/reentrancy_dao.sol#L18">Location</a></h5>
-      <p>Function: <code>deposit()</code>, Line: 18, Bytecode offset: 407:</br>
-<div class="highlight"><pre><span></span><span class="n">credit</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">msg.value</span>
+</p>
+         	 </div>
+         <h5>State change after external call (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>The contract account state is changed after an external call. Consider that the called contract could re-enter the function before this state change takes place. This can lead to business logic vulnerabilities.</p>
+</p>
+            </div>
+                           <h5>Issue #4</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>deposit()</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/reentrancy_dao.sol#L18">Line 18</a>, Bytecode offset: 407:</p>
+            <p><div class="highlight"><pre><span></span><span class="n">credit</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">msg.value</span>
 </pre></div>
-
-                  <h5>Issue Integer Overflow (Warning)</h5>
-         <p>A possible integer overflow exists in the function <code>deposit()</code>.
+</p>
+         	 </div>
+         <h5>Integer Overflow (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>A possible integer overflow exists in the function <code>deposit()</code>.
 The addition or multiplication may result in a value higher than the maximum representable integer.</p>
-
-                     <h5><a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/reentrancy_dao.sol#L19">Location</a></h5>
-      <p>Function: <code>deposit()</code>, Line: 19, Bytecode offset: 423:</br>
-<div class="highlight"><pre><span></span><span class="nb">balance</span> <span class="o">+=</span> <span class="nb">msg.value</span>
+</p>
+            </div>
+                           <h5>Issue #5</h5>
+            <div style="margin-left: 1em">
+            <p>Function: <code>deposit()</code>, <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/reentrancy_dao.sol#L19">Line 19</a>, Bytecode offset: 423:</p>
+            <p><div class="highlight"><pre><span></span><span class="nb">balance</span> <span class="o">+=</span> <span class="nb">msg.value</span>
 </pre></div>
-
-                  <h5>Issue Integer Overflow (Warning)</h5>
-         <p>A possible integer overflow exists in the function <code>deposit()</code>.
+</p>
+         	 </div>
+         <h5>Integer Overflow (Warning)</h5>
+            <div style="margin-left: 1em">
+            <p><p>A possible integer overflow exists in the function <code>deposit()</code>.
 The addition or multiplication may result in a value higher than the maximum representable integer.</p>
-
-                <hr>
+</p>
+            </div>
+          </div>
+    
+      <hr>
     <h3 id=reentrancy_dao_fixed>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/reentrancy_dao_fixed.sol">reentrancy_dao_fixed</a>
     </h3>
@@ -2002,7 +2179,8 @@ The addition or multiplication may result in a value higher than the maximum rep
 <span class="p">}</span>
 </pre></div>
 
-          <hr>
+    
+      <hr>
     <h3 id=reentrancy_nostateeffect>
       <a href="https://github.com/ConsenSys/evm-analyzer-benchmark-suite/tree/master/benchmarks/reentrancy_nostateeffect.sol">reentrancy_nostateeffect</a>
     </h3>
@@ -2041,6 +2219,7 @@ The addition or multiplication may result in a value higher than the maximum rep
 <span class="p">}</span>
 </pre></div>
 
-      
+    
+  
   </body>
 </html>
