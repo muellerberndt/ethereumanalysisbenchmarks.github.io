@@ -1,33 +1,23 @@
+<!DOCTYPE html>
 <html>
-  <!--- FIXME: put in css -->
+<head>
+  <meta charset="utf-8">
+  <title>Analysis Tool Evaluation for the Not (so) Smart Contracts Benchmark </title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <style>
     table, th, td {
-    border: 1px solid #cccccc;
-    border-collapse: collapse;
+      border: 1px solid #cccccc;
+      border-collapse: collapse;
     }
-
     table {
-    font-size: 12px;
+      font-size: 12px;
     }
-
     td {
-    padding: 5px;
-    align: center;
-    width: 150px;
+      padding: 5px;
+      align: center;
+      width: 150px;
     }
-
-    body {
-    font-family: "Arial";
-    }
-
-    h2 {
-    font-size: 1.17em;
-    }
-
-    h5 {
-    font-size: 1.0em;
-    }
-
+        
     .highlight .hll { background-color: #ffffcc }
     .highlight  { background: #f8f8f8; }
     .highlight .c { color: #408080; font-style: italic } /* Comment */
@@ -98,211 +88,362 @@
     .highlight .vm { color: #19177C } /* Name.Variable.Magic */
     .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
   </style>
+</head>
+<body>
+  <nav class="navbar navbar-dark navbar-expand bg-primary">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="#">Not (so) Smart Contracts Benchmark</a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#result-chart">Chart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#result-details">Details</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-3">
+    <div class="jumbotron">
+      <h1 class="display-5 text-center">Analysis Tool Evaluation for the <br><a href="https://github.com/trailofbits/not-so-smart-contracts">Not (so) Smart Contracts</a> Benchmark</h1>
+      <p class="text-center"><small>2018-08-23 13:27:38</small></p>
+      <p class="lead">This page shows the results EVM code analysis tools when run over the <a href="https://github.com/trailofbits/not-so-smart-contracts">Not (so) Smart Contracts</a> benchmark suite.</p>
+      <p>The code is <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites">hosted on github</a>. 
+          Please suggest or contribute more benchmarks or submit <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/issues">suggestions or issues</a>.</p>
+    </div>
 
-  <head>
-    <title>Analysis Tool Evaluation for the nssc Benchmark </title>
-  </head>
-  <body>
-    <!--- FIXME: use css better -->
-    <h1>Analysis Tool Evaluation for the <a href="https://github.com/trailofbits/not-so-smart-contracts">Not (so) Smart Contracts</a> Benchmark 2018-08-05 08:12:20</h1>
-
-    <p>This page shows the results EVM code analysis tools when run over the <a href="https://github.com/trailofbits/not-so-smart-contracts">Not (so) Smart Contracts</a> benchmark suite.
-      The code is <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites">hosted on github</a>.<br>
-      Please suggest or contribute more benchmarks or submit
-      <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/issues">suggestions or issues</a>.
-      <br></p>
-
-    <h2 id="results">Results Chart</h2>
-
-    <p>Green means the tool gives the expected result, yellow means the analysis program
-      failed or timed out, and red means it did not.</p>
+    <h2 id="result-chart" class="mt-4">Results Chart</h2>
+    <p>Chart legend:</p>
+    <ul>
+      <li style="color:rgba(80, 200, 120, 1)">Green means the tool gives the expected result</li>
+      <li style="color:rgba(253, 195, 83, 1)">Yellow means the analysis program failed or timed out</li>
+      <li style="color:rgba(255, 145, 164, 1)">Red means it did not.</li>
+    </ul>
 
     <p>Click on the benchmark name to see its Solidity code.</p>
 
     <p>See the project
     wiki's <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Terminology">Terminology</a>
       entry for definitions used below.</p>
+    
+    <table class="table table-sm table-hover">
+      <thead>
+        <tr style="font-weight: bold">
+          <th>Bug Type</th>
+          <th>Benchmark</th>
+                      <th colspan="2">
+              Mythril
+              <span style="font-size: 10px">v0.18.11</span>
+            </th>
+                      <th colspan="2">
+              Manticore
+              <span style="font-size: 10px">0.2.0</span>
+            </th>
+                  </tr>
+      </thead>
+      <tbody>
+                  <tr>
+            <td>honeypots</td>
+            <td><a href="#honeypots/GiftBox/GiftBox">honeypots/GiftBox/GiftBox</td>
+                          <td>5 minutes,  0.06 seconds</td>
+              <td style="background-color:
+                  rgba(253, 195, 83, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Timed-Out">Timed Out</a></td>
+                          <td>ignored</td>
+              <td style="background-color:
+                  rgba(253, 195, 83, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Ignored">Ignored</a></td>
+                      </tr>
+	                <tr>
+            <td>honeypots</td>
+            <td><a href="#honeypots/KOTH/KOTH">honeypots/KOTH/KOTH</td>
+                          <td> 6.19 seconds</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Wrong-Vulnerability">Wrong Vulnerability</a></td>
+                          <td>errored</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Errored">Errored</a></td>
+                      </tr>
+	                <tr>
+            <td>honeypots</td>
+            <td><a href="#honeypots/Lottery/Lottery">honeypots/Lottery/Lottery</td>
+                          <td>5 minutes,  0.11 seconds</td>
+              <td style="background-color:
+                  rgba(253, 195, 83, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Timed-Out">Timed Out</a></td>
+                          <td>5 minutes,  0.04 seconds</td>
+              <td style="background-color:
+                  rgba(253, 195, 83, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Timed-Out">Timed Out</a></td>
+                      </tr>
+	                <tr>
+            <td>honeypots</td>
+            <td><a href="#honeypots/Multiplicator/Multiplicator">honeypots/Multiplicator/Multiplicator</td>
+                          <td>16.92 seconds</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Wrong-Vulnerability">Wrong Vulnerability</a></td>
+                          <td>5 minutes,  0.03 seconds</td>
+              <td style="background-color:
+                  rgba(253, 195, 83, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Timed-Out">Timed Out</a></td>
+                      </tr>
+	                <tr>
+            <td>honeypots</td>
+            <td><a href="#honeypots/PrivateBank/PrivateBank">honeypots/PrivateBank/PrivateBank</td>
+                          <td>5 minutes,  0.03 seconds</td>
+              <td style="background-color:
+                  rgba(253, 195, 83, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Timed-Out">Timed Out</a></td>
+                          <td>errored</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Errored">Errored</a></td>
+                      </tr>
+	                <tr>
+            <td>honeypots</td>
+            <td><a href="#honeypots/VarLoop/VarLoop">honeypots/VarLoop/VarLoop</td>
+                          <td> 8.92 seconds</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Wrong-Vulnerability">Wrong Vulnerability</a></td>
+                          <td>50.43 seconds</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/False-Negative">False Negative</a></td>
+                      </tr>
+	                <tr>
+            <td>Incorrect Interface</td>
+            <td><a href="#incorrect_interface/Alice">incorrect_interface/Alice</td>
+                          <td> 8.81 seconds</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/False-Negative">False Negative</a></td>
+                          <td>2 minutes, 36.86 seconds</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/False-Negative">False Negative</a></td>
+                      </tr>
+	                <tr>
+            <td>Incorrect Interface</td>
+            <td><a href="#incorrect_interface/Bob">incorrect_interface/Bob</td>
+                          <td> 5.82 seconds</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Wrong-Vulnerability">Wrong Vulnerability</a></td>
+                          <td>errored</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Errored">Errored</a></td>
+                      </tr>
+	                <tr>
+            <td>Integer Overflow</td>
+            <td><a href="#integer_overflow/interger_overflow_1">integer_overflow/interger_overflow_1</td>
+                          <td> 5.47 seconds</td>
+              <td style="background-color:
+                  rgba(80, 200, 120, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
+                          <td>5 minutes,  0.02 seconds</td>
+              <td style="background-color:
+                  rgba(253, 195, 83, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Timed-Out">Timed Out</a></td>
+                      </tr>
+	                <tr>
+            <td>Missing Constructor</td>
+            <td><a href="#missing_constructor/Missing">missing_constructor/Missing</td>
+                          <td> 1.97 seconds</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Wrong-Vulnerability">Wrong Vulnerability</a></td>
+                          <td>1 minute, 37.12 seconds</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/False-Negative">False Negative</a></td>
+                      </tr>
+	                <tr>
+            <td>Missing Constructor</td>
+            <td><a href="#missing_constructor/Rubixi_source_code/Rubixi">missing_constructor/Rubixi_source_code/Rubixi</td>
+                          <td> 1.55 seconds</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/False-Negative">False Negative</a></td>
+                          <td>errored</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Errored">Errored</a></td>
+                      </tr>
+	                <tr>
+            <td>Missing Constructor</td>
+            <td><a href="#race_condition/RaceCondition">race_condition/RaceCondition</td>
+                          <td>11.25 seconds</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Wrong-Vulnerability">Wrong Vulnerability</a></td>
+                          <td>errored</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Errored">Errored</a></td>
+                      </tr>
+	                <tr>
+            <td>Reentrancy</td>
+            <td><a href="#reentrancy/DAO_source_code/DAO">reentrancy/DAO_source_code/DAO</td>
+                          <td> 1.41 seconds</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/False-Negative">False Negative</a></td>
+                          <td>errored</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Errored">Errored</a></td>
+                      </tr>
+	                <tr>
+            <td>Reentrancy</td>
+            <td><a href="#reentrancy/Reentrancy">reentrancy/Reentrancy</td>
+                          <td> 8.37 seconds</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Wrong-Vulnerability">Wrong Vulnerability</a></td>
+                          <td>5 minutes,  0.02 seconds</td>
+              <td style="background-color:
+                  rgba(253, 195, 83, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Timed-Out">Timed Out</a></td>
+                      </tr>
+	                <tr>
+            <td>Reentrancy</td>
+            <td><a href="#reentrancy/ReentrancyExploit">reentrancy/ReentrancyExploit</td>
+                          <td>12.14 seconds</td>
+              <td style="background-color:
+                  rgba(80, 200, 120, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
+                          <td>ignored</td>
+              <td style="background-color:
+                  rgba(253, 195, 83, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Ignored">Ignored</a></td>
+                      </tr>
+	                <tr>
+            <td>Unchecked External Call</td>
+            <td><a href="#unchecked_external_call/KotET_source_code/KingOfTheEtherThrone">unchecked_external_call/KotET_source_code/KingOfTheEtherThrone</td>
+                          <td> 1.63 seconds</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/False-Negative">False Negative</a></td>
+                          <td>errored</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Errored">Errored</a></td>
+                      </tr>
+	                <tr>
+            <td>Unprotected Function</td>
+            <td><a href="#unprotected_function/Unprotected">unprotected_function/Unprotected</td>
+                          <td> 5.23 seconds</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/False-Negative">False Negative</a></td>
+                          <td>2 minutes, 17.61 seconds</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/False-Negative">False Negative</a></td>
+                      </tr>
+	                <tr>
+            <td>Unprotected Function</td>
+            <td><a href="#unprotected_function/WalletLibrary_source_code/WalletLibrary">unprotected_function/WalletLibrary_source_code/WalletLibrary</td>
+                          <td> 1.56 seconds</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/False-Negative">False Negative</a></td>
+                          <td>errored</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Errored">Errored</a></td>
+                      </tr>
+	                <tr>
+            <td>Variable Shadowing</td>
+            <td><a href="#variable shadowing/inherited_state">variable shadowing/inherited_state</td>
+                          <td> 1.95 seconds</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Wrong-Vulnerability">Wrong Vulnerability</a></td>
+                          <td>errored</td>
+              <td style="background-color:
+                  rgba(255, 145, 164, .4)">
+              <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Errored">Errored</a></td>
+                      </tr>
+	            </tbody>
+    </table>
+  
+    <h2>Report summary</h2>
+    <table class="table table-sm table-hover">
+      <thead>
+        <tr style="font-weight: bold">
+          <td>Analyzer</td>
+          <td>Benchmark tests</td>
+          <td>Total time</td>
+          <td>Expected</td>
+          <td>Unexpected</td>
+        </tr>
+      </thead>
+      <tbody>
+                  <tr>
+            <td><b>Mythril v0.18.11</b></td>
+            <td>19</td>
+            <td>1 minute, 39.18 seconds</td>
+            <td>2</td>
+            <td>14</td>
+          </tr>
+                  <tr>
+            <td><b>Manticore 0.2.0</b></td>
+            <td>19</td>
+            <td>7 minutes, 22.02 seconds</td>
+            <td>0</td>
+            <td>4</td>
+          </tr>
+              </tbody>
+    </table>
+    <hr>
+  <!--- breakout per result ---->
 
-    <!--- Results as a chart ---->
-    <table>
-      <tr style="font-weight: bold">
-        <td>Bug Type</td>
-        <td>Benchmark</td>
-        <td colspan="2">
-          Mythril
-          <br>
-          <span style="font-size: 10px">v0.18.11</span>
-      </tr>
+  <h2 id="result-details" class="mt-4">Results Details</h2>
+
+      <div class="card mb-3">
+      <div class="card-body">
+        <div id=honeypots/GiftBox/GiftBox class="card-title"><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol">honeypots/GiftBox/GiftBox</a></div>
+        <table>
+          <thead>
+            <tr style="font-weight: bold">
+              <th>Bug Type</th>
+                                            <th>
+                  Mythril
+                  <span style="font-size: 10px">v0.18.11</span>
+                </th>
+                              <th>
+                  Manticore
+                  <span style="font-size: 10px">0.2.0</span>
+                </th>
+                          </tr>
+          </thead>
+          <tbody>
             <tr>
-        <td>honeypots</td>
-        <td><a href="#honeypots/GiftBox/GiftBox">honeypots/GiftBox/GiftBox</td>
-        <td>1 minute, 22.03 seconds</td>
-        <td style="background-color:
-            rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-	      <tr>
-        <td>honeypots</td>
-        <td><a href="#honeypots/KOTH/KOTH">honeypots/KOTH/KOTH</td>
-        <td> 2.10 seconds</td>
-        <td style="background-color:
-            rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-	      <tr>
-        <td>honeypots</td>
-        <td><a href="#honeypots/Lottery/Lottery">honeypots/Lottery/Lottery</td>
-        <td>50.37 seconds</td>
-        <td style="background-color:
-            rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-	      <tr>
-        <td>honeypots</td>
-        <td><a href="#honeypots/Multiplicator/Multiplicator">honeypots/Multiplicator/Multiplicator</td>
-        <td> 2.01 seconds</td>
-        <td style="background-color:
-            rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-	      <tr>
-        <td>honeypots</td>
-        <td><a href="#honeypots/PrivateBank/PrivateBank">honeypots/PrivateBank/PrivateBank</td>
-        <td>4 minutes,  0.11 seconds</td>
-        <td style="background-color:
-            rgba(253, 195, 83, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Timed-Out">Timed Out</a></td>
-	      <tr>
-        <td>honeypots</td>
-        <td><a href="#honeypots/VarLoop/VarLoop">honeypots/VarLoop/VarLoop</td>
-        <td> 2.39 seconds</td>
-        <td style="background-color:
-            rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-	      <tr>
-        <td>Incorrect Interface</td>
-        <td><a href="#incorrect_interface/Alice">incorrect_interface/Alice</td>
-        <td> 2.16 seconds</td>
-        <td style="background-color:
-            rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-	      <tr>
-        <td>Incorrect Interface</td>
-        <td><a href="#incorrect_interface/Bob">incorrect_interface/Bob</td>
-        <td> 2.24 seconds</td>
-        <td style="background-color:
-            rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-	      <tr>
-        <td>Integer Overflow</td>
-        <td><a href="#integer_overflow/interger_overflow_1">integer_overflow/interger_overflow_1</td>
-        <td> 2.75 seconds</td>
-        <td style="background-color:
-            rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-	      <tr>
-        <td>Missing Constructor</td>
-        <td><a href="#missing_constructor/Missing">missing_constructor/Missing</td>
-        <td> 1.39 seconds</td>
-        <td style="background-color:
-            rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-	      <tr>
-        <td>Missing Constructor</td>
-        <td><a href="#missing_constructor/Rubixi_source_code/Rubixi">missing_constructor/Rubixi_source_code/Rubixi</td>
-        <td> 1.13 seconds</td>
-        <td style="background-color:
-            rgba(128, 128, 128, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Unconfigured">Unconfigured</a></td>
-	      <tr>
-        <td>Missing Constructor</td>
-        <td><a href="#race_condition/RaceCondition">race_condition/RaceCondition</td>
-        <td> 2.94 seconds</td>
-        <td style="background-color:
-            rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-	      <tr>
-        <td>Reentrancy</td>
-        <td><a href="#reentrancy/DAO_source_code/DAO">reentrancy/DAO_source_code/DAO</td>
-        <td> 1.14 seconds</td>
-        <td style="background-color:
-            rgba(128, 128, 128, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Unconfigured">Unconfigured</a></td>
-	      <tr>
-        <td>Reentrancy</td>
-        <td><a href="#reentrancy/Reentrancy">reentrancy/Reentrancy</td>
-        <td> 2.51 seconds</td>
-        <td style="background-color:
-            rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-	      <tr>
-        <td>Reentrancy</td>
-        <td><a href="#reentrancy/ReentrancyExploit">reentrancy/ReentrancyExploit</td>
-        <td> 2.41 seconds</td>
-        <td style="background-color:
-            rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-	      <tr>
-        <td>Unchecked External Call</td>
-        <td><a href="#unchecked_external_call/KotET_source_code/KingOfTheEtherThrone">unchecked_external_call/KotET_source_code/KingOfTheEtherThrone</td>
-        <td> 1.11 seconds</td>
-        <td style="background-color:
-            rgba(128, 128, 128, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Unconfigured">Unconfigured</a></td>
-	      <tr>
-        <td>Unprotected Function</td>
-        <td><a href="#unprotected_function/Unprotected">unprotected_function/Unprotected</td>
-        <td> 2.26 seconds</td>
-        <td style="background-color:
-            rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-	      <tr>
-        <td>Unprotected Function</td>
-        <td><a href="#unprotected_function/WalletLibrary_source_code/WalletLibrary">unprotected_function/WalletLibrary_source_code/WalletLibrary</td>
-        <td> 1.22 seconds</td>
-        <td style="background-color:
-            rgba(128, 128, 128, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Unconfigured">Unconfigured</a></td>
-	      <tr>
-        <td>Variable Shadowing</td>
-        <td><a href="#variable shadowing/inherited_state">variable shadowing/inherited_state</td>
-        <td> 1.33 seconds</td>
-        <td style="background-color:
-            rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-	      </tr>
-      <tr>
-        <td><b>summary stats</b></td>
-        <td>19 tests</td>
-        <td>7 minutes, 43.48 seconds</td>
-        <td>14 expected, 4 unexpected
-	  <!-- <br>
-	       
-	    -->
-	</td>
-      </tr>
-    </table>
-
-    <!--- breakout per result ---->
-    <h2 id="results">Results Details</h2>
-
-        <hr>
-    <h3 id=honeypots/GiftBox/GiftBox>
-      <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol">honeypots/GiftBox/GiftBox</a>
-    </h3>
-    <table>
-      <tr style="font-weight: bold">
-        <td>Bug Type</td>
-	          <td colspan="2">
-          Mythril
-          <br>
-          <span style="font-size: 10px">v0.18.11</span>
-      </tr>
-      <tr>
-        <td>honeypots</td>
-	        <td style="background-color:
-		   rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-      </tr>
-    </table>
-    <h4>Source Code</h4>
-    <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">19</span><span class="p">;</span>
+              <td>honeypots</td>
+                                            <td style="background-color:
+                    rgba(253, 195, 83, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Timed-Out">Timed Out</a>
+                </td>
+                              <td style="background-color:
+                    rgba(253, 195, 83, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Ignored">Ignored</a>
+                </td>
+                          </tr>
+          </tbody>
+        </table>
+        <h4 class="mt-4">Source Code</h4>
+        <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">19</span><span class="p">;</span>
 
 <span class="kd">contract</span> <span class="n">NEW_YEARS_GIFT</span>
 <span class="p">{</span>
@@ -372,310 +513,41 @@
 <span class="p">}</span>
 </pre></div>
 
-        <h4>Mythril Report</h4>
-    <div style="margin-left: 1em">
-               <h5>Issue #1</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>GetGift(bytes)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L37">Line 37</a>, Bytecode offset: 190:</p>
-            <p><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="n">GetGift</span><span class="p">(</span><span class="kt">bytes</span> <span class="n">pass</span><span class="p">)</span>
-    <span class="kr">external</span>
-    <span class="kr">payable</span>
-    <span class="k">returns</span> <span class="p">(</span><span class="kt">string</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">hashPass</span> <span class="o">==</span> <span class="nf">sha3</span><span class="p">(</span><span class="n">pass</span><span class="p">))</span>
-        <span class="p">{</span>
-            <span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">);</span>
-            <span class="k">return</span> <span class="n">message</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-</pre></div>
-</p>
-                  <p><i>Integer Overflow (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>A possible integer overflow exists in the function <code>GetGift(bytes)</code>.
-The addition or multiplication may result in a value higher than the maximum representable integer.</p>
-</p>
-            </div>
-	 </div>
-               <h5>Issue #2</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>SetMessage(string)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L28">Line 28</a>, Bytecode offset: 470:</p>
-            <p><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="n">SetMessage</span><span class="p">(</span><span class="kt">string</span> <span class="n">_message</span><span class="p">)</span>
-    <span class="kr">public</span>
-    <span class="p">{</span>
-        <span class="k">if</span><span class="p">(</span><span class="nb">msg.sender</span><span class="o">==</span><span class="n">sender</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">message</span> <span class="o">=</span><span class="n">_message</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-</pre></div>
-</p>
-                  <p><i>Integer Overflow (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>A possible integer overflow exists in the function <code>SetMessage(string)</code>.
-The addition or multiplication may result in a value higher than the maximum representable integer.</p>
-</p>
-            </div>
-	 </div>
-               <h5>Issue #3</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>GetHash(bytes)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L15">Line 15</a>, Bytecode offset: 575:</p>
-            <p><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="n">GetHash</span><span class="p">(</span><span class="kt">bytes</span> <span class="n">pass</span><span class="p">)</span> <span class="kr">public</span> <span class="kr">constant</span> <span class="k">returns</span> <span class="p">(</span><span class="kt">bytes32</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nf">sha3</span><span class="p">(</span><span class="n">pass</span><span class="p">);}</span>
-</pre></div>
-</p>
-                  <p><i>Integer Overflow (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>A possible integer overflow exists in the function <code>GetHash(bytes)</code>.
-The addition or multiplication may result in a value higher than the maximum representable integer.</p>
-</p>
-            </div>
-	 </div>
-               <h5>Issue #4</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>GetGift(bytes)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L42">Line 42</a>, Bytecode offset: 840:</p>
-            <p><div class="highlight"><pre><span></span><span class="nf">sha3</span><span class="p">(</span><span class="n">pass</span><span class="p">)</span>
-</pre></div>
-</p>
-                  <p><i>Integer Overflow (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>A possible integer overflow exists in the function <code>GetGift(bytes)</code>.
-The addition or multiplication may result in a value higher than the maximum representable integer.</p>
-</p>
-            </div>
-	 </div>
-               <h5>Issue #5</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>GetGift(bytes)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L42">Line 42</a>, Bytecode offset: 853:</p>
-            <p><div class="highlight"><pre><span></span><span class="nf">sha3</span><span class="p">(</span><span class="n">pass</span><span class="p">)</span>
-</pre></div>
-</p>
-                  <p><i>Integer Underflow (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>A possible integer underflow exists in the function <code>GetGift(bytes)</code>.
-The subtraction may result in a value &lt; 0.</p>
-</p>
-            </div>
-	 </div>
-               <h5>Issue #6</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>GetGift(bytes)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L44">Line 44</a>, Bytecode offset: 943:</p>
-            <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span>
-</pre></div>
-</p>
-                  <p><i>Ether send (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>In the function <code>GetGift(bytes)</code> a non-zero amount of Ether is sent to msg.sender.</p>
-
-<p>There is a check on storage index 2. This storage slot can be written to by calling the function <code>SetPass(bytes32)</code>.</p>
-</p>
-            </div>
-	 </div>
-               <h5>Issue #7</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>Revoce()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L55">Line 55</a>, Bytecode offset: 1686:</p>
-            <p><div class="highlight"><pre><span></span><span class="n">sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span>
-</pre></div>
-</p>
-                  <p><i>Ether send (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>In the function <code>Revoce()</code> a non-zero amount of Ether is sent to an address taken from storage slot 1.
-There is a check on storage index 1. This storage slot can be written to by calling the function <code>SetPass(bytes32)</code>.</p>
-
-<p>There is a check on storage index 1. This storage slot can be written to by calling the function <code>SetPass(bytes32)</code>.</p>
-</p>
-            </div>
-	 </div>
-               <h5>Issue #8</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>Revoce()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L55">Line 55</a>, Bytecode offset: 1686:</p>
-            <p><div class="highlight"><pre><span></span><span class="n">sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span>
-</pre></div>
-</p>
-                  <p><i>Transaction order dependence (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>A possible transaction order independence vulnerability exists in function Revoce(). The value or direction of the call statement is determined from a tainted storage location</p>
-</p>
-            </div>
-	 </div>
-               <h5>Issue #9</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>SetMessage(string)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L3">Line 3</a>, Bytecode offset: 1819:</p>
-            <p><div class="highlight"><pre><span></span><span class="kd">contract</span> <span class="n">NEW_YEARS_GIFT</span>
-<span class="p">{</span>
-    <span class="kt">string</span> <span class="n">message</span><span class="p">;</span>
-    
-    <span class="kt">bool</span> <span class="n">passHasBeenSet</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-    
-    <span class="kt">address</span> <span class="n">sender</span><span class="p">;</span>
-    
-    <span class="kt">bytes32</span> <span class="kr">public</span> <span class="n">hashPass</span><span class="p">;</span>
-	
-    <span class="kd">function</span><span class="p">()</span> <span class="kr">public</span> <span class="kr">payable</span><span class="p">{}</span>
-    
-    <span class="kd">function</span> <span class="n">GetHash</span><span class="p">(</span><span class="kt">bytes</span> <span class="n">pass</span><span class="p">)</span> <span class="kr">public</span> <span class="kr">constant</span> <span class="k">returns</span> <span class="p">(</span><span class="kt">bytes32</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nf">sha3</span><span class="p">(</span><span class="n">pass</span><span class="p">);}</span>
-    
-    <span class="kd">function</span> <span class="n">SetPass</span><span class="p">(</span><span class="kt">bytes32</span> <span class="n">hash</span><span class="p">)</span>
-    <span class="kr">public</span>
-    <span class="kr">payable</span>
-    <span class="p">{</span>
-        <span class="k">if</span><span class="p">(</span> <span class="p">(</span><span class="o">!</span><span class="n">passHasBeenSet</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="nb">msg.value</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="kc">ether</span><span class="p">))</span> <span class="o">||</span> <span class="n">hashPass</span><span class="o">==</span><span class="mh">0x0</span> <span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">hashPass</span> <span class="o">=</span> <span class="n">hash</span><span class="p">;</span>
-            <span class="n">sender</span> <span class="o">=</span> <span class="nb">msg.sender</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    
-    <span class="kd">function</span> <span class="n">SetMessage</span><span class="p">(</span><span class="kt">string</span> <span class="n">_message</span><span class="p">)</span>
-    <span class="kr">public</span>
-    <span class="p">{</span>
-        <span class="k">if</span><span class="p">(</span><span class="nb">msg.sender</span><span class="o">==</span><span class="n">sender</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">message</span> <span class="o">=</span><span class="n">_message</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    
-    <span class="kd">function</span> <span class="n">GetGift</span><span class="p">(</span><span class="kt">bytes</span> <span class="n">pass</span><span class="p">)</span>
-    <span class="kr">external</span>
-    <span class="kr">payable</span>
-    <span class="k">returns</span> <span class="p">(</span><span class="kt">string</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">hashPass</span> <span class="o">==</span> <span class="nf">sha3</span><span class="p">(</span><span class="n">pass</span><span class="p">))</span>
-        <span class="p">{</span>
-            <span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">);</span>
-            <span class="k">return</span> <span class="n">message</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    
-    <span class="kd">function</span> <span class="n">Revoce</span><span class="p">()</span>
-    <span class="kr">public</span>
-    <span class="kr">payable</span>
-    <span class="p">{</span>
-        <span class="k">if</span><span class="p">(</span><span class="nb">msg.sender</span><span class="o">==</span><span class="n">sender</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">);</span>
-            <span class="n">message</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    
-    <span class="kd">function</span> <span class="n">PassHasBeenSet</span><span class="p">(</span><span class="kt">bytes32</span> <span class="n">hash</span><span class="p">)</span>
-    <span class="kr">public</span>
-    <span class="p">{</span>
-        <span class="k">if</span><span class="p">(</span><span class="nb">msg.sender</span><span class="o">==</span><span class="n">sender</span><span class="o">&amp;&amp;</span><span class="n">hash</span><span class="o">==</span><span class="n">hashPass</span><span class="p">)</span>
-        <span class="p">{</span>
-           <span class="n">passHasBeenSet</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</p>
-                  <p><i>Integer Overflow (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>A possible integer overflow exists in the function <code>SetMessage(string)</code>.
-The addition or multiplication may result in a value higher than the maximum representable integer.</p>
-</p>
-            </div>
-	 </div>
-               <h5>Issue #10</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>SetMessage(string)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/GiftBox/GiftBox.sol#L3">Line 3</a>, Bytecode offset: 1833:</p>
-            <p><div class="highlight"><pre><span></span><span class="kd">contract</span> <span class="n">NEW_YEARS_GIFT</span>
-<span class="p">{</span>
-    <span class="kt">string</span> <span class="n">message</span><span class="p">;</span>
-    
-    <span class="kt">bool</span> <span class="n">passHasBeenSet</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-    
-    <span class="kt">address</span> <span class="n">sender</span><span class="p">;</span>
-    
-    <span class="kt">bytes32</span> <span class="kr">public</span> <span class="n">hashPass</span><span class="p">;</span>
-	
-    <span class="kd">function</span><span class="p">()</span> <span class="kr">public</span> <span class="kr">payable</span><span class="p">{}</span>
-    
-    <span class="kd">function</span> <span class="n">GetHash</span><span class="p">(</span><span class="kt">bytes</span> <span class="n">pass</span><span class="p">)</span> <span class="kr">public</span> <span class="kr">constant</span> <span class="k">returns</span> <span class="p">(</span><span class="kt">bytes32</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nf">sha3</span><span class="p">(</span><span class="n">pass</span><span class="p">);}</span>
-    
-    <span class="kd">function</span> <span class="n">SetPass</span><span class="p">(</span><span class="kt">bytes32</span> <span class="n">hash</span><span class="p">)</span>
-    <span class="kr">public</span>
-    <span class="kr">payable</span>
-    <span class="p">{</span>
-        <span class="k">if</span><span class="p">(</span> <span class="p">(</span><span class="o">!</span><span class="n">passHasBeenSet</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="nb">msg.value</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="kc">ether</span><span class="p">))</span> <span class="o">||</span> <span class="n">hashPass</span><span class="o">==</span><span class="mh">0x0</span> <span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">hashPass</span> <span class="o">=</span> <span class="n">hash</span><span class="p">;</span>
-            <span class="n">sender</span> <span class="o">=</span> <span class="nb">msg.sender</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    
-    <span class="kd">function</span> <span class="n">SetMessage</span><span class="p">(</span><span class="kt">string</span> <span class="n">_message</span><span class="p">)</span>
-    <span class="kr">public</span>
-    <span class="p">{</span>
-        <span class="k">if</span><span class="p">(</span><span class="nb">msg.sender</span><span class="o">==</span><span class="n">sender</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">message</span> <span class="o">=</span><span class="n">_message</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    
-    <span class="kd">function</span> <span class="n">GetGift</span><span class="p">(</span><span class="kt">bytes</span> <span class="n">pass</span><span class="p">)</span>
-    <span class="kr">external</span>
-    <span class="kr">payable</span>
-    <span class="k">returns</span> <span class="p">(</span><span class="kt">string</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">hashPass</span> <span class="o">==</span> <span class="nf">sha3</span><span class="p">(</span><span class="n">pass</span><span class="p">))</span>
-        <span class="p">{</span>
-            <span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">);</span>
-            <span class="k">return</span> <span class="n">message</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    
-    <span class="kd">function</span> <span class="n">Revoce</span><span class="p">()</span>
-    <span class="kr">public</span>
-    <span class="kr">payable</span>
-    <span class="p">{</span>
-        <span class="k">if</span><span class="p">(</span><span class="nb">msg.sender</span><span class="o">==</span><span class="n">sender</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">);</span>
-            <span class="n">message</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    
-    <span class="kd">function</span> <span class="n">PassHasBeenSet</span><span class="p">(</span><span class="kt">bytes32</span> <span class="n">hash</span><span class="p">)</span>
-    <span class="kr">public</span>
-    <span class="p">{</span>
-        <span class="k">if</span><span class="p">(</span><span class="nb">msg.sender</span><span class="o">==</span><span class="n">sender</span><span class="o">&amp;&amp;</span><span class="n">hash</span><span class="o">==</span><span class="n">hashPass</span><span class="p">)</span>
-        <span class="p">{</span>
-           <span class="n">passHasBeenSet</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</p>
-                  <p><i>Integer Overflow (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>A possible integer overflow exists in the function <code>SetMessage(string)</code>.
-The addition or multiplication may result in a value higher than the maximum representable integer.</p>
-</p>
-            </div>
-	 </div>
-          </div>
-    
-      <hr>
-    <h3 id=honeypots/KOTH/KOTH>
-      <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/KOTH/KOTH.sol">honeypots/KOTH/KOTH</a>
-    </h3>
-    <table>
-      <tr style="font-weight: bold">
-        <td>Bug Type</td>
-	          <td colspan="2">
-          Mythril
-          <br>
-          <span style="font-size: 10px">v0.18.11</span>
-      </tr>
-      <tr>
-        <td>honeypots</td>
-	        <td style="background-color:
-		   rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-      </tr>
-    </table>
-    <h4>Source Code</h4>
-    <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">19</span><span class="p">;</span>
+                                                  </div>
+    </div>
+      <div class="card mb-3">
+      <div class="card-body">
+        <div id=honeypots/KOTH/KOTH class="card-title"><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/KOTH/KOTH.sol">honeypots/KOTH/KOTH</a></div>
+        <table>
+          <thead>
+            <tr style="font-weight: bold">
+              <th>Bug Type</th>
+                                            <th>
+                  Mythril
+                  <span style="font-size: 10px">v0.18.11</span>
+                </th>
+                              <th>
+                  Manticore
+                  <span style="font-size: 10px">0.2.0</span>
+                </th>
+                          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>honeypots</td>
+                                            <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Wrong-Vulnerability">Wrong Vulnerability</a>
+                </td>
+                              <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Errored">Errored</a>
+                </td>
+                          </tr>
+          </tbody>
+        </table>
+        <h4 class="mt-4">Source Code</h4>
+        <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">19</span><span class="p">;</span>
 <span class="c1">//</span>
 <span class="c1">//Live TEST ---- Please Do NOT use! Thanks! ----</span>
 <span class="c1">//</span>
@@ -708,28 +580,71 @@ The addition or multiplication may result in a value higher than the maximum rep
 <span class="p">}</span>
 </pre></div>
 
-    
-      <hr>
-    <h3 id=honeypots/Lottery/Lottery>
-      <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/Lottery/Lottery.sol">honeypots/Lottery/Lottery</a>
-    </h3>
-    <table>
-      <tr style="font-weight: bold">
-        <td>Bug Type</td>
-	          <td colspan="2">
-          Mythril
-          <br>
-          <span style="font-size: 10px">v0.18.11</span>
-      </tr>
-      <tr>
-        <td>honeypots</td>
-	        <td style="background-color:
-		   rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-      </tr>
-    </table>
-    <h4>Source Code</h4>
-    <div class="highlight"><pre><span></span><span class="cm">/*</span>
+                              <h4 class="mt-3">Mythril Report</h4>
+            <div style="margin-left: 1em">
+                              <h5>Issue #1</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>withdraw()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/KOTH/KOTH.sol#L29">Line 29</a>, Bytecode offset: 428:</p>
+                    <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span>
+</pre></div>
+</p>
+                  </div>
+                                <p><i>Ether send (Warning)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>In the function <code>withdraw()</code> a non-zero amount of Ether is sent to msg.sender.
+It seems that this function can be called without restrictions.</p>
+</p>
+                  </div>
+                                              <h5>Issue #2</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>withdraw()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/KOTH/KOTH.sol#L29">Line 29</a>, Bytecode offset: 428:</p>
+                    <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span>
+</pre></div>
+</p>
+                  </div>
+                                <p><i>Multiple Calls (Information)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
+Consecutive calls: 
+Call at address: 428</p>
+</p>
+                  </div>
+                                          </div>
+                                          </div>
+    </div>
+      <div class="card mb-3">
+      <div class="card-body">
+        <div id=honeypots/Lottery/Lottery class="card-title"><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/Lottery/Lottery.sol">honeypots/Lottery/Lottery</a></div>
+        <table>
+          <thead>
+            <tr style="font-weight: bold">
+              <th>Bug Type</th>
+                                            <th>
+                  Mythril
+                  <span style="font-size: 10px">v0.18.11</span>
+                </th>
+                              <th>
+                  Manticore
+                  <span style="font-size: 10px">0.2.0</span>
+                </th>
+                          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>honeypots</td>
+                                            <td style="background-color:
+                    rgba(253, 195, 83, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Timed-Out">Timed Out</a>
+                </td>
+                              <td style="background-color:
+                    rgba(253, 195, 83, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Timed-Out">Timed Out</a>
+                </td>
+                          </tr>
+          </tbody>
+        </table>
+        <h4 class="mt-4">Source Code</h4>
+        <div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm"> * This is a distributed lottery that chooses random addresses as lucky addresses. If these</span>
 <span class="cm"> * participate, they get the jackpot: 7 times the price of their bet.</span>
 <span class="cm"> * Of course one address can only win once. The owner regularly reseeds the secret</span>
@@ -828,70 +743,41 @@ The addition or multiplication may result in a value higher than the maximum rep
 <span class="p">}</span>
 </pre></div>
 
-        <h4>Mythril Report</h4>
-    <div style="margin-left: 1em">
-               <h5>Issue #1</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>forceReseed()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/Lottery/Lottery.sol#L85">Line 85</a>, Bytecode offset: 1204:</p>
-            <p><div class="highlight"><pre><span></span><span class="nb">block.number</span> <span class="o">-</span> <span class="mi">1</span>
-</pre></div>
-</p>
-                  <p><i>Integer Underflow (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>A possible integer underflow exists in the function <code>forceReseed()</code>.
-The subtraction may result in a value &lt; 0.</p>
-</p>
-            </div>
-	 </div>
-               <h5>Issue #2</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>forceReseed()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/Lottery/Lottery.sol#L86">Line 86</a>, Bytecode offset: 1242:</p>
-            <p><div class="highlight"><pre><span></span><span class="nb">block.difficulty</span><span class="o">*</span><span class="p">(</span><span class="kt">uint</span><span class="p">)(</span><span class="nb">block.coinbase</span><span class="p">)</span>
-</pre></div>
-</p>
-                  <p><i>Integer Overflow (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>A possible integer overflow exists in the function <code>forceReseed()</code>.
-The addition or multiplication may result in a value higher than the maximum representable integer.</p>
-</p>
-            </div>
-	 </div>
-               <h5>Issue #3</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>forceReseed()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/Lottery/Lottery.sol#L87">Line 87</a>, Bytecode offset: 1254:</p>
-            <p><div class="highlight"><pre><span></span><span class="nb">tx.gasprice</span> <span class="o">*</span> <span class="mi">7</span>
-</pre></div>
-</p>
-                  <p><i>Integer Overflow (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>A possible integer overflow exists in the function <code>forceReseed()</code>.
-The addition or multiplication may result in a value higher than the maximum representable integer.</p>
-</p>
-            </div>
-	 </div>
-          </div>
-    
-      <hr>
-    <h3 id=honeypots/Multiplicator/Multiplicator>
-      <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/Multiplicator/Multiplicator.sol">honeypots/Multiplicator/Multiplicator</a>
-    </h3>
-    <table>
-      <tr style="font-weight: bold">
-        <td>Bug Type</td>
-	          <td colspan="2">
-          Mythril
-          <br>
-          <span style="font-size: 10px">v0.18.11</span>
-      </tr>
-      <tr>
-        <td>honeypots</td>
-	        <td style="background-color:
-		   rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-      </tr>
-    </table>
-    <h4>Source Code</h4>
-    <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">18</span><span class="p">;</span>
+                                                  </div>
+    </div>
+      <div class="card mb-3">
+      <div class="card-body">
+        <div id=honeypots/Multiplicator/Multiplicator class="card-title"><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/Multiplicator/Multiplicator.sol">honeypots/Multiplicator/Multiplicator</a></div>
+        <table>
+          <thead>
+            <tr style="font-weight: bold">
+              <th>Bug Type</th>
+                                            <th>
+                  Mythril
+                  <span style="font-size: 10px">v0.18.11</span>
+                </th>
+                              <th>
+                  Manticore
+                  <span style="font-size: 10px">0.2.0</span>
+                </th>
+                          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>honeypots</td>
+                                            <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Wrong-Vulnerability">Wrong Vulnerability</a>
+                </td>
+                              <td style="background-color:
+                    rgba(253, 195, 83, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Timed-Out">Timed Out</a>
+                </td>
+                          </tr>
+          </tbody>
+        </table>
+        <h4 class="mt-4">Source Code</h4>
+        <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">18</span><span class="p">;</span>
 
 <span class="kd">contract</span> <span class="n">Multiplicator</span>
 <span class="p">{</span>
@@ -918,28 +804,100 @@ The addition or multiplication may result in a value higher than the maximum rep
 <span class="p">}</span>
 </pre></div>
 
-    
-      <hr>
-    <h3 id=honeypots/PrivateBank/PrivateBank>
-      <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/PrivateBank/PrivateBank.sol">honeypots/PrivateBank/PrivateBank</a>
-    </h3>
-    <table>
-      <tr style="font-weight: bold">
-        <td>Bug Type</td>
-	          <td colspan="2">
-          Mythril
-          <br>
-          <span style="font-size: 10px">v0.18.11</span>
-      </tr>
-      <tr>
-        <td>honeypots</td>
-	        <td style="background-color:
-		   rgba(253, 195, 83, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Timed-Out">Timed Out</a></td>
-      </tr>
-    </table>
-    <h4>Source Code</h4>
-    <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">19</span><span class="p">;</span>
+                              <h4 class="mt-3">Mythril Report</h4>
+            <div style="margin-left: 1em">
+                              <h5>Issue #1</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>multiplicate(address)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/Multiplicator/Multiplicator.sol#L22">Line 22</a>, Bytecode offset: 345:</p>
+                    <p><div class="highlight"><pre><span></span><span class="n">adr</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="o">+</span><span class="nb">msg.value</span><span class="p">)</span>
+</pre></div>
+</p>
+                  </div>
+                                <p><i>Ether send (Warning)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>In the function <code>multiplicate(address)</code> a non-zero amount of Ether is sent to an address taken from function arguments.
+It seems that this function can be called without restrictions.</p>
+</p>
+                  </div>
+                                              <h5>Issue #2</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>multiplicate(address)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/Multiplicator/Multiplicator.sol#L22">Line 22</a>, Bytecode offset: 345:</p>
+                    <p><div class="highlight"><pre><span></span><span class="n">adr</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="o">+</span><span class="nb">msg.value</span><span class="p">)</span>
+</pre></div>
+</p>
+                  </div>
+                                <p><i>Multiple Calls (Information)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
+Consecutive calls: 
+Call at address: 345
+Call at address: 567</p>
+</p>
+                  </div>
+                                              <h5>Issue #3</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>withdraw()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/Multiplicator/Multiplicator.sol#L14">Line 14</a>, Bytecode offset: 567:</p>
+                    <p><div class="highlight"><pre><span></span><span class="n">Owner</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span>
+</pre></div>
+</p>
+                  </div>
+                                <p><i>Ether send (Warning)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>In the function <code>withdraw()</code> a non-zero amount of Ether is sent to msg.sender.
+It seems that this function can be called without restrictions.</p>
+</p>
+                  </div>
+                                              <h5>Issue #4</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>withdraw()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/Multiplicator/Multiplicator.sol#L14">Line 14</a>, Bytecode offset: 567:</p>
+                    <p><div class="highlight"><pre><span></span><span class="n">Owner</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span>
+</pre></div>
+</p>
+                  </div>
+                                <p><i>Multiple Calls (Information)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
+Consecutive calls: 
+Call at address: 345
+Call at address: 567</p>
+</p>
+                  </div>
+                                          </div>
+                                          </div>
+    </div>
+      <div class="card mb-3">
+      <div class="card-body">
+        <div id=honeypots/PrivateBank/PrivateBank class="card-title"><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/PrivateBank/PrivateBank.sol">honeypots/PrivateBank/PrivateBank</a></div>
+        <table>
+          <thead>
+            <tr style="font-weight: bold">
+              <th>Bug Type</th>
+                                            <th>
+                  Mythril
+                  <span style="font-size: 10px">v0.18.11</span>
+                </th>
+                              <th>
+                  Manticore
+                  <span style="font-size: 10px">0.2.0</span>
+                </th>
+                          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>honeypots</td>
+                                            <td style="background-color:
+                    rgba(253, 195, 83, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Timed-Out">Timed Out</a>
+                </td>
+                              <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Errored">Errored</a>
+                </td>
+                          </tr>
+          </tbody>
+        </table>
+        <h4 class="mt-4">Source Code</h4>
+        <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">19</span><span class="p">;</span>
 
 <span class="kd">contract</span> <span class="n">Private_Bank</span>
 <span class="p">{</span>
@@ -1009,28 +967,41 @@ The addition or multiplication may result in a value higher than the maximum rep
 <span class="p">}</span>
 </pre></div>
 
-    
-      <hr>
-    <h3 id=honeypots/VarLoop/VarLoop>
-      <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/VarLoop/VarLoop.sol">honeypots/VarLoop/VarLoop</a>
-    </h3>
-    <table>
-      <tr style="font-weight: bold">
-        <td>Bug Type</td>
-	          <td colspan="2">
-          Mythril
-          <br>
-          <span style="font-size: 10px">v0.18.11</span>
-      </tr>
-      <tr>
-        <td>honeypots</td>
-	        <td style="background-color:
-		   rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-      </tr>
-    </table>
-    <h4>Source Code</h4>
-    <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">18</span><span class="p">;</span>
+                                                  </div>
+    </div>
+      <div class="card mb-3">
+      <div class="card-body">
+        <div id=honeypots/VarLoop/VarLoop class="card-title"><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/VarLoop/VarLoop.sol">honeypots/VarLoop/VarLoop</a></div>
+        <table>
+          <thead>
+            <tr style="font-weight: bold">
+              <th>Bug Type</th>
+                                            <th>
+                  Mythril
+                  <span style="font-size: 10px">v0.18.11</span>
+                </th>
+                              <th>
+                  Manticore
+                  <span style="font-size: 10px">0.2.0</span>
+                </th>
+                          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>honeypots</td>
+                                            <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Wrong-Vulnerability">Wrong Vulnerability</a>
+                </td>
+                              <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/False-Negative">False Negative</a>
+                </td>
+                          </tr>
+          </tbody>
+        </table>
+        <h4 class="mt-4">Source Code</h4>
+        <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">18</span><span class="p">;</span>
 
 <span class="kd">contract</span> <span class="n">Test1</span>
 <span class="p">{</span>
@@ -1071,57 +1042,119 @@ The addition or multiplication may result in a value higher than the maximum rep
 <span class="p">}</span>
 </pre></div>
 
-        <h4>Mythril Report</h4>
-    <div style="margin-left: 1em">
-               <h5>Issue #1</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>Test()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/VarLoop/VarLoop.sol#L26">Line 26</a>, Bytecode offset: 352:</p>
-            <p><div class="highlight"><pre><span></span><span class="nb">msg.value</span><span class="o">*</span><span class="mi">2</span>
+                              <h4 class="mt-3">Mythril Report</h4>
+            <div style="margin-left: 1em">
+                              <h5>Issue #1</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>withdraw()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/VarLoop/VarLoop.sol#L12">Line 12</a>, Bytecode offset: 293:</p>
+                    <p><div class="highlight"><pre><span></span><span class="n">owner</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span>
 </pre></div>
 </p>
-                  <p><i>Integer Overflow (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>A possible integer overflow exists in the function <code>Test()</code>.
-The addition or multiplication may result in a value higher than the maximum representable integer.</p>
-</p>
-            </div>
-	 </div>
-               <h5>Issue #2</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>Test()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/VarLoop/VarLoop.sol#L36">Line 36</a>, Bytecode offset: 464:</p>
-            <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">i2</span><span class="p">)</span>
-</pre></div>
-</p>
-                  <p><i>Ether send (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>In the function <code>Test()</code> a non-zero amount of Ether is sent to msg.sender.
+                  </div>
+                                <p><i>Ether send (Warning)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>In the function <code>withdraw()</code> a non-zero amount of Ether is sent to msg.sender.
 It seems that this function can be called without restrictions.</p>
 </p>
-            </div>
-	 </div>
-          </div>
-    
-      <hr>
-    <h3 id=incorrect_interface/Alice>
-      <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//incorrect_interface/Alice.sol">incorrect_interface/Alice</a>
-    </h3>
-    <table>
-      <tr style="font-weight: bold">
-        <td>Bug Type</td>
-	          <td colspan="2">
-          Mythril
-          <br>
-          <span style="font-size: 10px">v0.18.11</span>
-      </tr>
-      <tr>
-        <td>Incorrect Interface</td>
-	        <td style="background-color:
-		   rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-      </tr>
-    </table>
-    <h4>Source Code</h4>
-    <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">15</span><span class="p">;</span>
+                  </div>
+                                              <h5>Issue #2</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>withdraw()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/VarLoop/VarLoop.sol#L12">Line 12</a>, Bytecode offset: 293:</p>
+                    <p><div class="highlight"><pre><span></span><span class="n">owner</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span>
+</pre></div>
+</p>
+                  </div>
+                                <p><i>Multiple Calls (Information)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
+Consecutive calls: 
+Call at address: 293
+Call at address: 464
+Call at address: 464
+Call at address: 464
+Call at address: 464</p>
+</p>
+                  </div>
+                                              <h5>Issue #3</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>Test()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/VarLoop/VarLoop.sol#L26">Line 26</a>, Bytecode offset: 352:</p>
+                    <p><div class="highlight"><pre><span></span><span class="nb">msg.value</span><span class="o">*</span><span class="mi">2</span>
+</pre></div>
+</p>
+                  </div>
+                                <p><i>Integer Overflow (Warning)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>A possible integer overflow exists in the function <code>Test()</code>.
+The addition or multiplication may result in a value higher than the maximum representable integer.</p>
+</p>
+                  </div>
+                                              <h5>Issue #4</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>Test()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/VarLoop/VarLoop.sol#L36">Line 36</a>, Bytecode offset: 464:</p>
+                    <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">i2</span><span class="p">)</span>
+</pre></div>
+</p>
+                  </div>
+                                <p><i>Ether send (Warning)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>In the function <code>Test()</code> a non-zero amount of Ether is sent to msg.sender.
+It seems that this function can be called without restrictions.</p>
+</p>
+                  </div>
+                                              <h5>Issue #5</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>Test()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//honeypots/VarLoop/VarLoop.sol#L36">Line 36</a>, Bytecode offset: 464:</p>
+                    <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">i2</span><span class="p">)</span>
+</pre></div>
+</p>
+                  </div>
+                                <p><i>Multiple Calls (Information)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
+Consecutive calls: 
+Call at address: 293
+Call at address: 464
+Call at address: 464
+Call at address: 464
+Call at address: 464</p>
+</p>
+                  </div>
+                                          </div>
+                                          </div>
+    </div>
+      <div class="card mb-3">
+      <div class="card-body">
+        <div id=incorrect_interface/Alice class="card-title"><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//incorrect_interface/Alice.sol">incorrect_interface/Alice</a></div>
+        <table>
+          <thead>
+            <tr style="font-weight: bold">
+              <th>Bug Type</th>
+                                            <th>
+                  Mythril
+                  <span style="font-size: 10px">v0.18.11</span>
+                </th>
+                              <th>
+                  Manticore
+                  <span style="font-size: 10px">0.2.0</span>
+                </th>
+                          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Incorrect Interface</td>
+                                            <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/False-Negative">False Negative</a>
+                </td>
+                              <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/False-Negative">False Negative</a>
+                </td>
+                          </tr>
+          </tbody>
+        </table>
+        <h4 class="mt-4">Source Code</h4>
+        <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">15</span><span class="p">;</span>
 
 <span class="kd">contract</span> <span class="n">Alice</span> <span class="p">{</span> 
     <span class="kt">int</span> <span class="kr">public</span> <span class="n">val</span><span class="p">;</span>
@@ -1140,28 +1173,41 @@ It seems that this function can be called without restrictions.</p>
 <span class="p">}</span>
 </pre></div>
 
-    
-      <hr>
-    <h3 id=incorrect_interface/Bob>
-      <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//incorrect_interface/Bob.sol">incorrect_interface/Bob</a>
-    </h3>
-    <table>
-      <tr style="font-weight: bold">
-        <td>Bug Type</td>
-	          <td colspan="2">
-          Mythril
-          <br>
-          <span style="font-size: 10px">v0.18.11</span>
-      </tr>
-      <tr>
-        <td>Incorrect Interface</td>
-	        <td style="background-color:
-		   rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-      </tr>
-    </table>
-    <h4>Source Code</h4>
-    <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">15</span><span class="p">;</span>
+                                                  </div>
+    </div>
+      <div class="card mb-3">
+      <div class="card-body">
+        <div id=incorrect_interface/Bob class="card-title"><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//incorrect_interface/Bob.sol">incorrect_interface/Bob</a></div>
+        <table>
+          <thead>
+            <tr style="font-weight: bold">
+              <th>Bug Type</th>
+                                            <th>
+                  Mythril
+                  <span style="font-size: 10px">v0.18.11</span>
+                </th>
+                              <th>
+                  Manticore
+                  <span style="font-size: 10px">0.2.0</span>
+                </th>
+                          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Incorrect Interface</td>
+                                            <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Wrong-Vulnerability">Wrong Vulnerability</a>
+                </td>
+                              <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Errored">Errored</a>
+                </td>
+                          </tr>
+          </tbody>
+        </table>
+        <h4 class="mt-4">Source Code</h4>
+        <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">15</span><span class="p">;</span>
 
 <span class="kd">contract</span> <span class="n">Alice</span> <span class="p">{</span> 
     <span class="kd">function</span> <span class="n">set</span><span class="p">(</span><span class="kt">uint</span><span class="p">);</span> 
@@ -1179,55 +1225,98 @@ It seems that this function can be called without restrictions.</p>
 <span class="p">}</span>
 </pre></div>
 
-        <h4>Mythril Report</h4>
-    <div style="margin-left: 1em">
-               <h5>Issue #1</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>_function_0x2801617e</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//incorrect_interface/Bob.sol#L11">Line 11</a>, Bytecode offset: 330:</p>
-            <p><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+                              <h4 class="mt-3">Mythril Report</h4>
+            <div style="margin-left: 1em">
+                              <h5>Issue #1</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>set(address)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//incorrect_interface/Bob.sol#L11">Line 11</a>, Bytecode offset: 330:</p>
+                    <p><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 </pre></div>
 </p>
-                  <p><i>Message call to external contract (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>This contract executes a message call to an address provided as a function argument. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
+                  </div>
+                                <p><i>Message call to external contract (Warning)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>This contract executes a message call to an address provided as a function argument. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
 </p>
-            </div>
-	 </div>
-               <h5>Issue #2</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>_function_0x90b2290e</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//incorrect_interface/Bob.sol#L15">Line 15</a>, Bytecode offset: 469:</p>
-            <p><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">.</span><span class="n">set_fixed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+                  </div>
+                                              <h5>Issue #2</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>set(address)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//incorrect_interface/Bob.sol#L11">Line 11</a>, Bytecode offset: 330:</p>
+                    <p><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 </pre></div>
 </p>
-                  <p><i>Message call to external contract (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>This contract executes a message call to an address provided as a function argument. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
+                  </div>
+                                <p><i>Multiple Calls (Information)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
+Consecutive calls: 
+Call at address: 330
+Call at address: 469</p>
 </p>
-            </div>
-	 </div>
-          </div>
-    
-      <hr>
-    <h3 id=integer_overflow/interger_overflow_1>
-      <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//integer_overflow/interger_overflow_1.sol">integer_overflow/interger_overflow_1</a>
-    </h3>
-    <table>
-      <tr style="font-weight: bold">
-        <td>Bug Type</td>
-	          <td colspan="2">
-          Mythril
-          <br>
-          <span style="font-size: 10px">v0.18.11</span>
-      </tr>
-      <tr>
-        <td>Integer Overflow</td>
-	        <td style="background-color:
-		   rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-      </tr>
-    </table>
-    <h4>Source Code</h4>
-    <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">15</span><span class="p">;</span>
+                  </div>
+                                              <h5>Issue #3</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>set_fixed(address)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//incorrect_interface/Bob.sol#L15">Line 15</a>, Bytecode offset: 469:</p>
+                    <p><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">.</span><span class="n">set_fixed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</p>
+                  </div>
+                                <p><i>Message call to external contract (Warning)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>This contract executes a message call to an address provided as a function argument. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
+</p>
+                  </div>
+                                              <h5>Issue #4</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>set_fixed(address)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//incorrect_interface/Bob.sol#L15">Line 15</a>, Bytecode offset: 469:</p>
+                    <p><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">.</span><span class="n">set_fixed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</p>
+                  </div>
+                                <p><i>Multiple Calls (Information)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
+Consecutive calls: 
+Call at address: 330
+Call at address: 469</p>
+</p>
+                  </div>
+                                          </div>
+                                          </div>
+    </div>
+      <div class="card mb-3">
+      <div class="card-body">
+        <div id=integer_overflow/interger_overflow_1 class="card-title"><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//integer_overflow/interger_overflow_1.sol">integer_overflow/interger_overflow_1</a></div>
+        <table>
+          <thead>
+            <tr style="font-weight: bold">
+              <th>Bug Type</th>
+                                            <th>
+                  Mythril
+                  <span style="font-size: 10px">v0.18.11</span>
+                </th>
+                              <th>
+                  Manticore
+                  <span style="font-size: 10px">0.2.0</span>
+                </th>
+                          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Integer Overflow</td>
+                                            <td style="background-color:
+                    rgba(80, 200, 120, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a>
+                </td>
+                              <td style="background-color:
+                    rgba(253, 195, 83, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Timed-Out">Timed Out</a>
+                </td>
+                          </tr>
+          </tbody>
+        </table>
+        <h4 class="mt-4">Source Code</h4>
+        <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">15</span><span class="p">;</span>
 
 <span class="kd">contract</span> <span class="n">Overflow</span> <span class="p">{</span>
     <span class="kt">uint</span> <span class="kr">private</span> <span class="n">sellerBalance</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
@@ -1246,44 +1335,57 @@ It seems that this function can be called without restrictions.</p>
 <span class="p">}</span>
 </pre></div>
 
-        <h4>Mythril Report</h4>
-    <div style="margin-left: 1em">
-               <h5>Issue #1</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>add(uint256)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//integer_overflow/interger_overflow_1.sol#L7">Line 7</a>, Bytecode offset: 229:</p>
-            <p><div class="highlight"><pre><span></span><span class="n">sellerBalance</span> <span class="o">+=</span> <span class="n">value</span>
+                              <h4 class="mt-3">Mythril Report</h4>
+            <div style="margin-left: 1em">
+                              <h5>Issue #1</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>add(uint256)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//integer_overflow/interger_overflow_1.sol#L7">Line 7</a>, Bytecode offset: 229:</p>
+                    <p><div class="highlight"><pre><span></span><span class="n">sellerBalance</span> <span class="o">+=</span> <span class="n">value</span>
 </pre></div>
 </p>
-                  <p><i>Integer Overflow (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>A possible integer overflow exists in the function <code>add(uint256)</code>.
+                  </div>
+                                <p><i>Integer Overflow (Warning)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>A possible integer overflow exists in the function <code>add(uint256)</code>.
 The addition or multiplication may result in a value higher than the maximum representable integer.</p>
 </p>
-            </div>
-	 </div>
-          </div>
-    
-      <hr>
-    <h3 id=missing_constructor/Missing>
-      <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//missing_constructor/Missing.sol">missing_constructor/Missing</a>
-    </h3>
-    <table>
-      <tr style="font-weight: bold">
-        <td>Bug Type</td>
-	          <td colspan="2">
-          Mythril
-          <br>
-          <span style="font-size: 10px">v0.18.11</span>
-      </tr>
-      <tr>
-        <td>Missing Constructor</td>
-	        <td style="background-color:
-		   rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-      </tr>
-    </table>
-    <h4>Source Code</h4>
-    <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">15</span><span class="p">;</span>
+                  </div>
+                                          </div>
+                                          </div>
+    </div>
+      <div class="card mb-3">
+      <div class="card-body">
+        <div id=missing_constructor/Missing class="card-title"><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//missing_constructor/Missing.sol">missing_constructor/Missing</a></div>
+        <table>
+          <thead>
+            <tr style="font-weight: bold">
+              <th>Bug Type</th>
+                                            <th>
+                  Mythril
+                  <span style="font-size: 10px">v0.18.11</span>
+                </th>
+                              <th>
+                  Manticore
+                  <span style="font-size: 10px">0.2.0</span>
+                </th>
+                          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Missing Constructor</td>
+                                            <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Wrong-Vulnerability">Wrong Vulnerability</a>
+                </td>
+                              <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/False-Negative">False Negative</a>
+                </td>
+                          </tr>
+          </tbody>
+        </table>
+        <h4 class="mt-4">Source Code</h4>
+        <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">15</span><span class="p">;</span>
 
 <span class="kd">contract</span> <span class="n">Missing</span><span class="p">{</span>
     <span class="kt">address</span> <span class="kr">private</span> <span class="n">owner</span><span class="p">;</span>
@@ -1310,58 +1412,57 @@ The addition or multiplication may result in a value higher than the maximum rep
 <span class="p">}</span>
 </pre></div>
 
-        <h4>Mythril Report</h4>
-    <div style="margin-left: 1em">
-               <h5>Issue #1</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>withdraw()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//missing_constructor/Missing.sol#L23">Line 23</a>, Bytecode offset: 388:</p>
-            <p><div class="highlight"><pre><span></span><span class="n">owner</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span>
+                              <h4 class="mt-3">Mythril Report</h4>
+            <div style="margin-left: 1em">
+                              <h5>Issue #1</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>withdraw()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//missing_constructor/Missing.sol#L23">Line 23</a>, Bytecode offset: 388:</p>
+                    <p><div class="highlight"><pre><span></span><span class="n">owner</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span>
 </pre></div>
 </p>
-                  <p><i>Ether send (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>In the function <code>withdraw()</code> a non-zero amount of Ether is sent to an address taken from storage slot 0.
-There is a check on storage index 0. This storage slot can be written to by calling the function <code>IamMissing()</code>.</p>
-
-<p>There is a check on storage index 0. This storage slot can be written to by calling the function <code>IamMissing()</code>.</p>
+                  </div>
+                                <p><i>Ether send (Warning)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>In the function <code>withdraw()</code> a non-zero amount of Ether is sent to msg.sender.
+It seems that this function can be called without restrictions.</p>
 </p>
-            </div>
-	 </div>
-               <h5>Issue #2</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>withdraw()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//missing_constructor/Missing.sol#L23">Line 23</a>, Bytecode offset: 388:</p>
-            <p><div class="highlight"><pre><span></span><span class="n">owner</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span>
-</pre></div>
-</p>
-                  <p><i>Transaction order dependence (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>A possible transaction order independence vulnerability exists in function withdraw(). The value or direction of the call statement is determined from a tainted storage location</p>
-</p>
-            </div>
-	 </div>
-          </div>
-    
-      <hr>
-    <h3 id=missing_constructor/Rubixi_source_code/Rubixi>
-      <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//missing_constructor/Rubixi_source_code/Rubixi.sol">missing_constructor/Rubixi_source_code/Rubixi</a>
-    </h3>
-    <table>
-      <tr style="font-weight: bold">
-        <td>Bug Type</td>
-	          <td colspan="2">
-          Mythril
-          <br>
-          <span style="font-size: 10px">v0.18.11</span>
-      </tr>
-      <tr>
-        <td>Missing Constructor</td>
-	        <td style="background-color:
-		   rgba(128, 128, 128, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Unconfigured">Unconfigured</a></td>
-      </tr>
-    </table>
-    <h4>Source Code</h4>
-    <div class="highlight"><pre><span></span><span class="c1">// 0xe82719202e5965Cf5D9B6673B7503a3b92DE20be#code</span>
+                  </div>
+                                          </div>
+                                          </div>
+    </div>
+      <div class="card mb-3">
+      <div class="card-body">
+        <div id=missing_constructor/Rubixi_source_code/Rubixi class="card-title"><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//missing_constructor/Rubixi_source_code/Rubixi.sol">missing_constructor/Rubixi_source_code/Rubixi</a></div>
+        <table>
+          <thead>
+            <tr style="font-weight: bold">
+              <th>Bug Type</th>
+                                            <th>
+                  Mythril
+                  <span style="font-size: 10px">v0.18.11</span>
+                </th>
+                              <th>
+                  Manticore
+                  <span style="font-size: 10px">0.2.0</span>
+                </th>
+                          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Missing Constructor</td>
+                                            <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/False-Negative">False Negative</a>
+                </td>
+                              <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Errored">Errored</a>
+                </td>
+                          </tr>
+          </tbody>
+        </table>
+        <h4 class="mt-4">Source Code</h4>
+        <div class="highlight"><pre><span></span><span class="c1">// 0xe82719202e5965Cf5D9B6673B7503a3b92DE20be#code</span>
 
 <span class="kd">contract</span> <span class="n">Rubixi</span> <span class="p">{</span>
 
@@ -1517,28 +1618,41 @@ There is a check on storage index 0. This storage slot can be written to by call
 <span class="p">}</span>
 </pre></div>
 
-    
-      <hr>
-    <h3 id=race_condition/RaceCondition>
-      <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//race_condition/RaceCondition.sol">race_condition/RaceCondition</a>
-    </h3>
-    <table>
-      <tr style="font-weight: bold">
-        <td>Bug Type</td>
-	          <td colspan="2">
-          Mythril
-          <br>
-          <span style="font-size: 10px">v0.18.11</span>
-      </tr>
-      <tr>
-        <td>Missing Constructor</td>
-	        <td style="background-color:
-		   rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-      </tr>
-    </table>
-    <h4>Source Code</h4>
-    <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">16</span><span class="p">;</span>
+                                                  </div>
+    </div>
+      <div class="card mb-3">
+      <div class="card-body">
+        <div id=race_condition/RaceCondition class="card-title"><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//race_condition/RaceCondition.sol">race_condition/RaceCondition</a></div>
+        <table>
+          <thead>
+            <tr style="font-weight: bold">
+              <th>Bug Type</th>
+                                            <th>
+                  Mythril
+                  <span style="font-size: 10px">v0.18.11</span>
+                </th>
+                              <th>
+                  Manticore
+                  <span style="font-size: 10px">0.2.0</span>
+                </th>
+                          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Missing Constructor</td>
+                                            <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Wrong-Vulnerability">Wrong Vulnerability</a>
+                </td>
+                              <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Errored">Errored</a>
+                </td>
+                          </tr>
+          </tbody>
+        </table>
+        <h4 class="mt-4">Source Code</h4>
+        <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">16</span><span class="p">;</span>
 
 <span class="c1">// https://github.com/ethereum/EIPs/issues/20</span>
 <span class="kd">contract</span> <span class="n">ERC20</span> <span class="p">{</span>
@@ -1590,67 +1704,70 @@ There is a check on storage index 0. This storage slot can be written to by call
 <span class="p">}</span>
 </pre></div>
 
-        <h4>Mythril Report</h4>
-    <div style="margin-left: 1em">
-               <h5>Issue #1</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>buy(uint256)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//race_condition/RaceCondition.sol#L39">Line 39</a>, Bytecode offset: 623:</p>
-            <p><div class="highlight"><pre><span></span><span class="n">token</span><span class="p">.</span><span class="n">transferFrom</span><span class="p">(</span><span class="nb">msg.sender</span><span class="p">,</span> <span class="n">owner</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>
+                              <h4 class="mt-3">Mythril Report</h4>
+            <div style="margin-left: 1em">
+                              <h5>Issue #1</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>buy(uint256)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//race_condition/RaceCondition.sol#L39">Line 39</a>, Bytecode offset: 623:</p>
+                    <p><div class="highlight"><pre><span></span><span class="n">token</span><span class="p">.</span><span class="n">transferFrom</span><span class="p">(</span><span class="nb">msg.sender</span><span class="p">,</span> <span class="n">owner</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>
 </pre></div>
 </p>
-                  <p><i>Message call to external contract (Informational)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>This contract executes a message call to to another contract. Make sure that the called contract is trusted and does not execute user-supplied code.</p>
+                  </div>
+                                <p><i>Message call to external contract (Informational)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>This contract executes a message call to to another contract. Make sure that the called contract is trusted and does not execute user-supplied code.</p>
 </p>
-            </div>
-	 </div>
-               <h5>Issue #2</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>buy(uint256)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//race_condition/RaceCondition.sol#L41">Line 41</a>, Bytecode offset: 686:</p>
-            <p><div class="highlight"><pre><span></span><span class="n">price</span> <span class="o">=</span> <span class="n">new_price</span>
+                  </div>
+                                              <h5>Issue #2</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>buy(uint256)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//race_condition/RaceCondition.sol#L39">Line 39</a>, Bytecode offset: 623:</p>
+                    <p><div class="highlight"><pre><span></span><span class="n">token</span><span class="p">.</span><span class="n">transferFrom</span><span class="p">(</span><span class="nb">msg.sender</span><span class="p">,</span> <span class="n">owner</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>
 </pre></div>
 </p>
-                  <p><i>State change after external call (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>The contract account state is changed after an external call. Consider that the called contract could re-enter the function before this state change takes place. This can lead to business logic vulnerabilities.</p>
+                  </div>
+                                <p><i>Multiple Calls (Information)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
+Consecutive calls: 
+Call at address: 623</p>
 </p>
-            </div>
-	 </div>
-               <h5>Issue #3</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>buy(uint256)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//race_condition/RaceCondition.sol#L42">Line 42</a>, Bytecode offset: 750:</p>
-            <p><div class="highlight"><pre><span></span><span class="n">owner</span> <span class="o">=</span> <span class="nb">msg.sender</span>
-</pre></div>
-</p>
-                  <p><i>State change after external call (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>The contract account state is changed after an external call. Consider that the called contract could re-enter the function before this state change takes place. This can lead to business logic vulnerabilities.</p>
-</p>
-            </div>
-	 </div>
-          </div>
-    
-      <hr>
-    <h3 id=reentrancy/DAO_source_code/DAO>
-      <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/DAO_source_code/DAO.sol">reentrancy/DAO_source_code/DAO</a>
-    </h3>
-    <table>
-      <tr style="font-weight: bold">
-        <td>Bug Type</td>
-	          <td colspan="2">
-          Mythril
-          <br>
-          <span style="font-size: 10px">v0.18.11</span>
-      </tr>
-      <tr>
-        <td>Reentrancy</td>
-	        <td style="background-color:
-		   rgba(128, 128, 128, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Unconfigured">Unconfigured</a></td>
-      </tr>
-    </table>
-    <h4>Source Code</h4>
-    <div class="highlight"><pre><span></span><span class="c1">// 0xbb9bc244d798123fde783fcc1c72d3bb8c189413#code</span>
+                  </div>
+                                          </div>
+                                          </div>
+    </div>
+      <div class="card mb-3">
+      <div class="card-body">
+        <div id=reentrancy/DAO_source_code/DAO class="card-title"><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/DAO_source_code/DAO.sol">reentrancy/DAO_source_code/DAO</a></div>
+        <table>
+          <thead>
+            <tr style="font-weight: bold">
+              <th>Bug Type</th>
+                                            <th>
+                  Mythril
+                  <span style="font-size: 10px">v0.18.11</span>
+                </th>
+                              <th>
+                  Manticore
+                  <span style="font-size: 10px">0.2.0</span>
+                </th>
+                          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Reentrancy</td>
+                                            <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/False-Negative">False Negative</a>
+                </td>
+                              <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Errored">Errored</a>
+                </td>
+                          </tr>
+          </tbody>
+        </table>
+        <h4 class="mt-4">Source Code</h4>
+        <div class="highlight"><pre><span></span><span class="c1">// 0xbb9bc244d798123fde783fcc1c72d3bb8c189413#code</span>
 
 <span class="cm">/*</span>
 
@@ -2890,28 +3007,41 @@ There is a check on storage index 0. This storage slot can be written to by call
 <span class="p">}</span>
 </pre></div>
 
-    
-      <hr>
-    <h3 id=reentrancy/Reentrancy>
-      <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol">reentrancy/Reentrancy</a>
-    </h3>
-    <table>
-      <tr style="font-weight: bold">
-        <td>Bug Type</td>
-	          <td colspan="2">
-          Mythril
-          <br>
-          <span style="font-size: 10px">v0.18.11</span>
-      </tr>
-      <tr>
-        <td>Reentrancy</td>
-	        <td style="background-color:
-		   rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-      </tr>
-    </table>
-    <h4>Source Code</h4>
-    <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">15</span><span class="p">;</span>
+                                                  </div>
+    </div>
+      <div class="card mb-3">
+      <div class="card-body">
+        <div id=reentrancy/Reentrancy class="card-title"><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol">reentrancy/Reentrancy</a></div>
+        <table>
+          <thead>
+            <tr style="font-weight: bold">
+              <th>Bug Type</th>
+                                            <th>
+                  Mythril
+                  <span style="font-size: 10px">v0.18.11</span>
+                </th>
+                              <th>
+                  Manticore
+                  <span style="font-size: 10px">0.2.0</span>
+                </th>
+                          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Reentrancy</td>
+                                            <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Wrong-Vulnerability">Wrong Vulnerability</a>
+                </td>
+                              <td style="background-color:
+                    rgba(253, 195, 83, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Timed-Out">Timed Out</a>
+                </td>
+                          </tr>
+          </tbody>
+        </table>
+        <h4 class="mt-4">Source Code</h4>
+        <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">15</span><span class="p">;</span>
 
 <span class="kd">contract</span> <span class="n">Reentrance</span> <span class="p">{</span>
     <span class="kd">mapping</span> <span class="p">(</span><span class="kt">address</span> <span class="o">=&gt;</span> <span class="kt">uint</span><span class="p">)</span> <span class="n">userBalance</span><span class="p">;</span>
@@ -2955,119 +3085,168 @@ There is a check on storage index 0. This storage slot can be written to by call
 <span class="p">}</span>
 </pre></div>
 
-        <h4>Mythril Report</h4>
-    <div style="margin-left: 1em">
-               <h5>Issue #1</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>withdrawBalance_fixed()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L28">Line 28</a>, Bytecode offset: 455:</p>
-            <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">amount</span><span class="p">)()</span>
+                              <h4 class="mt-3">Mythril Report</h4>
+            <div style="margin-left: 1em">
+                              <h5>Issue #1</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>withdrawBalance_fixed()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L28">Line 28</a>, Bytecode offset: 455:</p>
+                    <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">amount</span><span class="p">)()</span>
 </pre></div>
 </p>
-                  <p><i>Ether send (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>In the function <code>withdrawBalance_fixed()</code> a non-zero amount of Ether is sent to msg.sender.
+                  </div>
+                                <p><i>Ether send (Warning)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>In the function <code>withdrawBalance_fixed()</code> a non-zero amount of Ether is sent to msg.sender.
 It seems that this function can be called without restrictions.</p>
 </p>
-            </div>
-	 </div>
-               <h5>Issue #2</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>withdrawBalance_fixed()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L28">Line 28</a>, Bytecode offset: 455:</p>
-            <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">amount</span><span class="p">)()</span>
+                  </div>
+                                              <h5>Issue #2</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>withdrawBalance_fixed()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L28">Line 28</a>, Bytecode offset: 455:</p>
+                    <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">amount</span><span class="p">)()</span>
 </pre></div>
 </p>
-                  <p><i>Message call to external contract (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>This contract executes a message call to the address of the transaction sender. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
+                  </div>
+                                <p><i>Message call to external contract (Warning)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>This contract executes a message call to the address of the transaction sender. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
 </p>
-            </div>
-	 </div>
-               <h5>Issue #3</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>withdrawBalance()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L17">Line 17</a>, Bytecode offset: 575:</p>
-            <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">])()</span>
+                  </div>
+                                              <h5>Issue #3</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>withdrawBalance_fixed()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L28">Line 28</a>, Bytecode offset: 455:</p>
+                    <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">amount</span><span class="p">)()</span>
 </pre></div>
 </p>
-                  <p><i>Ether send (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>In the function <code>withdrawBalance()</code> a non-zero amount of Ether is sent to msg.sender.
+                  </div>
+                                <p><i>Multiple Calls (Information)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
+Consecutive calls: 
+Call at address: 455
+Call at address: 575
+Call at address: 848</p>
+</p>
+                  </div>
+                                              <h5>Issue #4</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>withdrawBalance()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L17">Line 17</a>, Bytecode offset: 575:</p>
+                    <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">])()</span>
+</pre></div>
+</p>
+                  </div>
+                                <p><i>Ether send (Warning)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>In the function <code>withdrawBalance()</code> a non-zero amount of Ether is sent to msg.sender.
 It seems that this function can be called without restrictions.</p>
 </p>
-            </div>
-	 </div>
-               <h5>Issue #4</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>withdrawBalance()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L17">Line 17</a>, Bytecode offset: 575:</p>
-            <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">])()</span>
+                  </div>
+                                              <h5>Issue #5</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>withdrawBalance()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L17">Line 17</a>, Bytecode offset: 575:</p>
+                    <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">])()</span>
 </pre></div>
 </p>
-                  <p><i>Message call to external contract (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>This contract executes a message call to the address of the transaction sender. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
+                  </div>
+                                <p><i>Message call to external contract (Warning)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>This contract executes a message call to the address of the transaction sender. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
 </p>
-            </div>
-	 </div>
-               <h5>Issue #5</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>withdrawBalance()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L20">Line 20</a>, Bytecode offset: 657:</p>
-            <p><div class="highlight"><pre><span></span><span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                  </div>
+                                              <h5>Issue #6</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>withdrawBalance()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L17">Line 17</a>, Bytecode offset: 575:</p>
+                    <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">])()</span>
 </pre></div>
 </p>
-                  <p><i>State change after external call (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>The contract account state is changed after an external call. Consider that the called contract could re-enter the function before this state change takes place. This can lead to business logic vulnerabilities.</p>
+                  </div>
+                                <p><i>Multiple Calls (Information)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
+Consecutive calls: 
+Call at address: 455
+Call at address: 575
+Call at address: 848</p>
 </p>
-            </div>
-	 </div>
-               <h5>Issue #6</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>addToBalance()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L11">Line 11</a>, Bytecode offset: 729:</p>
-            <p><div class="highlight"><pre><span></span><span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">msg.value</span>
+                  </div>
+                                              <h5>Issue #7</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>addToBalance()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L11">Line 11</a>, Bytecode offset: 729:</p>
+                    <p><div class="highlight"><pre><span></span><span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">msg.value</span>
 </pre></div>
 </p>
-                  <p><i>Integer Overflow (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>A possible integer overflow exists in the function <code>addToBalance()</code>.
+                  </div>
+                                <p><i>Integer Overflow (Warning)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>A possible integer overflow exists in the function <code>addToBalance()</code>.
 The addition or multiplication may result in a value higher than the maximum representable integer.</p>
 </p>
-            </div>
-	 </div>
-               <h5>Issue #7</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>withdrawBalance_fixed_2()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L38">Line 38</a>, Bytecode offset: 848:</p>
-            <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">])</span>
+                  </div>
+                                              <h5>Issue #8</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>withdrawBalance_fixed_2()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L38">Line 38</a>, Bytecode offset: 848:</p>
+                    <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">])</span>
 </pre></div>
 </p>
-                  <p><i>Ether send (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>In the function <code>withdrawBalance_fixed_2()</code> a non-zero amount of Ether is sent to msg.sender.
+                  </div>
+                                <p><i>Ether send (Warning)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>In the function <code>withdrawBalance_fixed_2()</code> a non-zero amount of Ether is sent to msg.sender.
 It seems that this function can be called without restrictions.</p>
 </p>
-            </div>
-	 </div>
-          </div>
-    
-      <hr>
-    <h3 id=reentrancy/ReentrancyExploit>
-      <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol">reentrancy/ReentrancyExploit</a>
-    </h3>
-    <table>
-      <tr style="font-weight: bold">
-        <td>Bug Type</td>
-	          <td colspan="2">
-          Mythril
-          <br>
-          <span style="font-size: 10px">v0.18.11</span>
-      </tr>
-      <tr>
-        <td>Reentrancy</td>
-	        <td style="background-color:
-		   rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-      </tr>
-    </table>
-    <h4>Source Code</h4>
-    <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">15</span><span class="p">;</span>
+                  </div>
+                                              <h5>Issue #9</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>withdrawBalance_fixed_2()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/Reentrancy.sol#L38">Line 38</a>, Bytecode offset: 848:</p>
+                    <p><div class="highlight"><pre><span></span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">])</span>
+</pre></div>
+</p>
+                  </div>
+                                <p><i>Multiple Calls (Information)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
+Consecutive calls: 
+Call at address: 455
+Call at address: 575
+Call at address: 848</p>
+</p>
+                  </div>
+                                          </div>
+                                          </div>
+    </div>
+      <div class="card mb-3">
+      <div class="card-body">
+        <div id=reentrancy/ReentrancyExploit class="card-title"><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol">reentrancy/ReentrancyExploit</a></div>
+        <table>
+          <thead>
+            <tr style="font-weight: bold">
+              <th>Bug Type</th>
+                                            <th>
+                  Mythril
+                  <span style="font-size: 10px">v0.18.11</span>
+                </th>
+                              <th>
+                  Manticore
+                  <span style="font-size: 10px">0.2.0</span>
+                </th>
+                          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Reentrancy</td>
+                                            <td style="background-color:
+                    rgba(80, 200, 120, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a>
+                </td>
+                              <td style="background-color:
+                    rgba(253, 195, 83, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Ignored">Ignored</a>
+                </td>
+                          </tr>
+          </tbody>
+        </table>
+        <h4 class="mt-4">Source Code</h4>
+        <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">15</span><span class="p">;</span>
 
 <span class="kd">contract</span> <span class="n">ReentranceExploit</span> <span class="p">{</span>
     <span class="kt">bool</span> <span class="kr">public</span> <span class="n">attackModeIsOn</span><span class="o">=</span><span class="kc">false</span><span class="p">;</span> 
@@ -3108,105 +3287,124 @@ It seems that this function can be called without restrictions.</p>
 <span class="p">}</span>
 </pre></div>
 
-        <h4>Mythril Report</h4>
-    <div style="margin-left: 1em">
-               <h5>Issue #1</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>fallback</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L31">Line 31</a>, Bytecode offset: 369:</p>
-            <p><div class="highlight"><pre><span></span><span class="n">vulnerable_contract</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="kt">bytes4</span><span class="p">(</span><span class="nf">sha3</span><span class="p">(</span><span class="s">&quot;withdrawBalance()&quot;</span><span class="p">)))</span>
+                              <h4 class="mt-3">Mythril Report</h4>
+            <div style="margin-left: 1em">
+                              <h5>Issue #1</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>fallback</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L31">Line 31</a>, Bytecode offset: 369:</p>
+                    <p><div class="highlight"><pre><span></span><span class="n">vulnerable_contract</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="kt">bytes4</span><span class="p">(</span><span class="nf">sha3</span><span class="p">(</span><span class="s">&quot;withdrawBalance()&quot;</span><span class="p">)))</span>
 </pre></div>
 </p>
-                  <p><i>Message call to external contract (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>This contract executes a message call to an address found at storage slot 0. This storage slot can be written to by calling the function <code>fallback</code>. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
+                  </div>
+                                <p><i>Message call to external contract (Warning)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>This contract executes a message call to an address provided as a function argument. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
 </p>
-            </div>
-	 </div>
-               <h5>Issue #2</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>fallback</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L31">Line 31</a>, Bytecode offset: 369:</p>
-            <p><div class="highlight"><pre><span></span><span class="n">vulnerable_contract</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="kt">bytes4</span><span class="p">(</span><span class="nf">sha3</span><span class="p">(</span><span class="s">&quot;withdrawBalance()&quot;</span><span class="p">)))</span>
+                  </div>
+                                              <h5>Issue #2</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>launch_attack()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L22">Line 22</a>, Bytecode offset: 975:</p>
+                    <p><div class="highlight"><pre><span></span><span class="n">vulnerable_contract</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="kt">bytes4</span><span class="p">(</span><span class="nf">sha3</span><span class="p">(</span><span class="s">&quot;withdrawBalance()&quot;</span><span class="p">)))</span>
 </pre></div>
 </p>
-                  <p><i>Transaction order dependence (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>A possible transaction order independence vulnerability exists in function fallback. The value or direction of the call statement is determined from a tainted storage location</p>
+                  </div>
+                                <p><i>Message call to external contract (Warning)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>This contract executes a message call to an address provided as a function argument. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
 </p>
-            </div>
-	 </div>
-               <h5>Issue #3</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>launch_attack()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L22">Line 22</a>, Bytecode offset: 975:</p>
-            <p><div class="highlight"><pre><span></span><span class="n">vulnerable_contract</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="kt">bytes4</span><span class="p">(</span><span class="nf">sha3</span><span class="p">(</span><span class="s">&quot;withdrawBalance()&quot;</span><span class="p">)))</span>
+                  </div>
+                                              <h5>Issue #3</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>get_money()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L36">Line 36</a>, Bytecode offset: 1106:</p>
+                    <p><div class="highlight"><pre><span></span><span class="nb">suicide</span><span class="p">(</span><span class="n">owner</span><span class="p">)</span>
 </pre></div>
 </p>
-                  <p><i>Message call to external contract (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>This contract executes a message call to an address found at storage slot 0. This storage slot can be written to by calling the function <code>fallback</code>. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
-</p>
-            </div>
-	 </div>
-               <h5>Issue #4</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>launch_attack()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L22">Line 22</a>, Bytecode offset: 975:</p>
-            <p><div class="highlight"><pre><span></span><span class="n">vulnerable_contract</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="kt">bytes4</span><span class="p">(</span><span class="nf">sha3</span><span class="p">(</span><span class="s">&quot;withdrawBalance()&quot;</span><span class="p">)))</span>
-</pre></div>
-</p>
-                  <p><i>Transaction order dependence (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>A possible transaction order independence vulnerability exists in function launch_attack(). The value or direction of the call statement is determined from a tainted storage location</p>
-</p>
-            </div>
-	 </div>
-               <h5>Issue #5</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>get_money()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L36">Line 36</a>, Bytecode offset: 1106:</p>
-            <p><div class="highlight"><pre><span></span><span class="nb">suicide</span><span class="p">(</span><span class="n">owner</span><span class="p">)</span>
-</pre></div>
-</p>
-                  <p><i>Unchecked SUICIDE (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>The function <code>get_money()</code> executes the SUICIDE instruction. The remaining Ether is sent to a stored address.</p>
+                  </div>
+                                <p><i>Unchecked SUICIDE (Warning)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>The function <code>get_money()</code> executes the SUICIDE instruction. The remaining Ether is sent to the caller's address.</p>
 
 <p>It seems that this function can be called without restrictions.</p>
 </p>
-            </div>
-	 </div>
-               <h5>Issue #6</h5>
-                     <div style="margin-left: 1em">
-            <p>Function: <code>deposit(address)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L15">Line 15</a>, Bytecode offset: 1376:</p>
-            <p><div class="highlight"><pre><span></span><span class="n">vulnerable_contract</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="nb">msg.value</span><span class="p">)(</span><span class="kt">bytes4</span><span class="p">(</span><span class="nf">sha3</span><span class="p">(</span><span class="s">&quot;addToBalance()&quot;</span><span class="p">)))</span>
+                  </div>
+                                              <h5>Issue #4</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>deposit(address)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L15">Line 15</a>, Bytecode offset: 1376:</p>
+                    <p><div class="highlight"><pre><span></span><span class="n">vulnerable_contract</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="nb">msg.value</span><span class="p">)(</span><span class="kt">bytes4</span><span class="p">(</span><span class="nf">sha3</span><span class="p">(</span><span class="s">&quot;addToBalance()&quot;</span><span class="p">)))</span>
 </pre></div>
 </p>
-                  <p><i>Message call to external contract (Warning)</i></p>
-            <div style="margin-left: 1em">
-            <p><p>This contract executes a message call to an address provided as a function argument. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
+                  </div>
+                                <p><i>Ether send (Warning)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>In the function <code>deposit(address)</code> a non-zero amount of Ether is sent to an address taken from function arguments.
+It seems that this function can be called without restrictions.</p>
 </p>
-            </div>
-	 </div>
-          </div>
-    
-      <hr>
-    <h3 id=unchecked_external_call/KotET_source_code/KingOfTheEtherThrone>
-      <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//unchecked_external_call/KotET_source_code/KingOfTheEtherThrone.sol">unchecked_external_call/KotET_source_code/KingOfTheEtherThrone</a>
-    </h3>
-    <table>
-      <tr style="font-weight: bold">
-        <td>Bug Type</td>
-	          <td colspan="2">
-          Mythril
-          <br>
-          <span style="font-size: 10px">v0.18.11</span>
-      </tr>
-      <tr>
-        <td>Unchecked External Call</td>
-	        <td style="background-color:
-		   rgba(128, 128, 128, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Unconfigured">Unconfigured</a></td>
-      </tr>
-    </table>
-    <h4>Source Code</h4>
-    <div class="highlight"><pre><span></span><span class="c1">// A chain-game contract that maintains a &#39;throne&#39; which agents may pay to rule.</span>
+                  </div>
+                                              <h5>Issue #5</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>deposit(address)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L15">Line 15</a>, Bytecode offset: 1376:</p>
+                    <p><div class="highlight"><pre><span></span><span class="n">vulnerable_contract</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="nb">msg.value</span><span class="p">)(</span><span class="kt">bytes4</span><span class="p">(</span><span class="nf">sha3</span><span class="p">(</span><span class="s">&quot;addToBalance()&quot;</span><span class="p">)))</span>
+</pre></div>
+</p>
+                  </div>
+                                <p><i>Message call to external contract (Warning)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>This contract executes a message call to an address provided as a function argument. Generally, it is not recommended to call user-supplied addresses using Solidity's call() construct. Note that attackers might leverage reentrancy attacks to exploit race conditions or manipulate this contract's state.</p>
+</p>
+                  </div>
+                                              <h5>Issue #6</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>deposit(address)</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//reentrancy/ReentrancyExploit.sol#L15">Line 15</a>, Bytecode offset: 1376:</p>
+                    <p><div class="highlight"><pre><span></span><span class="n">vulnerable_contract</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="nb">msg.value</span><span class="p">)(</span><span class="kt">bytes4</span><span class="p">(</span><span class="nf">sha3</span><span class="p">(</span><span class="s">&quot;addToBalance()&quot;</span><span class="p">)))</span>
+</pre></div>
+</p>
+                  </div>
+                                <p><i>Multiple Calls (Information)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
+Consecutive calls: 
+Call at address: 369
+Call at address: 975
+Call at address: 1376
+Call at address: 369</p>
+</p>
+                  </div>
+                                          </div>
+                                          </div>
+    </div>
+      <div class="card mb-3">
+      <div class="card-body">
+        <div id=unchecked_external_call/KotET_source_code/KingOfTheEtherThrone class="card-title"><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//unchecked_external_call/KotET_source_code/KingOfTheEtherThrone.sol">unchecked_external_call/KotET_source_code/KingOfTheEtherThrone</a></div>
+        <table>
+          <thead>
+            <tr style="font-weight: bold">
+              <th>Bug Type</th>
+                                            <th>
+                  Mythril
+                  <span style="font-size: 10px">v0.18.11</span>
+                </th>
+                              <th>
+                  Manticore
+                  <span style="font-size: 10px">0.2.0</span>
+                </th>
+                          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Unchecked External Call</td>
+                                            <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/False-Negative">False Negative</a>
+                </td>
+                              <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Errored">Errored</a>
+                </td>
+                          </tr>
+          </tbody>
+        </table>
+        <h4 class="mt-4">Source Code</h4>
+        <div class="highlight"><pre><span></span><span class="c1">// A chain-game contract that maintains a &#39;throne&#39; which agents may pay to rule.</span>
 <span class="c1">// See www.kingoftheether.com &amp; https://github.com/kieranelby/KingOfTheEtherThrone .</span>
 <span class="c1">// (c) Kieran Elby 2016. All rights reserved.</span>
 <span class="c1">// v0.4.0.</span>
@@ -3377,28 +3575,41 @@ It seems that this function can be called without restrictions.</p>
 <span class="p">}</span>
 </pre></div>
 
-    
-      <hr>
-    <h3 id=unprotected_function/Unprotected>
-      <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//unprotected_function/Unprotected.sol">unprotected_function/Unprotected</a>
-    </h3>
-    <table>
-      <tr style="font-weight: bold">
-        <td>Bug Type</td>
-	          <td colspan="2">
-          Mythril
-          <br>
-          <span style="font-size: 10px">v0.18.11</span>
-      </tr>
-      <tr>
-        <td>Unprotected Function</td>
-	        <td style="background-color:
-		   rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-      </tr>
-    </table>
-    <h4>Source Code</h4>
-    <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">15</span><span class="p">;</span>
+                                                  </div>
+    </div>
+      <div class="card mb-3">
+      <div class="card-body">
+        <div id=unprotected_function/Unprotected class="card-title"><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//unprotected_function/Unprotected.sol">unprotected_function/Unprotected</a></div>
+        <table>
+          <thead>
+            <tr style="font-weight: bold">
+              <th>Bug Type</th>
+                                            <th>
+                  Mythril
+                  <span style="font-size: 10px">v0.18.11</span>
+                </th>
+                              <th>
+                  Manticore
+                  <span style="font-size: 10px">0.2.0</span>
+                </th>
+                          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Unprotected Function</td>
+                                            <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/False-Negative">False Negative</a>
+                </td>
+                              <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/False-Negative">False Negative</a>
+                </td>
+                          </tr>
+          </tbody>
+        </table>
+        <h4 class="mt-4">Source Code</h4>
+        <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">15</span><span class="p">;</span>
 
 <span class="kd">contract</span> <span class="n">Unprotected</span><span class="p">{</span>
     <span class="kt">address</span> <span class="kr">private</span> <span class="n">owner</span><span class="p">;</span>
@@ -3430,28 +3641,41 @@ It seems that this function can be called without restrictions.</p>
 <span class="p">}</span>
 </pre></div>
 
-    
-      <hr>
-    <h3 id=unprotected_function/WalletLibrary_source_code/WalletLibrary>
-      <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//unprotected_function/WalletLibrary_source_code/WalletLibrary.sol">unprotected_function/WalletLibrary_source_code/WalletLibrary</a>
-    </h3>
-    <table>
-      <tr style="font-weight: bold">
-        <td>Bug Type</td>
-	          <td colspan="2">
-          Mythril
-          <br>
-          <span style="font-size: 10px">v0.18.11</span>
-      </tr>
-      <tr>
-        <td>Unprotected Function</td>
-	        <td style="background-color:
-		   rgba(128, 128, 128, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Unconfigured">Unconfigured</a></td>
-      </tr>
-    </table>
-    <h4>Source Code</h4>
-    <div class="highlight"><pre><span></span><span class="c1">// 0xa657491c1e7f16adb39b9b60e87bbb8d93988bc3#code</span>
+                                                  </div>
+    </div>
+      <div class="card mb-3">
+      <div class="card-body">
+        <div id=unprotected_function/WalletLibrary_source_code/WalletLibrary class="card-title"><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//unprotected_function/WalletLibrary_source_code/WalletLibrary.sol">unprotected_function/WalletLibrary_source_code/WalletLibrary</a></div>
+        <table>
+          <thead>
+            <tr style="font-weight: bold">
+              <th>Bug Type</th>
+                                            <th>
+                  Mythril
+                  <span style="font-size: 10px">v0.18.11</span>
+                </th>
+                              <th>
+                  Manticore
+                  <span style="font-size: 10px">0.2.0</span>
+                </th>
+                          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Unprotected Function</td>
+                                            <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/False-Negative">False Negative</a>
+                </td>
+                              <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Errored">Errored</a>
+                </td>
+                          </tr>
+          </tbody>
+        </table>
+        <h4 class="mt-4">Source Code</h4>
+        <div class="highlight"><pre><span></span><span class="c1">// 0xa657491c1e7f16adb39b9b60e87bbb8d93988bc3#code</span>
 <span class="c1">//sol Wallet</span>
 <span class="c1">// Multi-sig, daily-limited account proxy/wallet.</span>
 <span class="c1">// @authors:</span>
@@ -3915,28 +4139,41 @@ It seems that this function can be called without restrictions.</p>
 <span class="p">}</span>
 </pre></div>
 
-    
-      <hr>
-    <h3 id=variable shadowing/inherited_state>
-      <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//variable shadowing/inherited_state.sol">variable shadowing/inherited_state</a>
-    </h3>
-    <table>
-      <tr style="font-weight: bold">
-        <td>Bug Type</td>
-	          <td colspan="2">
-          Mythril
-          <br>
-          <span style="font-size: 10px">v0.18.11</span>
-      </tr>
-      <tr>
-        <td>Variable Shadowing</td>
-	        <td style="background-color:
-		   rgba(80, 200, 120, .4)">
-	  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/True-Positive">True Positive</a></td>
-      </tr>
-    </table>
-    <h4>Source Code</h4>
-    <div class="highlight"><pre><span></span><span class="kd">contract</span> <span class="n">Suicidal</span> <span class="p">{</span>
+                                                  </div>
+    </div>
+      <div class="card mb-3">
+      <div class="card-body">
+        <div id=variable shadowing/inherited_state class="card-title"><a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//variable shadowing/inherited_state.sol">variable shadowing/inherited_state</a></div>
+        <table>
+          <thead>
+            <tr style="font-weight: bold">
+              <th>Bug Type</th>
+                                            <th>
+                  Mythril
+                  <span style="font-size: 10px">v0.18.11</span>
+                </th>
+                              <th>
+                  Manticore
+                  <span style="font-size: 10px">0.2.0</span>
+                </th>
+                          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Variable Shadowing</td>
+                                            <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Wrong-Vulnerability">Wrong Vulnerability</a>
+                </td>
+                              <td style="background-color:
+                    rgba(255, 145, 164, .4)">
+                  <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Errored">Errored</a>
+                </td>
+                          </tr>
+          </tbody>
+        </table>
+        <h4 class="mt-4">Source Code</h4>
+        <div class="highlight"><pre><span></span><span class="kd">contract</span> <span class="n">Suicidal</span> <span class="p">{</span>
   <span class="kt">address</span> <span class="n">owner</span><span class="p">;</span>
   <span class="kd">function</span> <span class="nb">suicide</span><span class="p">()</span> <span class="kr">public</span> <span class="k">returns</span> <span class="p">(</span><span class="kt">address</span><span class="p">)</span> <span class="p">{</span>
     <span class="nf">require</span><span class="p">(</span><span class="n">owner</span> <span class="o">==</span> <span class="nb">msg.sender</span><span class="p">);</span>
@@ -3951,7 +4188,42 @@ It seems that this function can be called without restrictions.</p>
 <span class="p">}</span>
 </pre></div>
 
-    
-  
+                              <h4 class="mt-3">Mythril Report</h4>
+            <div style="margin-left: 1em">
+                              <h5>Issue #1</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>suicide()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//variable shadowing/inherited_state.sol#L5">Line 5</a>, Bytecode offset: 307:</p>
+                    <p><div class="highlight"><pre><span></span><span class="nb">selfdestruct</span><span class="p">(</span><span class="n">owner</span><span class="p">)</span>
+</pre></div>
+</p>
+                  </div>
+                                <p><i>Unchecked SUICIDE (Warning)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>The function <code>suicide()</code> executes the SUICIDE instruction. The remaining Ether is sent to: 1461501637330902918203684832716283019655932542975 &amp;
+1461501637330902918203684832716283019655932542975 &amp;
+UDiv(0, 256)</p>
+
+<p>It seems that this function can be called without restrictions.</p>
+</p>
+                  </div>
+                                              <h5>Issue #2</h5>
+                                  <div style="margin-left: 1em">
+                    <p>Function: <code>suicide()</code>, <a href="https://github.com/trailofbits/not-so-smart-contracts/tree/master//variable shadowing/inherited_state.sol#L5">Line 5</a>, Bytecode offset: 307:</p>
+                    <p><div class="highlight"><pre><span></span><span class="nb">selfdestruct</span><span class="p">(</span><span class="n">owner</span><span class="p">)</span>
+</pre></div>
+</p>
+                  </div>
+                                <p><i>Unchecked SUICIDE (Warning)</i></p>
+                                  <div style="margin-left: 1em">
+                    <p><p>The function <code>suicide()</code> executes the SUICIDE instruction. The remaining Ether is sent to: 1461501637330902918203684832716283019655932542975 &amp;
+1461501637330902918203684832716283019655932542975 &amp;
+UDiv(0, 256)</p>
+
+<p>It seems that this function can be called without restrictions.</p>
+</p>
+                  </div>
+                                          </div>
+                                          </div>
+    </div>
   </body>
 </html>
