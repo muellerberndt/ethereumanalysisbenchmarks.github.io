@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Analysis Tool Evaluation for the Not (so) Smart Contracts Benchmark </title>
+  <title>Analysis Tool Evaluation for the (Not so) Smart Contracts Benchmark </title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <style>
     table, th, td {
@@ -17,7 +17,7 @@
       align: center;
       width: 150px;
     }
-        
+
     .highlight .hll { background-color: #ffffcc }
     .highlight  { background: #f8f8f8; }
     .highlight .c { color: #408080; font-style: italic } /* Comment */
@@ -96,7 +96,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="#">Not (so) Smart Contracts Benchmark</a>
+        <a class="navbar-brand" href="#">(Not so) Smart Contracts Benchmark</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item">
             <a class="nav-link" href="#result-chart">Chart</a>
@@ -110,10 +110,10 @@
   </nav>
   <div class="container mt-3">
     <div class="jumbotron">
-      <h1 class="display-5 text-center">Analysis Tool Evaluation for the <br><a href="https://github.com/trailofbits/not-so-smart-contracts">Not (so) Smart Contracts</a> Benchmark</h1>
+      <h1 class="display-5 text-center">Analysis Tool Evaluation for the <br><a href="https://github.com/trailofbits/not-so-smart-contracts">(Not so) Smart Contracts</a> Benchmark</h1>
       <p class="text-center"><small>2018-08-23 13:27:38</small></p>
-      <p class="lead">This page shows the results EVM code analysis tools when run over the <a href="https://github.com/trailofbits/not-so-smart-contracts">Not (so) Smart Contracts</a> benchmark suite.</p>
-      <p>The code is <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites">hosted on github</a>. 
+      <p class="lead">This page shows the results EVM code analysis tools when run over the <a href="https://github.com/trailofbits/not-so-smart-contracts">(Not so) Smart Contracts</a> benchmark suite.</p>
+      <p>The code is <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites">hosted on github</a>.
           Please suggest or contribute more benchmarks or submit <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/issues">suggestions or issues</a>.</p>
     </div>
 
@@ -130,7 +130,7 @@
     <p>See the project
     wiki's <a href="https://github.com/EthereumAnalysisBenchmarks/evm-analyzer-bench-suites/wiki/Terminology">Terminology</a>
       entry for definitions used below.</p>
-    
+
     <table class="table table-sm table-hover">
       <thead>
         <tr style="font-weight: bold">
@@ -377,7 +377,7 @@
                       </tr>
 	            </tbody>
     </table>
-  
+
     <h2>Report summary</h2>
     <table class="table table-sm table-hover">
       <thead>
@@ -448,17 +448,17 @@
 <span class="kd">contract</span> <span class="n">NEW_YEARS_GIFT</span>
 <span class="p">{</span>
     <span class="kt">string</span> <span class="n">message</span><span class="p">;</span>
-    
+
     <span class="kt">bool</span> <span class="n">passHasBeenSet</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-    
+
     <span class="kt">address</span> <span class="n">sender</span><span class="p">;</span>
-    
+
     <span class="kt">bytes32</span> <span class="kr">public</span> <span class="n">hashPass</span><span class="p">;</span>
-	
+
     <span class="kd">function</span><span class="p">()</span> <span class="kr">public</span> <span class="kr">payable</span><span class="p">{}</span>
-    
+
     <span class="kd">function</span> <span class="n">GetHash</span><span class="p">(</span><span class="kt">bytes</span> <span class="n">pass</span><span class="p">)</span> <span class="kr">public</span> <span class="kr">constant</span> <span class="k">returns</span> <span class="p">(</span><span class="kt">bytes32</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nf">sha3</span><span class="p">(</span><span class="n">pass</span><span class="p">);}</span>
-    
+
     <span class="kd">function</span> <span class="n">SetPass</span><span class="p">(</span><span class="kt">bytes32</span> <span class="n">hash</span><span class="p">)</span>
     <span class="kr">public</span>
     <span class="kr">payable</span>
@@ -469,7 +469,7 @@
             <span class="n">sender</span> <span class="o">=</span> <span class="nb">msg.sender</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
-    
+
     <span class="kd">function</span> <span class="n">SetMessage</span><span class="p">(</span><span class="kt">string</span> <span class="n">_message</span><span class="p">)</span>
     <span class="kr">public</span>
     <span class="p">{</span>
@@ -478,7 +478,7 @@
             <span class="n">message</span> <span class="o">=</span><span class="n">_message</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
-    
+
     <span class="kd">function</span> <span class="n">GetGift</span><span class="p">(</span><span class="kt">bytes</span> <span class="n">pass</span><span class="p">)</span>
     <span class="kr">external</span>
     <span class="kr">payable</span>
@@ -490,7 +490,7 @@
             <span class="k">return</span> <span class="n">message</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
-    
+
     <span class="kd">function</span> <span class="n">Revoce</span><span class="p">()</span>
     <span class="kr">public</span>
     <span class="kr">payable</span>
@@ -501,7 +501,7 @@
             <span class="n">message</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
-    
+
     <span class="kd">function</span> <span class="n">PassHasBeenSet</span><span class="p">(</span><span class="kt">bytes32</span> <span class="n">hash</span><span class="p">)</span>
     <span class="kr">public</span>
     <span class="p">{</span>
@@ -605,7 +605,7 @@ It seems that this function can be called without restrictions.</p>
                                 <p><i>Multiple Calls (Information)</i></p>
                                   <div style="margin-left: 1em">
                     <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
-Consecutive calls: 
+Consecutive calls:
 Call at address: 428</p>
 </p>
                   </div>
@@ -668,45 +668,45 @@ Call at address: 428</p>
         <span class="kt">uint</span> <span class="n">component3</span><span class="p">;</span>
         <span class="kt">uint</span> <span class="n">component4</span><span class="p">;</span>
     <span class="p">}</span>
-    
+
     <span class="kt">address</span> <span class="n">owner</span><span class="p">;</span> <span class="c1">//address of the owner</span>
     <span class="kt">uint</span> <span class="kr">private</span> <span class="n">secretSeed</span><span class="p">;</span> <span class="c1">//seed used to calculate number of an address</span>
     <span class="kt">uint</span> <span class="kr">private</span> <span class="n">lastReseed</span><span class="p">;</span> <span class="c1">//last reseed - used to automatically reseed the contract every 1000 blocks</span>
     <span class="kt">uint</span> <span class="n">LuckyNumber</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span> <span class="c1">//if the number of an address equals 7, it wins</span>
-        
+
     <span class="kd">mapping</span> <span class="p">(</span><span class="kt">address</span> <span class="o">=&gt;</span> <span class="kt">bool</span><span class="p">)</span> <span class="n">winner</span><span class="p">;</span> <span class="c1">//keeping track of addresses that have already won</span>
-    
+
     <span class="kd">function</span> <span class="n">OpenAddressLottery</span><span class="p">()</span> <span class="p">{</span>
         <span class="n">owner</span> <span class="o">=</span> <span class="nb">msg.sender</span><span class="p">;</span>
         <span class="n">reseed</span><span class="p">(</span><span class="n">SeedComponents</span><span class="p">((</span><span class="kt">uint</span><span class="p">)(</span><span class="nb">block.coinbase</span><span class="p">),</span> <span class="nb">block.difficulty</span><span class="p">,</span> <span class="nb">block.gaslimit</span><span class="p">,</span> <span class="nb">block.timestamp</span><span class="p">));</span> <span class="c1">//generate a quality random seed</span>
     <span class="p">}</span>
-    
+
     <span class="kd">function</span> <span class="n">participate</span><span class="p">()</span> <span class="kr">payable</span> <span class="p">{</span>
         <span class="k">if</span><span class="p">(</span><span class="nb">msg.value</span><span class="o">&lt;</span><span class="mf">0.1</span> <span class="kc">ether</span><span class="p">)</span>
             <span class="k">return</span><span class="p">;</span> <span class="c1">//verify ticket price</span>
-        
+
         <span class="c1">// make sure he hasn&#39;t won already</span>
         <span class="nf">require</span><span class="p">(</span><span class="n">winner</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">]</span> <span class="o">==</span> <span class="kc">false</span><span class="p">);</span>
-        
+
         <span class="k">if</span><span class="p">(</span><span class="n">luckyNumberOfAddress</span><span class="p">(</span><span class="nb">msg.sender</span><span class="p">)</span> <span class="o">==</span> <span class="n">LuckyNumber</span><span class="p">){</span> <span class="c1">//check if it equals 7</span>
             <span class="n">winner</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// every address can only win once</span>
-            
+
             <span class="kt">uint</span> <span class="n">win</span><span class="o">=</span><span class="nb">msg.value</span><span class="o">*</span><span class="mi">7</span><span class="p">;</span> <span class="c1">//win = 7 times the ticket price</span>
-            
+
             <span class="k">if</span><span class="p">(</span><span class="n">win</span><span class="o">&gt;</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span> <span class="c1">//if the balance isnt sufficient...</span>
                 <span class="n">win</span><span class="o">=</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">;</span> <span class="c1">//...send everything we&#39;ve got</span>
             <span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">win</span><span class="p">);</span>
         <span class="p">}</span>
-        
+
         <span class="k">if</span><span class="p">(</span><span class="nb">block.number</span><span class="o">-</span><span class="n">lastReseed</span><span class="o">&gt;</span><span class="mi">1000</span><span class="p">)</span> <span class="c1">//reseed if needed</span>
             <span class="n">reseed</span><span class="p">(</span><span class="n">SeedComponents</span><span class="p">((</span><span class="kt">uint</span><span class="p">)(</span><span class="nb">block.coinbase</span><span class="p">),</span> <span class="nb">block.difficulty</span><span class="p">,</span> <span class="nb">block.gaslimit</span><span class="p">,</span> <span class="nb">block.timestamp</span><span class="p">));</span> <span class="c1">//generate a quality random seed</span>
     <span class="p">}</span>
-    
+
     <span class="kd">function</span> <span class="n">luckyNumberOfAddress</span><span class="p">(</span><span class="kt">address</span> <span class="n">addr</span><span class="p">)</span> <span class="kr">constant</span> <span class="k">returns</span><span class="p">(</span><span class="kt">uint</span> <span class="n">n</span><span class="p">){</span>
         <span class="c1">// calculate the number of current address - 1 in 8 chance</span>
         <span class="n">n</span> <span class="o">=</span> <span class="kt">uint</span><span class="p">(</span><span class="nf">keccak256</span><span class="p">(</span><span class="kt">uint</span><span class="p">(</span><span class="n">addr</span><span class="p">),</span> <span class="n">secretSeed</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span> <span class="o">%</span> <span class="mi">8</span><span class="p">;</span>
     <span class="p">}</span>
-    
+
     <span class="kd">function</span> <span class="n">reseed</span><span class="p">(</span><span class="n">SeedComponents</span> <span class="n">components</span><span class="p">)</span> <span class="kr">internal</span> <span class="p">{</span>
         <span class="n">secretSeed</span> <span class="o">=</span> <span class="kt">uint256</span><span class="p">(</span><span class="nf">keccak256</span><span class="p">(</span>
             <span class="n">components</span><span class="p">.</span><span class="n">component1</span><span class="p">,</span>
@@ -716,25 +716,25 @@ Call at address: 428</p>
         <span class="p">));</span> <span class="c1">//hash the incoming parameters and use the hash to (re)initialize the seed</span>
         <span class="n">lastReseed</span> <span class="o">=</span> <span class="nb">block.number</span><span class="p">;</span>
     <span class="p">}</span>
-    
+
     <span class="kd">function</span> <span class="n">kill</span><span class="p">()</span> <span class="p">{</span>
         <span class="nf">require</span><span class="p">(</span><span class="nb">msg.sender</span><span class="o">==</span><span class="n">owner</span><span class="p">);</span>
-        
+
         <span class="nb">selfdestruct</span><span class="p">(</span><span class="nb">msg.sender</span><span class="p">);</span>
     <span class="p">}</span>
-    
+
     <span class="kd">function</span> <span class="n">forceReseed</span><span class="p">()</span> <span class="p">{</span> <span class="c1">//reseed initiated by the owner - for testing purposes</span>
         <span class="nf">require</span><span class="p">(</span><span class="nb">msg.sender</span><span class="o">==</span><span class="n">owner</span><span class="p">);</span>
-        
+
         <span class="n">SeedComponents</span> <span class="n">s</span><span class="p">;</span>
         <span class="n">s</span><span class="p">.</span><span class="n">component1</span> <span class="o">=</span> <span class="kt">uint</span><span class="p">(</span><span class="nb">msg.sender</span><span class="p">);</span>
         <span class="n">s</span><span class="p">.</span><span class="n">component2</span> <span class="o">=</span> <span class="kt">uint256</span><span class="p">(</span><span class="nb">block.blockhash</span><span class="p">(</span><span class="nb">block.number</span> <span class="o">-</span> <span class="mi">1</span><span class="p">));</span>
         <span class="n">s</span><span class="p">.</span><span class="n">component3</span> <span class="o">=</span> <span class="nb">block.difficulty</span><span class="o">*</span><span class="p">(</span><span class="kt">uint</span><span class="p">)(</span><span class="nb">block.coinbase</span><span class="p">);</span>
         <span class="n">s</span><span class="p">.</span><span class="n">component4</span> <span class="o">=</span> <span class="nb">tx.gasprice</span> <span class="o">*</span> <span class="mi">7</span><span class="p">;</span>
-        
+
         <span class="n">reseed</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="c1">//reseed</span>
     <span class="p">}</span>
-    
+
     <span class="kd">function</span> <span class="p">()</span> <span class="kr">payable</span> <span class="p">{</span> <span class="c1">//if someone sends money without any function call, just assume he wanted to participate</span>
         <span class="k">if</span><span class="p">(</span><span class="nb">msg.value</span><span class="o">&gt;=</span><span class="mf">0.1</span> <span class="kc">ether</span> <span class="o">&amp;&amp;</span> <span class="nb">msg.sender</span><span class="o">!=</span><span class="n">owner</span><span class="p">)</span> <span class="c1">//owner can&#39;t participate, he can only fund the jackpot</span>
             <span class="n">participate</span><span class="p">();</span>
@@ -782,9 +782,9 @@ Call at address: 428</p>
 <span class="kd">contract</span> <span class="n">Multiplicator</span>
 <span class="p">{</span>
     <span class="kt">address</span> <span class="kr">public</span> <span class="n">Owner</span> <span class="o">=</span> <span class="nb">msg.sender</span><span class="p">;</span>
-   
+
     <span class="kd">function</span><span class="p">()</span><span class="kr">payable</span><span class="p">{}</span>
-   
+
     <span class="kd">function</span> <span class="n">withdraw</span><span class="p">()</span>
     <span class="kr">payable</span>
     <span class="kr">public</span>
@@ -792,12 +792,12 @@ Call at address: 428</p>
         <span class="nf">require</span><span class="p">(</span><span class="nb">msg.sender</span> <span class="o">==</span> <span class="n">Owner</span><span class="p">);</span>
         <span class="n">Owner</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">);</span>
     <span class="p">}</span>
-    
+
     <span class="kd">function</span> <span class="n">multiplicate</span><span class="p">(</span><span class="kt">address</span> <span class="n">adr</span><span class="p">)</span>
     <span class="kr">payable</span>
     <span class="p">{</span>
         <span class="k">if</span><span class="p">(</span><span class="nb">msg.value</span><span class="o">&gt;=</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">)</span>
-        <span class="p">{</span>        
+        <span class="p">{</span>
             <span class="n">adr</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="o">+</span><span class="nb">msg.value</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
@@ -829,7 +829,7 @@ It seems that this function can be called without restrictions.</p>
                                 <p><i>Multiple Calls (Information)</i></p>
                                   <div style="margin-left: 1em">
                     <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
-Consecutive calls: 
+Consecutive calls:
 Call at address: 345
 Call at address: 567</p>
 </p>
@@ -857,7 +857,7 @@ It seems that this function can be called without restrictions.</p>
                                 <p><i>Multiple Calls (Information)</i></p>
                                   <div style="margin-left: 1em">
                     <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
-Consecutive calls: 
+Consecutive calls:
 Call at address: 345
 Call at address: 567</p>
 </p>
@@ -902,16 +902,16 @@ Call at address: 567</p>
 <span class="kd">contract</span> <span class="n">Private_Bank</span>
 <span class="p">{</span>
     <span class="kd">mapping</span> <span class="p">(</span><span class="kt">address</span> <span class="o">=&gt;</span> <span class="kt">uint</span><span class="p">)</span> <span class="kr">public</span> <span class="n">balances</span><span class="p">;</span>
-    
+
     <span class="kt">uint</span> <span class="kr">public</span> <span class="n">MinDeposit</span> <span class="o">=</span> <span class="mi">1</span> <span class="kc">ether</span><span class="p">;</span>
-    
+
     <span class="n">Log</span> <span class="n">TransferLog</span><span class="p">;</span>
-    
+
     <span class="kd">function</span> <span class="n">Private_Bank</span><span class="p">(</span><span class="kt">address</span> <span class="n">_log</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">TransferLog</span> <span class="o">=</span> <span class="n">Log</span><span class="p">(</span><span class="n">_log</span><span class="p">);</span>
     <span class="p">}</span>
-    
+
     <span class="kd">function</span> <span class="n">Deposit</span><span class="p">()</span>
     <span class="kr">public</span>
     <span class="kr">payable</span>
@@ -922,12 +922,12 @@ Call at address: 567</p>
             <span class="n">TransferLog</span><span class="p">.</span><span class="n">AddMessage</span><span class="p">(</span><span class="nb">msg.sender</span><span class="p">,</span><span class="nb">msg.value</span><span class="p">,</span><span class="s">&quot;Deposit&quot;</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
-    
+
     <span class="kd">function</span> <span class="n">CashOut</span><span class="p">(</span><span class="kt">uint</span> <span class="n">_am</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="k">if</span><span class="p">(</span><span class="n">_am</span><span class="o">&lt;=</span><span class="n">balances</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">])</span>
         <span class="p">{</span>
-            
+
             <span class="k">if</span><span class="p">(</span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">_am</span><span class="p">)())</span>
             <span class="p">{</span>
                 <span class="n">balances</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">]</span><span class="o">-=</span><span class="n">_am</span><span class="p">;</span>
@@ -935,14 +935,14 @@ Call at address: 567</p>
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-    
-    <span class="kd">function</span><span class="p">()</span> <span class="kr">public</span> <span class="kr">payable</span><span class="p">{}</span>    
-    
+
+    <span class="kd">function</span><span class="p">()</span> <span class="kr">public</span> <span class="kr">payable</span><span class="p">{}</span>
+
 <span class="p">}</span>
 
-<span class="kd">contract</span> <span class="n">Log</span> 
+<span class="kd">contract</span> <span class="n">Log</span>
 <span class="p">{</span>
-   
+
     <span class="kd">struct</span> <span class="n">Message</span>
     <span class="p">{</span>
         <span class="kt">address</span> <span class="n">Sender</span><span class="p">;</span>
@@ -950,11 +950,11 @@ Call at address: 567</p>
         <span class="kt">uint</span> <span class="n">Val</span><span class="p">;</span>
         <span class="kt">uint</span>  <span class="n">Time</span><span class="p">;</span>
     <span class="p">}</span>
-    
+
     <span class="n">Message</span><span class="p">[]</span> <span class="kr">public</span> <span class="n">History</span><span class="p">;</span>
-    
+
     <span class="n">Message</span> <span class="n">LastMsg</span><span class="p">;</span>
-    
+
     <span class="kd">function</span> <span class="n">AddMessage</span><span class="p">(</span><span class="kt">address</span> <span class="n">_adr</span><span class="p">,</span><span class="kt">uint</span> <span class="n">_val</span><span class="p">,</span><span class="kt">string</span> <span class="n">_data</span><span class="p">)</span>
     <span class="kr">public</span>
     <span class="p">{</span>
@@ -1006,7 +1006,7 @@ Call at address: 567</p>
 <span class="kd">contract</span> <span class="n">Test1</span>
 <span class="p">{</span>
     <span class="kt">address</span> <span class="n">owner</span> <span class="o">=</span> <span class="nb">msg.sender</span><span class="p">;</span>
-    
+
     <span class="kd">function</span> <span class="n">withdraw</span><span class="p">()</span>
     <span class="kr">payable</span>
     <span class="kr">public</span>
@@ -1014,25 +1014,25 @@ Call at address: 567</p>
         <span class="nf">require</span><span class="p">(</span><span class="nb">msg.sender</span><span class="o">==</span><span class="n">owner</span><span class="p">);</span>
         <span class="n">owner</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">);</span>
     <span class="p">}</span>
-    
+
     <span class="kd">function</span><span class="p">()</span> <span class="kr">payable</span> <span class="p">{}</span>
-    
+
     <span class="kd">function</span> <span class="n">Test</span><span class="p">()</span>
     <span class="kr">payable</span>
     <span class="kr">public</span>
     <span class="p">{</span>
         <span class="k">if</span><span class="p">(</span><span class="nb">msg.value</span><span class="o">&gt;=</span><span class="mi">1</span> <span class="kc">ether</span><span class="p">)</span>
         <span class="p">{</span>
-            
+
             <span class="kd">var</span> <span class="n">i1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
             <span class="kd">var</span> <span class="n">i2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
             <span class="kd">var</span> <span class="n">amX2</span> <span class="o">=</span> <span class="nb">msg.value</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span>
-            
+
             <span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
             <span class="p">{</span>
                 <span class="k">if</span><span class="p">(</span><span class="n">i1</span><span class="o">&lt;</span><span class="n">i2</span><span class="p">)</span><span class="k">break</span><span class="p">;</span>
                 <span class="k">if</span><span class="p">(</span><span class="n">i1</span><span class="o">&gt;</span><span class="n">amX2</span><span class="p">)</span><span class="k">break</span><span class="p">;</span>
-                
+
                 <span class="n">i2</span><span class="o">=</span><span class="n">i1</span><span class="p">;</span>
                 <span class="n">i1</span><span class="o">++</span><span class="p">;</span>
             <span class="p">}</span>
@@ -1067,7 +1067,7 @@ It seems that this function can be called without restrictions.</p>
                                 <p><i>Multiple Calls (Information)</i></p>
                                   <div style="margin-left: 1em">
                     <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
-Consecutive calls: 
+Consecutive calls:
 Call at address: 293
 Call at address: 464
 Call at address: 464
@@ -1111,7 +1111,7 @@ It seems that this function can be called without restrictions.</p>
                                 <p><i>Multiple Calls (Information)</i></p>
                                   <div style="margin-left: 1em">
                     <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
-Consecutive calls: 
+Consecutive calls:
 Call at address: 293
 Call at address: 464
 Call at address: 464
@@ -1156,7 +1156,7 @@ Call at address: 464</p>
         <h4 class="mt-4">Source Code</h4>
         <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">15</span><span class="p">;</span>
 
-<span class="kd">contract</span> <span class="n">Alice</span> <span class="p">{</span> 
+<span class="kd">contract</span> <span class="n">Alice</span> <span class="p">{</span>
     <span class="kt">int</span> <span class="kr">public</span> <span class="n">val</span><span class="p">;</span>
 
     <span class="kd">function</span> <span class="n">set</span><span class="p">(</span><span class="kt">int</span> <span class="n">new_val</span><span class="p">){</span>
@@ -1209,19 +1209,19 @@ Call at address: 464</p>
         <h4 class="mt-4">Source Code</h4>
         <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">15</span><span class="p">;</span>
 
-<span class="kd">contract</span> <span class="n">Alice</span> <span class="p">{</span> 
-    <span class="kd">function</span> <span class="n">set</span><span class="p">(</span><span class="kt">uint</span><span class="p">);</span> 
-    <span class="kd">function</span> <span class="n">set_fixed</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span> 
+<span class="kd">contract</span> <span class="n">Alice</span> <span class="p">{</span>
+    <span class="kd">function</span> <span class="n">set</span><span class="p">(</span><span class="kt">uint</span><span class="p">);</span>
+    <span class="kd">function</span> <span class="n">set_fixed</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="kd">contract</span> <span class="n">Bob</span> <span class="p">{</span> 
-    <span class="kd">function</span> <span class="n">set</span><span class="p">(</span><span class="n">Alice</span> <span class="n">c</span><span class="p">){</span> 
-        <span class="n">c</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span> 
+<span class="kd">contract</span> <span class="n">Bob</span> <span class="p">{</span>
+    <span class="kd">function</span> <span class="n">set</span><span class="p">(</span><span class="n">Alice</span> <span class="n">c</span><span class="p">){</span>
+        <span class="n">c</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="kd">function</span> <span class="n">set_fixed</span><span class="p">(</span><span class="n">Alice</span> <span class="n">c</span><span class="p">){</span> 
-        <span class="n">c</span><span class="p">.</span><span class="n">set_fixed</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span> 
-    <span class="p">}</span> 
+    <span class="kd">function</span> <span class="n">set_fixed</span><span class="p">(</span><span class="n">Alice</span> <span class="n">c</span><span class="p">){</span>
+        <span class="n">c</span><span class="p">.</span><span class="n">set_fixed</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1249,7 +1249,7 @@ Call at address: 464</p>
                                 <p><i>Multiple Calls (Information)</i></p>
                                   <div style="margin-left: 1em">
                     <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
-Consecutive calls: 
+Consecutive calls:
 Call at address: 330
 Call at address: 469</p>
 </p>
@@ -1276,7 +1276,7 @@ Call at address: 469</p>
                                 <p><i>Multiple Calls (Information)</i></p>
                                   <div style="margin-left: 1em">
                     <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
-Consecutive calls: 
+Consecutive calls:
 Call at address: 330
 Call at address: 469</p>
 </p>
@@ -1320,18 +1320,18 @@ Call at address: 469</p>
 
 <span class="kd">contract</span> <span class="n">Overflow</span> <span class="p">{</span>
     <span class="kt">uint</span> <span class="kr">private</span> <span class="n">sellerBalance</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-    
+
     <span class="kd">function</span> <span class="n">add</span><span class="p">(</span><span class="kt">uint</span> <span class="n">value</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="kt">bool</span><span class="p">){</span>
         <span class="n">sellerBalance</span> <span class="o">+=</span> <span class="n">value</span><span class="p">;</span> <span class="c1">// possible overflow</span>
 
         <span class="c1">// possible auditor assert</span>
         <span class="c1">// assert(sellerBalance &gt;= value); </span>
-    <span class="p">}</span> 
+    <span class="p">}</span>
 
     <span class="kd">function</span> <span class="n">safe_add</span><span class="p">(</span><span class="kt">uint</span> <span class="n">value</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="kt">bool</span><span class="p">){</span>
         <span class="nf">require</span><span class="p">(</span><span class="n">value</span> <span class="o">+</span> <span class="n">sellerBalance</span> <span class="o">&gt;=</span> <span class="n">sellerBalance</span><span class="p">);</span>
-        <span class="n">sellerBalance</span> <span class="o">+=</span> <span class="n">value</span><span class="p">;</span> 
-    <span class="p">}</span> 
+        <span class="n">sellerBalance</span> <span class="o">+=</span> <span class="n">value</span><span class="p">;</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1398,13 +1398,13 @@ The addition or multiplication may result in a value higher than the maximum rep
     <span class="c1">// The name of the constructor should be Missing</span>
     <span class="c1">// Anyone can call the IamMissing once the contract is deployed</span>
     <span class="kd">function</span> <span class="n">IamMissing</span><span class="p">()</span>
-        <span class="kr">public</span> 
+        <span class="kr">public</span>
     <span class="p">{</span>
         <span class="n">owner</span> <span class="o">=</span> <span class="nb">msg.sender</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="kd">function</span> <span class="n">withdraw</span><span class="p">()</span> 
-        <span class="kr">public</span> 
+    <span class="kd">function</span> <span class="n">withdraw</span><span class="p">()</span>
+        <span class="kr">public</span>
         <span class="n">onlyowner</span>
     <span class="p">{</span>
        <span class="n">owner</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="nb">balance</span><span class="p">);</span>
@@ -1672,7 +1672,7 @@ It seems that this function can be called without restrictions.</p>
     <span class="n">ERC20</span> <span class="n">token</span><span class="p">;</span>
 
     <span class="kd">function</span> <span class="n">RaceCondition</span><span class="p">(</span><span class="kt">uint</span> <span class="n">_price</span><span class="p">,</span> <span class="n">ERC20</span> <span class="n">_token</span><span class="p">)</span>
-        <span class="kr">public</span> 
+        <span class="kr">public</span>
     <span class="p">{</span>
         <span class="n">owner</span> <span class="o">=</span> <span class="nb">msg.sender</span><span class="p">;</span>
         <span class="n">price</span> <span class="o">=</span> <span class="n">_price</span><span class="p">;</span>
@@ -1698,7 +1698,7 @@ It seems that this function can be called without restrictions.</p>
 
     <span class="kd">function</span> <span class="n">changePrice</span><span class="p">(</span><span class="kt">uint</span> <span class="n">new_price</span><span class="p">){</span>
         <span class="nf">require</span><span class="p">(</span><span class="nb">msg.sender</span> <span class="o">==</span> <span class="n">owner</span><span class="p">);</span>
-        <span class="n">price</span> <span class="o">=</span> <span class="n">new_price</span><span class="p">;</span> 
+        <span class="n">price</span> <span class="o">=</span> <span class="n">new_price</span><span class="p">;</span>
     <span class="p">}</span>
 
 <span class="p">}</span>
@@ -1728,7 +1728,7 @@ It seems that this function can be called without restrictions.</p>
                                 <p><i>Multiple Calls (Information)</i></p>
                                   <div style="margin-left: 1em">
                     <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
-Consecutive calls: 
+Consecutive calls:
 Call at address: 623</p>
 </p>
                   </div>
@@ -3045,14 +3045,14 @@ Call at address: 623</p>
 
 <span class="kd">contract</span> <span class="n">Reentrance</span> <span class="p">{</span>
     <span class="kd">mapping</span> <span class="p">(</span><span class="kt">address</span> <span class="o">=&gt;</span> <span class="kt">uint</span><span class="p">)</span> <span class="n">userBalance</span><span class="p">;</span>
-   
+
     <span class="kd">function</span> <span class="n">getBalance</span><span class="p">(</span><span class="kt">address</span> <span class="n">u</span><span class="p">)</span> <span class="kr">constant</span> <span class="k">returns</span><span class="p">(</span><span class="kt">uint</span><span class="p">){</span>
         <span class="k">return</span> <span class="n">userBalance</span><span class="p">[</span><span class="n">u</span><span class="p">];</span>
     <span class="p">}</span>
 
     <span class="kd">function</span> <span class="n">addToBalance</span><span class="p">()</span> <span class="kr">payable</span><span class="p">{</span>
         <span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">msg.value</span><span class="p">;</span>
-    <span class="p">}</span>   
+    <span class="p">}</span>
 
     <span class="kd">function</span> <span class="n">withdrawBalance</span><span class="p">(){</span>
         <span class="c1">// send userBalance[msg.sender] ethers to msg.sender</span>
@@ -3061,7 +3061,7 @@ Call at address: 623</p>
             <span class="k">throw</span><span class="p">;</span>
         <span class="p">}</span>
         <span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="p">}</span>   
+    <span class="p">}</span>
 
     <span class="kd">function</span> <span class="n">withdrawBalance_fixed</span><span class="p">(){</span>
         <span class="c1">// to protect against re-entrancy, the state variable</span>
@@ -3071,7 +3071,7 @@ Call at address: 623</p>
         <span class="k">if</span><span class="p">(</span> <span class="o">!</span> <span class="p">(</span><span class="nb">msg.sender</span><span class="p">.</span><span class="nf">call</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">amount</span><span class="p">)()</span> <span class="p">)</span> <span class="p">){</span>
             <span class="k">throw</span><span class="p">;</span>
         <span class="p">}</span>
-    <span class="p">}</span>   
+    <span class="p">}</span>
 
     <span class="kd">function</span> <span class="n">withdrawBalance_fixed_2</span><span class="p">(){</span>
         <span class="c1">// send() and transfer() are safe against reentrancy</span>
@@ -3080,8 +3080,8 @@ Call at address: 623</p>
         <span class="c1">// in the fallback function (no further call possible)</span>
         <span class="nb">msg.sender</span><span class="p">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">]);</span>
         <span class="n">userBalance</span><span class="p">[</span><span class="nb">msg.sender</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="p">}</span>   
-   
+    <span class="p">}</span>
+
 <span class="p">}</span>
 </pre></div>
 
@@ -3122,7 +3122,7 @@ It seems that this function can be called without restrictions.</p>
                                 <p><i>Multiple Calls (Information)</i></p>
                                   <div style="margin-left: 1em">
                     <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
-Consecutive calls: 
+Consecutive calls:
 Call at address: 455
 Call at address: 575
 Call at address: 848</p>
@@ -3163,7 +3163,7 @@ It seems that this function can be called without restrictions.</p>
                                 <p><i>Multiple Calls (Information)</i></p>
                                   <div style="margin-left: 1em">
                     <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
-Consecutive calls: 
+Consecutive calls:
 Call at address: 455
 Call at address: 575
 Call at address: 848</p>
@@ -3205,7 +3205,7 @@ It seems that this function can be called without restrictions.</p>
                                 <p><i>Multiple Calls (Information)</i></p>
                                   <div style="margin-left: 1em">
                     <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
-Consecutive calls: 
+Consecutive calls:
 Call at address: 455
 Call at address: 575
 Call at address: 848</p>
@@ -3249,7 +3249,7 @@ Call at address: 848</p>
         <div class="highlight"><pre><span></span><span class="kr">pragma solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">15</span><span class="p">;</span>
 
 <span class="kd">contract</span> <span class="n">ReentranceExploit</span> <span class="p">{</span>
-    <span class="kt">bool</span> <span class="kr">public</span> <span class="n">attackModeIsOn</span><span class="o">=</span><span class="kc">false</span><span class="p">;</span> 
+    <span class="kt">bool</span> <span class="kr">public</span> <span class="n">attackModeIsOn</span><span class="o">=</span><span class="kc">false</span><span class="p">;</span>
     <span class="kt">address</span> <span class="kr">public</span> <span class="n">vulnerable_contract</span><span class="p">;</span>
     <span class="kt">address</span> <span class="kr">public</span> <span class="n">owner</span><span class="p">;</span>
 
@@ -3268,7 +3268,7 @@ Call at address: 848</p>
         <span class="c1">// call withdrawBalance</span>
         <span class="c1">// withdrawBalance calls the fallback of ReentranceExploit</span>
         <span class="nf">require</span><span class="p">(</span><span class="n">vulnerable_contract</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="kt">bytes4</span><span class="p">(</span><span class="nf">sha3</span><span class="p">(</span><span class="s">&quot;withdrawBalance()&quot;</span><span class="p">))));</span>
-    <span class="p">}</span>  
+    <span class="p">}</span>
 
 
     <span class="kd">function</span> <span class="p">()</span> <span class="kr">public</span> <span class="kr">payable</span><span class="p">{</span>
@@ -3362,7 +3362,7 @@ It seems that this function can be called without restrictions.</p>
                                 <p><i>Multiple Calls (Information)</i></p>
                                   <div style="margin-left: 1em">
                     <p><p>Multiple sends exist in one transaction, try to isolate each external call into its own transaction. As external calls can fail accidentally or deliberately.
-Consecutive calls: 
+Consecutive calls:
 Call at address: 369
 Call at address: 975
 Call at address: 1376
@@ -3519,7 +3519,7 @@ Call at address: 369</p>
         <span class="c1">// payments accumulate to avoid wasting gas sending small fees.</span>
 
         <span class="kt">uint</span> <span class="n">wizardCommission</span> <span class="o">=</span> <span class="p">(</span><span class="n">valuePaid</span> <span class="o">*</span> <span class="n">wizardCommissionFractionNum</span><span class="p">)</span> <span class="o">/</span> <span class="n">wizardCommissionFractionDen</span><span class="p">;</span>
-        
+
         <span class="kt">uint</span> <span class="n">compensation</span> <span class="o">=</span> <span class="n">valuePaid</span> <span class="o">-</span> <span class="n">wizardCommission</span><span class="p">;</span>
 
         <span class="k">if</span> <span class="p">(</span><span class="n">currentMonarch</span><span class="p">.</span><span class="n">etherAddress</span> <span class="o">!=</span> <span class="n">wizardAddress</span><span class="p">)</span> <span class="p">{</span>
@@ -3620,20 +3620,20 @@ Call at address: 369</p>
     <span class="p">}</span>
 
     <span class="kd">function</span> <span class="n">Unprotected</span><span class="p">()</span>
-        <span class="kr">public</span> 
+        <span class="kr">public</span>
     <span class="p">{</span>
         <span class="n">owner</span> <span class="o">=</span> <span class="nb">msg.sender</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="c1">// This function should be protected</span>
-    <span class="kd">function</span> <span class="n">changeOwner</span><span class="p">(</span><span class="kt">address</span> <span class="n">_newOwner</span><span class="p">)</span> 
+    <span class="kd">function</span> <span class="n">changeOwner</span><span class="p">(</span><span class="kt">address</span> <span class="n">_newOwner</span><span class="p">)</span>
         <span class="kr">public</span>
     <span class="p">{</span>
        <span class="n">owner</span> <span class="o">=</span> <span class="n">_newOwner</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="kd">function</span> <span class="n">changeOwner_fixed</span><span class="p">(</span><span class="kt">address</span> <span class="n">_newOwner</span><span class="p">)</span> 
-        <span class="kr">public</span> 
+    <span class="kd">function</span> <span class="n">changeOwner_fixed</span><span class="p">(</span><span class="kt">address</span> <span class="n">_newOwner</span><span class="p">)</span>
+        <span class="kr">public</span>
         <span class="n">onlyowner</span>
     <span class="p">{</span>
        <span class="n">owner</span> <span class="o">=</span> <span class="n">_newOwner</span><span class="p">;</span>
